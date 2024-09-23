@@ -27,7 +27,7 @@ const FooterText = styled.p`
   font-size: 1rem;
   font-size: small;
 `;
-const FoooterLink = styled.a`
+const FoooterLink = styled.div`
 padding: 2px 5px;
 margin: 0 5px;
 `
@@ -56,7 +56,7 @@ const Footer = () => {
           />
           About
         </FoooterLink>
-        <FoooterLink
+        <a
           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -69,7 +69,7 @@ const Footer = () => {
             height={16}
           />
           Go to nextjs.org →
-        </FoooterLink>
+        </a>
       </FooterLinks>
       <FooterText>
         &copy; {new Date().getFullYear()} Eric Lucero González. All Rights Reserved.

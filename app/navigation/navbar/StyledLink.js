@@ -19,7 +19,7 @@ const StyledAnchor = styled.div`
 `;
 
 const StyledLink = ({ href, children }) => {
-  return (
+  return (  
     <Link href={href} passHref>
       <StyledAnchor>{children}</StyledAnchor>
     </Link>

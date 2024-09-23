@@ -1,7 +1,12 @@
 import React from "react";
+import { MainBg } from "../ComponentsStyled";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <MainBg>
+      <h1>Contact</h1>
+    </MainBg>
+  );
 };
 
 export default Contact;

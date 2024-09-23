@@ -1,7 +1,10 @@
 import React from "react";
+import { MainBg } from "../ComponentsStyled";
 
 const About = () => {
-  return <div>About</div>;
+  return <MainBg>
+    <h1>About</h1>
+  </MainBg>;
 };
 
 export default About;
