@@ -1,9 +1,9 @@
 import React from "react";
-import { MainBg } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ComponentsStyled";
 
 const About = () => {
   return <MainBg>
-    <h1>About</h1>
+    <TitlePage>About</TitlePage>
   </MainBg>;
 };
 

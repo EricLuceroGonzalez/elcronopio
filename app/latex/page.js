@@ -1,9 +1,9 @@
 import React from "react";
-import { MainBg } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ComponentsStyled";
 
 const Latex = () => {
     return <MainBg>
-        <h1>LaTeX</h1>
+        <TitlePage>LaTeX</TitlePage>
     </MainBg>
 };
 

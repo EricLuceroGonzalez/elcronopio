@@ -1,10 +1,10 @@
 import React from "react";
-import { MainBg } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ComponentsStyled";
 
 const Contact = () => {
   return (
     <MainBg>
-      <h1>Contact</h1>
+      <TitlePage>Contact</TitlePage>
     </MainBg>
   );
 };

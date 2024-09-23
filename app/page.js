@@ -1,14 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Footer from "./navigation/footer";
-import { Main, PageContainer } from "./ComponentsStyled";
+import Footer from "./components/navigation/footer";
+import { Main, MainBg, PageContainer, TitlePage } from "./ComponentsStyled";
 
 export default function Home() {
   return (
     <PageContainer>
-      <Main>
-        <h1>Home</h1>
-      </Main>
+      <MainBg>
+        <TitlePage>Home</TitlePage>
+        <TitlePage>Home</TitlePage>
+      </MainBg>
     </PageContainer>
   );
 }

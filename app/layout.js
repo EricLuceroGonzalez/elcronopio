@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "./navigation/navbar";
-import Footer from "./navigation/footer";
+import NavBar from "./components/navigation/navbar";
+import Footer from "./components/navigation/footer";
 import dynamic from 'next/dynamic'
 
 
