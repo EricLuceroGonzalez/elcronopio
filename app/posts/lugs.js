@@ -1,6 +1,7 @@
 "use client";
 
 import styled from "styled-components";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
@@ -35,4 +36,18 @@ export const Content = styled.div`
   font-size: 1.1rem;
   line-height: 1.6;
   color: #444;
+`;
+
+export const MetaInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #777;
+`;
+
+export const CodeBlock = styled(SyntaxHighlighter)`
+  margin: 20px 0;
+  border-radius: 8px;
 `;

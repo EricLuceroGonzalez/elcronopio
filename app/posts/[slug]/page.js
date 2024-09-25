@@ -1,11 +1,26 @@
 // "use client"; // Agrega esta línea para convertir el componente en un componente de cliente
+import ReactMarkdown from 'react-markdown'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import {
+  materialDark,
+  materialLight,
+  oneLight,
+} from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
+
 import markdownToHtml from "@/app/lib/markdownToHtml";
 import { getPostBySlug } from "@/app/lib/api";
-import { Article, Author, Content, Date, Title } from "../lugs";
+import {
+  Article,
+  Author,
+  CodeBlock,
+  Content,
+  Date,
+  MetaInfo,
+  Title,
+} from "../lugs";
 import { MainBg } from "@/app/ComponentsStyled";
-// import { useEffect, useState } from "react"; // Importa hooks si es necesario
-// import { getPostBySlug, getAllPosts } from "@/lib/api";
-
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
@@ -14,16 +29,48 @@ export default async function Post({ params }) {
     return notFound();
   }
 
-  const content = await markdownToHtml(post.content || '');
+  // const content = await markdownToHtml(post.content || "");
 
   return (
     <MainBg>
-    <Article>
-      <Title>{post.title}</Title>
-      <Date>{post.date}</Date>
-      <Content dangerouslySetInnerHTML={{ __html: content }} />
-      <Author>{post.author}</Author>
-    </Article>
+      <Article>
+        <Title>{post.title}</Title>
+        <MetaInfo>
+          <Date>{post.date}</Date>
+          <Author>{post.author}</Author>
+        </MetaInfo>
+        {/* <Content dangerouslySetInnerHTML={{ __html: post.scontent }} /> */}
+        <ReactMarkdown
+          components={{
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '')
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  // children={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                  wrapLines={true}
+                  wrapLongLines={false}
+                  showLineNumbers={true}
+                  style={dracula}
+                  {...props}
+                >{String(children).replace(/\n$/, '')}</SyntaxHighlighter>
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              )
+            },
+          }}
+        >{post.content}</ReactMarkdown>
+        {/* Ejemplo de cómo incluir un bloque de código con SyntaxHighlighter */}
+        {/* <CodeBlock language="javascript" showLineNumbers style={dracula}>
+          {`console.log("Hello, world!");`}
+        </CodeBlock>
+
+        <CodeBlock language="python" showLineNumbers style={dracula}>
+          {`# some code in python`}
+        </CodeBlock> */}
+      </Article>
     </MainBg>
   );
 }
