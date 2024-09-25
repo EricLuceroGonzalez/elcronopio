@@ -4,11 +4,10 @@ import styled from 'styled-components';
 
 // Define the styled component for the anchor tag
 const StyledAnchor = styled.div`
-  color: blue;
+  color: black;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: #f0f0f0;
   transition: background-color 0.3s ease;
   margin: 2px 5px;
 

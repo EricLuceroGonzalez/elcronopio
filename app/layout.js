@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "./components/navigation/navbar";
 import Footer from "./components/navigation/footer";
 import dynamic from 'next/dynamic'
+import NaviBar from "./components/navigation/navbar/NaviBar";
 
 
 const geistSans = localFont({
@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {/* TODO: Revisar error en NavBar */}
-        <NavBar/>
+        {/* <NavBar/> */}
+        <NaviBar/>
         {children}
         <Footer/>
       </body>

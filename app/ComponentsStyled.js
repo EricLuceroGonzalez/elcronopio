@@ -28,3 +28,7 @@ export const MainBg = styled.div`
 export const TitlePage = styled.h1`
 color: black;
 `
+
+export const Section = styled.section`
+color: blue;
+`

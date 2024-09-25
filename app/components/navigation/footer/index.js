@@ -7,8 +7,8 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   width: 100%;
   padding: 1rem;
-  background-color: peachpuff;
-  color: black;
+  background-color: #000;
+  color: white;
   text-align: center;
   position: relative;
   bottom: 0;
@@ -39,12 +39,12 @@ const FoooterLink = styled.a`
   svg {
     width: 24px;
     height: 24px;
-    fill: gray; // Color inicial del SVG
+    fill: white; // Color inicial del SVG
     transition: fill 0.3s ease;
   }
 
   &:hover svg {
-    fill: darkblue; // Color del SVG al hacer hover
+    fill: wheat; // Color del SVG al hacer hover
   }
 `;
 
