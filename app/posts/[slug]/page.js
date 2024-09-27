@@ -62,6 +62,7 @@ export default async function Post({ params }) {
             },
           }}
         >{post.content}</ReactMarkdown>
+        {/* // TODO Check the paragraph separation in content from .md */}
         {/* Ejemplo de cómo incluir un bloque de código con SyntaxHighlighter */}
         {/* <CodeBlock language="javascript" showLineNumbers style={dracula}>
           {`console.log("Hello, world!");`}

@@ -18,7 +18,7 @@ function Home() {
       <MainBg>
         <TitlePage>Blog</TitlePage>
         {/* Add this <section> tag below the existing <section> tag */}
-        {allPostsData.map(({ slug,id, date, title,author,excerpt }) => (
+        {allPostsData.map(({ slug,id, date, title,author,excerpt,authorAvatar, doctype }) => (
           <PostSection
           key={id}
             title={title}
@@ -26,6 +26,8 @@ function Home() {
             date={date}
             excerpt={excerpt}
             author={author}
+            authorAvatar={authorAvatar}
+            doctype={doctype}
           />
         ))}
       </MainBg>

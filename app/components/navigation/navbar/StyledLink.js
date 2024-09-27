@@ -10,7 +10,6 @@ const StyledAnchor = styled.div`
   border-radius: 8px;
   transition: background-color 0.3s ease;
   margin: 2px 5px;
-
   &:hover {
     background-color: #e0e0e0;
     color: darkblue;
