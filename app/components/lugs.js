@@ -1,5 +1,4 @@
 "use client";
-
 import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
@@ -69,6 +68,7 @@ export const GridContainer = styled.div`
   padding: 16px 8px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: rgb(56, 56, 56);
 
   @media (min-width: 768px) {
     /* TODO: Style of blog posts and inner post */
@@ -79,6 +79,9 @@ export const GridContainer = styled.div`
 
   @media (min-width: 1024px) {
     gap: 2rem;
+  }
+  :hover{
+    background-color: rgba(200, 200, 200, 0.5);
   }
 `;
 
@@ -170,9 +173,6 @@ export const MdParagraph = styled.p`
   color: rgb(100,100,100);
 `;
 
-export const MdSpan = styled.span`
-  background-color: rgb(100,100,100);
-`;
 export const MdListItem = styled.li`
   color: rgb(100,100,200);
   margin: 3px 22px;
@@ -184,3 +184,31 @@ export const MdBlockQuote = styled.blockquote`
   padding: 1px 4px;
   margin: 3px 22px;
 `;
+
+export const MdSubHeadA = styled.h2`
+color: rgb(42, 244, 152, 255);
+`
+export const MdSubHeadB = styled.h3`
+color: rgb(42, 244, 152, 255);
+`
+export const MdSubHeadC = styled.h4`
+color: rgb(42, 244, 152, 255);
+`
+export const MdLink = styled.a`
+background-color: rgba(255, 0, 250,0.3);
+`
+export const SocialLink = styled.a`
+background-color: rgba(255, 120, 50,0.6);
+font-weight: bold ;
+cursor: pointer;
+`
+export const MdStrong = styled.strong`
+background-color: rgba(250, 15, 0,0.5);
+color: white;
+padding: 2px 5px;
+`
+export const MdEmph = styled.em`
+background-color: rgba(240, 255, 0,0.5);
+padding: 0 5px;
+font-style: normal;
+`

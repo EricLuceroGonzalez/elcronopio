@@ -3,15 +3,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Article,
-  Author,
-  CodeBlock,
-  Content,
   Date,
-  MdParagraph,
   MetaInfo,
-  StyledMarkdown,
-  Title,
   GridContainer,
   TitleContainer,
   AuthorInfo,
@@ -39,8 +32,8 @@ const PostSection = ({
     {/* <CoverImageContainer> */}
     {/* <CoverImage title={title} src={coverImage} slug={slug} /> */}
     {/* </CoverImageContainer> */}
-    <Link href={`/posts/${slug}`}>
       <GridContainer>
+    <Link href={`/posts/${slug}`}>
         <TitleContainer>
           <h2>{title}</h2>
           <MetaInfo>
@@ -67,8 +60,8 @@ const PostSection = ({
         {/* <div> */}
         <ExcerptContainer>{excerpt}</ExcerptContainer>
         {/* </div> */}
-      </GridContainer>
     </Link>
+      </GridContainer>
   </>
 );
 

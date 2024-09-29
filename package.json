@@ -11,6 +11,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.10.0",
     "next": "14.2.13",
     "prismjs": "^1.29.0",
     "react": "^18",
