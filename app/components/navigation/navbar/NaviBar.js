@@ -42,13 +42,16 @@ class NaviBar extends React.PureComponent {
           <Hamburger />
         </NavBarToggle>
         <Logo href="/"></Logo>
-        <MainNav display={this.state.displayNav}>
+        <MainNav
+          display={this.state.displayNav}
+          onClick={() => this.toggleNavBar()}
+        >
           {/* <NavigationBar> */}
-            <StyledLink href={"/"}>Home</StyledLink>
-            <StyledLink href={"/contact"}>Contacto</StyledLink>
-            <StyledLink href={"/about"}>About</StyledLink>
-            <StyledLink href={"/latex"}>LaTeX</StyledLink>
-            <StyledLink href={"/"}>Suscribe</StyledLink>
+          <StyledLink href={"/"}>Home</StyledLink>
+          <StyledLink href={"/contact"}>Contacto</StyledLink>
+          <StyledLink href={"/about"}>About</StyledLink>
+          <StyledLink href={"/latex"}>LaTeX</StyledLink>
+          <StyledLink href={"/"}>Suscribe</StyledLink>
           {/* </NavigationBar> */}
         </MainNav>
       </Bar>

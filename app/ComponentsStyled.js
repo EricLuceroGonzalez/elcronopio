@@ -17,12 +17,15 @@ export const Main = styled.main`
   min-height: 83vh;
 `;
 
-
 export const MainBg = styled.div`
   flex: 1;
   padding: 2rem;
   background-color: #f5f5f5;
   min-height: 83vh;
+  @media (max-width: 728px) {
+    text-align: justify;
+    padding: 1rem 7px;
+  }
 `;
 
 export const TitlePage = styled.h1`

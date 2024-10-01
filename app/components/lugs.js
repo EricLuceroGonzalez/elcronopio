@@ -10,12 +10,13 @@ export const Article = styled.article`
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+
   @media (max-width: 1080px) {
-    max-width: 90%
+    max-width: 90%;
   }
   @media (max-width: 728px) {
-    max-width: 97%
+    min-width: 100%;
+    padding: 5px;
   }
 `;
 
@@ -80,7 +81,7 @@ export const GridContainer = styled.div`
   @media (min-width: 1024px) {
     gap: 2rem;
   }
-  :hover{
+  :hover {
     background-color: rgba(200, 200, 200, 0.5);
   }
 `;
@@ -109,7 +110,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const MetaInfo = styled.div`
-/* border: 1px solid red; */
+  /* border: 1px solid red; */
   margin-bottom: 1rem;
   font-size: small;
   color: gray;
@@ -170,45 +171,50 @@ export const SideInfo = styled.div`
 export const MdParagraph = styled.p`
   font-size: medium;
   margin: 2em 0;
-  color: rgb(100,100,100);
+  color: rgb(100, 100, 100);
 `;
 
 export const MdListItem = styled.li`
-  color: rgb(100,100,200);
+  color: rgb(100, 100, 200);
   margin: 3px 22px;
 `;
 export const MdBlockQuote = styled.blockquote`
-  background-color: rgba(100,100,200,0.4);
-  border-left: 10px solid rgb(100,100,200);
-  color: rgb(100,100,200);
+  background-color: rgba(100, 100, 200, 0.4);
+  border-left: 10px solid rgb(100, 100, 200);
+  color: rgb(100, 100, 200);
   padding: 1px 4px;
   margin: 3px 22px;
 `;
 
+export const MdHead = styled.h1`
+  color: rgb(42, 254, 112);
+  font-size: small;
+  color: rebeccapurple;
+`;
 export const MdSubHeadA = styled.h2`
-color: rgb(42, 244, 152, 255);
-`
+  color: rgb(42, 244, 152, 255);
+`;
 export const MdSubHeadB = styled.h3`
-color: rgb(42, 244, 152, 255);
-`
+  color: rgb(42, 244, 152, 255);
+`;
 export const MdSubHeadC = styled.h4`
-color: rgb(42, 244, 152, 255);
-`
+  color: rgb(42, 244, 152, 255);
+`;
 export const MdLink = styled.a`
-background-color: rgba(255, 0, 250,0.3);
-`
+  background-color: rgba(255, 0, 250, 0.3);
+`;
 export const SocialLink = styled.a`
-background-color: rgba(255, 120, 50,0.6);
-font-weight: bold ;
-cursor: pointer;
-`
+  background-color: rgba(255, 120, 50, 0.6);
+  font-weight: bold;
+  cursor: pointer;
+`;
 export const MdStrong = styled.strong`
-background-color: rgba(250, 15, 0,0.5);
-color: white;
-padding: 2px 5px;
-`
+  background-color: rgba(250, 15, 0, 0.5);
+  color: white;
+  /* padding: 2px 5px; */
+`;
 export const MdEmph = styled.em`
-background-color: rgba(240, 255, 0,0.5);
-padding: 0 5px;
-font-style: normal;
-`
+  background-color: rgba(240, 255, 0, 0.5);
+  padding: 0 5px;
+  font-style: normal;
+`;

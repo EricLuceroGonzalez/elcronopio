@@ -11,3 +11,10 @@ const Contact = () => {
 };
 
 export default Contact;
+export const metadata = {
+  title: 'Contacto',
+  openGraph: {
+    title: 'Contact',
+    description: 'Contact is a...',
+  },
+}

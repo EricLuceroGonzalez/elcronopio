@@ -1,5 +1,7 @@
 import React from "react";
 import { MainBg, TitlePage } from "../ComponentsStyled";
+import { headers } from "next/headers";
+
 
 const Latex = () => {
     return <MainBg>
@@ -9,3 +11,11 @@ const Latex = () => {
 };
 
 export default Latex;
+
+export const metadata = {
+    title: 'LaTeX',
+    openGraph: {
+      title: 'LaTeX',
+      description: 'Acme is a...',
+    },
+  }

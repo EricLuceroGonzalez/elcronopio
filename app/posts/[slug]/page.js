@@ -31,6 +31,7 @@ import {
   MdLink,
   MdStrong,
   SocialLink,
+  MdHead,
 } from "../../components/lugs.js";
 import { MainBg } from "@/app/ComponentsStyled";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -48,6 +49,7 @@ export default async function Post({ params }) {
   const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
   const Li = ({ children }) => <MdListItem>{children}</MdListItem>;
   const Bq = ({ children }) => <MdBlockQuote>{children}</MdBlockQuote>;
+  const Head = ({ children }) => <MdHead>{children}</MdHead>;
   const HeadTwo = ({ children }) => <MdSubHeadA>{children}</MdSubHeadA>;
   const HeadThree = ({ children }) => <MdSubHeadB>{children}</MdSubHeadB>;
   const HeadFour = ({ children }) => <MdSubHeadC>{children}</MdSubHeadC>;
@@ -56,6 +58,7 @@ export default async function Post({ params }) {
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
   // const H4 = ({ children }) => <h4 className="md-post-h4">{children}</h4>
   // const Hr = () => <hr className="md-post-hr" />
+
   return (
     <MainBg>
       <Article>
@@ -81,6 +84,7 @@ export default async function Post({ params }) {
             p: P,
             li: Li,
             blockquote: Bq,
+            h1:Head,
             h2: HeadTwo,
             h3: HeadThree,
             h4: HeadFour,
@@ -89,7 +93,7 @@ export default async function Post({ params }) {
             a: (props) => {
               return (
                 <MdLink href={props.href}>{props.children}</MdLink> // All other links
-            )
+              );
             },
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
@@ -101,6 +105,7 @@ export default async function Post({ params }) {
                   wrapLongLines={false}
                   showLineNumbers={true}
                   style={dracula}
+                  customStyle={{ lineHeight: "0.75", fontSize: "small" }}
                   {...props}
                 >
                   {String(children).replace(/\n$/, "")}
@@ -158,3 +163,14 @@ export default async function Post({ params }) {
 //   },
 // };
 // return ()....
+export async function generateMetadata({ params, searchParams }, parent) {
+  // fetch data
+  const post = getPostBySlug(params.slug);
+  console.log(`post.title: ${post.title}`);
+  console.log(post.excerpt);
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
+}
