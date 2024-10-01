@@ -51,7 +51,7 @@ class NaviBar extends React.PureComponent {
           <StyledLink href={"/contact"}>Contacto</StyledLink>
           <StyledLink href={"/about"}>About</StyledLink>
           <StyledLink href={"/latex"}>LaTeX</StyledLink>
-          <StyledLink href={"/"}>Suscribe</StyledLink>
+          {/* <StyledLink href={"/"}>Suscribe</StyledLink> */}
           {/* </NavigationBar> */}
         </MainNav>
       </Bar>

@@ -35,6 +35,7 @@ import {
 } from "../../components/lugs.js";
 import { MainBg } from "@/app/ComponentsStyled";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Link from "next/link.js";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
@@ -42,9 +43,6 @@ export default async function Post({ params }) {
   if (!post) {
     return notFound();
   }
-
-  // const content = await markdownToHtml(post.content || "");
-
   // Override react-markdown elements to add class names
   const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
   const Li = ({ children }) => <MdListItem>{children}</MdListItem>;
@@ -56,13 +54,12 @@ export default async function Post({ params }) {
   // const MdLinks = ({ children }) => <MdLink>{children}</MdLink>;
   const Strong = ({ children }) => <MdStrong>{children}</MdStrong>;
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
-  // const H4 = ({ children }) => <h4 className="md-post-h4">{children}</h4>
   // const Hr = () => <hr className="md-post-hr" />
 
   return (
     <MainBg>
       <Article>
-        <Title>{post.title}</Title>
+        <MdHead>{post.title}</MdHead>
         <MetaInfo>
           <Date>{post.date}</Date>
           {/* <AuthorInfo>
@@ -76,7 +73,9 @@ export default async function Post({ params }) {
             </AuthorInfo> */}
           <SideInfo>
             {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
-            <SectionType doctype={post.doctype}>{post.doctype}</SectionType>
+            <Link href={`/${post.doctype}`}>
+              <SectionType doctype={post.doctype}>{post.doctype}</SectionType>
+            </Link>
           </SideInfo>
         </MetaInfo>
         <ReactMarkdown
@@ -84,7 +83,7 @@ export default async function Post({ params }) {
             p: P,
             li: Li,
             blockquote: Bq,
-            h1:Head,
+            h1: Head,
             h2: HeadTwo,
             h3: HeadThree,
             h4: HeadFour,

@@ -188,10 +188,12 @@ export const MdBlockQuote = styled.blockquote`
 
 export const MdHead = styled.h1`
   color: rgb(42, 254, 112);
-  font-size: small;
+  font-size: larger;
   color: rebeccapurple;
+  text-align: left;
 `;
 export const MdSubHeadA = styled.h2`
+  font-size: large;
   color: rgb(42, 244, 152, 255);
 `;
 export const MdSubHeadB = styled.h3`
