@@ -1,8 +1,23 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* :root {
+    --background: white;
+    --foreground: black;
 }
 
+[data-theme='dark'] {
+  --background: rgb(253, 47, 47);
+  --foreground: white;
+}
+body {
+  color: #000;
+  background-color: #fff;
+}
+
+[data-theme="dark"] body {
+  background-color: #ff1515;
+  color: #fff;
+} */
+
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -39,4 +54,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */

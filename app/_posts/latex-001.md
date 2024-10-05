@@ -9,7 +9,7 @@ excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calida
 doctype: "latex"
 ---
 
-LaTeX es un `sistema de preparación de documentos de alta calidad`, utilizado frecuentemente en la escritura de documentos científicos y *técnicos debido a su capacidad para manejar ecuaciones matemáticas complejas, tablas y referencias bibliográficas*.
+LaTeX es un sistema de preparación de documentos de alta calidad, utilizado frecuentemente en la escritura de documentos científicos y *técnicos debido a su capacidad para manejar ecuaciones matemáticas complejas, tablas y referencias bibliográficas*.
 
 > A diferencia de los editores de texto tradicionales, LaTeX utiliza un enfoque basado en etiquetas para formatear el contenido, lo que permite un control más preciso sobre el diseño del documento.
 
@@ -45,9 +45,9 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 * Uso de `<Em/>`: Con *Un Asterisco* o _Un guion bajo_
 
 
-> #### The quarterly results look great!
->
-> - Revenue was off the chart.
-> - Profits were higher than ever.
+ #### The quarterly results look great!
+
+ - Revenue was off the chart.
+ - Profits were higher than ever.
  
 *Everything* is going according to **plan**.

@@ -12,7 +12,7 @@ import {
   NavigationBar,
 } from "./navCompos";
 import StyledLink from "./StyledLink";
-
+import ThemeSwitcher from '../../ThemeSwitcher.js'
 /*
  * This is a ready to use component, just import it and plop it into your project as:
  * <Navbar/>
@@ -22,7 +22,7 @@ import StyledLink from "./StyledLink";
 class NaviBar extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { displayNav: props.displayNav ? "flex" : "none" };
+    this.state = { displayNav: props.displayNav ? "flex" : "flex" };
   }
   toggleNavBar() {
     this.setState((prevState, props) => {
@@ -31,16 +31,16 @@ class NaviBar extends React.PureComponent {
           return { displayNav: "flex" };
         case "flex":
         default:
-          return { displayNav: "none" };
+          return { displayNav: "flex" };
       }
     });
   }
   render() {
     return (
       <Bar>
-        <NavBarToggle onClick={() => this.toggleNavBar()}>
+        {/* <NavBarToggle onClick={() => this.toggleNavBar()}>
           <Hamburger />
-        </NavBarToggle>
+        </NavBarToggle> */}
         <Logo href="/"></Logo>
         <MainNav
           display={this.state.displayNav}
@@ -51,6 +51,7 @@ class NaviBar extends React.PureComponent {
           <StyledLink href={"/contact"}>Contacto</StyledLink>
           <StyledLink href={"/about"}>About</StyledLink>
           <StyledLink href={"/latex"}>LaTeX</StyledLink>
+         <ThemeSwitcher/>
           {/* <StyledLink href={"/"}>Suscribe</StyledLink> */}
           {/* </NavigationBar> */}
         </MainNav>

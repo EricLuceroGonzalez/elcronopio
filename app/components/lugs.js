@@ -7,7 +7,8 @@ export const Article = styled.article`
   max-width: 70%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: --var(--bg);
+  color: --var(--fg);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -22,20 +23,19 @@ export const Article = styled.article`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  color: #333;
   margin-bottom: 1rem;
 `;
 
 export const Date = styled.p`
   font-size: 1rem;
-  color: #777;
+  color: var(--fg);
   /* margin-bottom: 2rem; */
 `;
 
 export const Author = styled.p`
   font-size: 1.2rem;
   font-style: italic;
-  color: #555;
+  color: var(--fg);
   margin-bottom: 1.5rem;
 `;
 
@@ -65,11 +65,12 @@ export const CoverImageContainer = styled.div`
 
 export const GridContainer = styled.div`
   margin-bottom: 2rem;
-  background-color: rgba(216, 216, 216, 0.5);
+  background-color: var(--bg);
   padding: 16px 8px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: rgb(56, 56, 56);
+  color: var(--fg);
+  border: 1px solid var(--fg);
 
   @media (min-width: 768px) {
     /* TODO: Style of blog posts and inner post */
@@ -81,14 +82,11 @@ export const GridContainer = styled.div`
   @media (min-width: 1024px) {
     gap: 2rem;
   }
-  :hover {
-    background-color: rgba(200, 200, 200, 0.5);
-  }
 `;
 
 export const TitleContainer = styled.div`
   margin-bottom: 1rem;
-  color: black;
+  color: var(--fg);
 
   h2 {
     margin-bottom: 1rem;
@@ -130,6 +128,7 @@ export const ExcerptContainer = styled.p`
   font-size: small;
   line-height: 1.75;
   margin-bottom: 1rem;
+  color: var(--fg);
 `;
 // Contenedor para el avatar y el nombre del autor
 export const AuthorInfo = styled.div`
@@ -148,7 +147,7 @@ export const Avatar = styled.img`
 
 export const AuthorName = styled.span`
   font-size: x-small;
-  color: #555;
+  color: var(--fg);
 `;
 export const SectionType = styled.div`
   font-weight: bold;
@@ -171,52 +170,48 @@ export const SideInfo = styled.div`
 export const MdParagraph = styled.p`
   font-size: medium;
   margin: 2em 0;
-  color: rgb(100, 100, 100);
 `;
 
 export const MdListItem = styled.li`
-  color: rgb(100, 100, 200);
+  color: var(--item-fg);
   margin: 3px 22px;
 `;
 export const MdBlockQuote = styled.blockquote`
-  background-color: rgba(100, 100, 200, 0.4);
-  border-left: 10px solid rgb(100, 100, 200);
-  color: rgb(100, 100, 200);
-  padding: 1px 4px;
-  margin: 3px 22px;
+  border-left: 12px solid var(--primary-border);
+  background-color: var(--quote-bg);
+  color: var(--quote-fg);
+  padding: 1px 2px;
+  margin: 3px 12px;
 `;
 
 export const MdHead = styled.h1`
-  color: rgb(42, 254, 112);
+  color: var(--fg);
   font-size: larger;
-  color: rebeccapurple;
   text-align: left;
 `;
 export const MdSubHeadA = styled.h2`
   font-size: large;
-  color: rgb(42, 244, 152, 255);
+  color: var(--fg);
 `;
 export const MdSubHeadB = styled.h3`
-  color: rgb(42, 244, 152, 255);
+  color: var(--fg);
 `;
 export const MdSubHeadC = styled.h4`
-  color: rgb(42, 244, 152, 255);
+  color: var(--fg);
 `;
 export const MdLink = styled.a`
-  background-color: rgba(255, 0, 250, 0.3);
+  background-color: var(--link-bg);
+  color: var(--link-fg);
+  padding: 2px 5px;
 `;
-export const SocialLink = styled.a`
-  background-color: rgba(255, 120, 50, 0.6);
-  font-weight: bold;
-  cursor: pointer;
-`;
+
 export const MdStrong = styled.strong`
-  background-color: rgba(250, 15, 0, 0.5);
+  background-color: var(--strong-bg);
   color: white;
-  /* padding: 2px 5px; */
 `;
 export const MdEmph = styled.em`
-  background-color: rgba(240, 255, 0, 0.5);
+  background-color: var(--emphasis-bg);
+  color: var(--emphasis-fg);
   padding: 0 5px;
   font-style: normal;
 `;

@@ -12,6 +12,7 @@ import {
   SideInfo,
   SectionType,
   ExcerptContainer,
+  MdHead,
 } from "../../components/lugs.js";
 
 const Section = styled.section`
@@ -32,10 +33,10 @@ const PostSection = ({
     {/* <CoverImageContainer> */}
     {/* <CoverImage title={title} src={coverImage} slug={slug} /> */}
     {/* </CoverImageContainer> */}
-      <GridContainer>
-    <Link href={`/posts/${slug}`}>
+    <GridContainer>
+      <Link href={`/posts/${slug}`}>
         <TitleContainer>
-          <h2>{title}</h2>
+          <MdHead>{title}</MdHead>
           <MetaInfo>
             <SideInfo>
               <Date>{date}</Date>
@@ -60,8 +61,8 @@ const PostSection = ({
         {/* <div> */}
         <ExcerptContainer>{excerpt}</ExcerptContainer>
         {/* </div> */}
-    </Link>
-      </GridContainer>
+      </Link>
+    </GridContainer>
   </>
 );
 

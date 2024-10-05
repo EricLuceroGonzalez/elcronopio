@@ -1,6 +1,6 @@
 ---
 slug: 'latex-002'
-id: 'latex-001'
+id: 'latex-002'
 date: "2024-09-27"
 title: "Instalación de LaTeX en distintos sistemas operativos"
 author: "Eric Lucero"
