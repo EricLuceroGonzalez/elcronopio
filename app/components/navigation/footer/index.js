@@ -7,8 +7,8 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   width: 100%;
   padding: 1rem;
-  background-color: var(--footer-bg);
-  color: var(--footer-fg);
+  background-color: var(--fg);
+  color: var(--bg);
   text-align: center;
   position: relative;
   bottom: 0;
@@ -40,7 +40,7 @@ const FoooterLink = styled.a`
   svg {
     width: 24px;
     height: 24px;
-    fill: var(--footer-fg); // Color inicial del SVG
+    fill: var(--bg); // Color inicial del SVG
     transition: fill 0.3s ease;
   }
 

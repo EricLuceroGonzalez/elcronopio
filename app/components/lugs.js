@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Image from "next/image";
 
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
@@ -233,12 +234,18 @@ export const BoxGrid = styled.div`
 export const LinkList = styled.div`
   display: flex;
   gap: 1rem;
+  font-family: monospace;
 `;
 
 export const IconLink = styled.a`
-  color: var(--link-fg);
+  color: var(--fg);
   text-decoration: none;
-
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--fg); // Color inicial del SVG
+    transition: fill 0.3s ease;
+  }
   &:hover {
     color: var(--primary-btn-bg);
   }
@@ -252,4 +259,16 @@ export const AboutWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+`;
+
+export const PhotoAvatar = styled.div`
+  width: 200px; /* Tamaño del círculo */
+  height: 200px;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
+  border: 2px solid var(--border-stroke); /* Opcional: borde */
+  @media (max-width: 600px) {
+    width: 100px; /* Tamaño del círculo */
+    height: 100px;
+  }
 `;
