@@ -26,7 +26,7 @@ function getAllPosts() {
   return posts;
 }
 
-function getSomePosts() {
+function getLatexPosts() {
   const slugs = getPostSlugs();
 
   const latexPosts = slugs
@@ -37,9 +37,21 @@ function getSomePosts() {
   return latexPosts;
 }
 
+function getBlogPosts() {
+  const slugs = getPostSlugs();
+
+  const latexPosts = slugs
+    .map((slug) => getPostBySlug(slug))
+    .filter((post) => {
+      return post.doctype === 'blog'
+    }).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return latexPosts;
+}
+// TODO: Make just una getPost type function with params
 module.exports = {
   getPostSlugs,
   getPostBySlug,
   getAllPosts,
-  getSomePosts,
+  getLatexPosts,
+  getBlogPosts
 };

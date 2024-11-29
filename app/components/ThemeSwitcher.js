@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 const SunIcon = styled(TbSunFilled)`
   cursor: pointer;
-  background-color: var(--bg);
 `;
 const MoonIcon = styled(TbMoonFilled)`
   cursor: pointer;
@@ -32,11 +31,11 @@ const ThemeSwitcher = () => {
       <SunIcon
         onClick={() => setTheme("light")}
         color="white"
-        size={30}
+        size={20}
       ></SunIcon>
       <MoonIcon
         onClick={() => setTheme("dark")}
-        size={30}
+        size={20}
         color="#343434"
       ></MoonIcon>
     </div>

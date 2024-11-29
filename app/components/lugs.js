@@ -16,8 +16,9 @@ export const Article = styled.article`
     max-width: 90%;
   }
   @media (max-width: 728px) {
-    min-width: 100%;
+    min-width: 92%;
     padding: 5px;
+    box-shadow: none;
   }
 `;
 
@@ -27,8 +28,8 @@ export const Title = styled.h1`
 `;
 
 export const Date = styled.p`
-  font-size: 1rem;
-  color: var(--fg);
+  font-size: 0.65rem;
+  color: var(--theme-font);
   /* margin-bottom: 2rem; */
 `;
 
@@ -64,23 +65,26 @@ export const CoverImageContainer = styled.div`
 `;
 
 export const GridContainer = styled.div`
-  margin-bottom: 2rem;
+  margin: 0.55rem 0.55rem;
   background-color: var(--bg);
   padding: 16px 8px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: var(--fg);
-  border: 1px solid var(--fg);
+  border: 2px solid var(--fg);
 
   @media (min-width: 768px) {
     /* TODO: Style of blog posts and inner post */
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    max-width: 75%;
   }
 
   @media (min-width: 1024px) {
+    max-width: 25%;
     gap: 2rem;
+  }
+  &:hover {
+    border: 2px solid var(--border-stroke);
   }
 `;
 
@@ -108,14 +112,13 @@ export const TitleContainer = styled.div`
 `;
 
 export const MetaInfo = styled.div`
-  /* border: 1px solid red; */
   margin-bottom: 1rem;
   font-size: small;
   color: gray;
   display: flex;
   flex-direction: column;
   /* align-items:  */
-  justify-content: space-around;
+  justify-content: start;
 
   @media (min-width: 668px) {
     width: 40%;
@@ -168,8 +171,11 @@ export const SideInfo = styled.div`
 `;
 
 export const MdParagraph = styled.p`
-  font-size: medium;
+  font-size: small;
   margin: 2em 0;
+  @media (min-width: 1080px) {
+    font-size: medium;
+  }
 `;
 
 export const MdListItem = styled.li`
@@ -214,4 +220,36 @@ export const MdEmph = styled.em`
   color: var(--emphasis-fg);
   padding: 0 5px;
   font-style: normal;
+`;
+
+export const BoxGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+`;
+
+export const LinkList = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const IconLink = styled.a`
+  color: var(--link-fg);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-btn-bg);
+  }
+`;
+
+export const AboutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 `;

@@ -13,8 +13,8 @@ color: var(--fg);
   font-size: normal;
   font-weight: 700;
   &:hover {
-    background-color: #e0e0e0;
-    color: darkblue;
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-fg);
   }
 `;
 

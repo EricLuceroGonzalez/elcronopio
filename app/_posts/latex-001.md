@@ -2,7 +2,7 @@
 slug: 'latex-001'
 id: 'latex-001'
 title: "Introducción al mundo del LaTeX"
-date: "2024-09-27"
+date: "2024-08-04"
 author: "Eric Lucero"
 authorAvatar: https://avatar.iran.liara.run/public/boy
 excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas'
@@ -28,6 +28,8 @@ Hello, World! Este es un ejemplo simple de un documento en LaTeX.
 ```
 
 Como puedes ver este es un gran inicio. Puedes correr tus propios proyectos en [Overleaf](https://www.overleaf.com/) sin necesidad de descargar latex.
+
+Antes de todo, asegúrate de instalar Latex en tu computadora. Puedes verlo en [esta entrada del blog](/posts/latex-002)
 
 In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
 of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to

@@ -12,7 +12,7 @@ import {
   NavigationBar,
 } from "./navCompos";
 import StyledLink from "./StyledLink";
-import ThemeSwitcher from '../../ThemeSwitcher.js'
+import ThemeSwitcher from "../../ThemeSwitcher.js";
 /*
  * This is a ready to use component, just import it and plop it into your project as:
  * <Navbar/>
@@ -48,10 +48,10 @@ class NaviBar extends React.PureComponent {
         >
           {/* <NavigationBar> */}
           <StyledLink href={"/"}>Home</StyledLink>
-          <StyledLink href={"/contact"}>Contacto</StyledLink>
-          <StyledLink href={"/about"}>About</StyledLink>
+          <StyledLink href={"/blog"}>Blog</StyledLink>
           <StyledLink href={"/latex"}>LaTeX</StyledLink>
-         <ThemeSwitcher/>
+          <StyledLink href={"/about"}>About</StyledLink>
+          <ThemeSwitcher />
           {/* <StyledLink href={"/"}>Suscribe</StyledLink> */}
           {/* </NavigationBar> */}
         </MainNav>

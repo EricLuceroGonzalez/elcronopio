@@ -28,13 +28,14 @@ export const MainNav = styled.div`
   display: ${(props) => props.display};
   color: var(--fg);
   flex-direction: row; /* Change for mobile to column  */
+  align-items: center;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     margin-right: 30px;
     display: flex !important;
     flex-direction: row;
     justify-content: flex-end;
-  }
+  } */
 `;
 export const NavLi = styled.li`
   text-align: center;

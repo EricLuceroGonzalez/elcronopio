@@ -44,8 +44,7 @@ const PostSection = ({
               <SectionType doctype={doctype}>{doctype}</SectionType>
             </SideInfo>
             <SideInfo>
-              <AuthorInfo>
-                {/* <Avatar src={authorAvatar} alt={author} /> */}
+              {/* <AuthorInfo>
                 <Image
                   src={authorAvatar} // Ruta de la imagen del autor
                   alt={author} // Texto alternativo
@@ -54,7 +53,7 @@ const PostSection = ({
                   // objectFit="cover" // Asegura que la imagen se adapte bien al contenedor
                 />
                 <AuthorName>{author}</AuthorName>
-              </AuthorInfo>
+              </AuthorInfo> */}
             </SideInfo>
           </MetaInfo>
         </TitleContainer>
