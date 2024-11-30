@@ -7,9 +7,22 @@ import styled from "styled-components";
 
 const SunIcon = styled(TbSunFilled)`
   cursor: pointer;
+  color: ${(props) => (props.theme === "dark" ? "#FF9800" : "var(--fg)")};
+  transition: color 0.5s;
 `;
 const MoonIcon = styled(TbMoonFilled)`
   cursor: pointer;
+  /* color: var(--bg); */
+  color: ${(props) => (props.theme === "light" ? "var(--bg)" : "var(--fg)")};
+  transition: color 0.5s;
+`;
+const ThemeToggle = styled.div`
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+  padding: 2px;
+  background-color: var(--fg);
+  transition: background-color 0.3s;
 `;
 
 const ThemeSwitcher = () => {
@@ -27,18 +40,18 @@ const ThemeSwitcher = () => {
   if (!mounted) return null;
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <ThemeToggle>
       <SunIcon
         onClick={() => setTheme("light")}
-        color="white"
+        theme={theme}
         size={20}
       ></SunIcon>
       <MoonIcon
         onClick={() => setTheme("dark")}
+        theme={theme}
         size={20}
-        color="#343434"
       ></MoonIcon>
-    </div>
+    </ThemeToggle>
   );
 };
 

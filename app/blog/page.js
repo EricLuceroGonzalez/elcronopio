@@ -43,10 +43,30 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+
 export const metadata = {
-  title: "Blog",
+  title: "Blog | Eric's Portfolio",
+  description:
+    "Explora artículos sobre Inteligencia Artificial, programación, algoritmos metaheurísticos y más. Comparte mi viaje académico y profesional.",
   openGraph: {
-    title: "Blog",
-    description: "Contact is a...",
+    title: "Eric's Blog - Inteligencia Artificial y más",
+    description:
+      "Artículos y reflexiones sobre IA, optimización, programación y mi proceso de aprendizaje durante el doctorado.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Imagen relacionada con el blog
+        width: 1200,
+        height: 630,
+        alt: "Blog sobre Inteligencia Artificial y programación",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eric's Blog - Inteligencia Artificial y más",
+    description:
+      "Artículos y reflexiones sobre IA, optimización y programación.",
+    image:
+      "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
   },
 };

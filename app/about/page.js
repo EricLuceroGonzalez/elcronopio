@@ -100,7 +100,22 @@ export default About;
 export const metadata = {
   title: "Acerca de mi",
   openGraph: {
-    title: "Acerca de Eric...",
-    description: "About is a...",
+    title: "Acerca de mi...",
+    description: "Explora temas de IA, programación y documentos en LaTeX.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Imagen temática de LaTeX
+        width: 1200,
+        height: 630,
+        alt: "IA, Tutoriales y tips de LaTeX",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ElCronopio.com: Inteligencia Artificial, LaTeX y más",
+    description: "Explora temas de IA, programación y documentos en LaTeX.",
+    image:
+      "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
   },
 };

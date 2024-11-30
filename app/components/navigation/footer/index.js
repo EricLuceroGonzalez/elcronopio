@@ -25,7 +25,7 @@ const FooterLinks = styled.div`
 const FooterText = styled.p`
   margin: 0;
   font-size: 1rem;
-  font-size: small;
+  font-size: smaller;
 `;
 const FoooterLink = styled.a`
   padding: 2px 5px;
@@ -38,8 +38,8 @@ const FoooterLink = styled.a`
   color: var(--footer-fg);
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     fill: var(--bg); // Color inicial del SVG
     transition: fill 0.3s ease;
   }
