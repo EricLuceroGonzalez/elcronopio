@@ -3,32 +3,34 @@ import styled from "styled-components";
 export const NavigationBar = styled.div`
   background-color: none;
   padding: 15px 5px;
-  min-height: 40px;
+  min-height: 30px;
 `;
 
 export const Bar = styled.nav`
-  font-size: 18px;
+  font-size: 14px;
   background-color: var(--bg);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 20px;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
-  /* height: 45px; */
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding-bottom: 0;
     height: 70px;
     align-items: center;
-  }
+  } */
 `;
 export const MainNav = styled.div`
+  width: 80%;
   list-style-type: none;
   display: ${(props) => props.display};
   color: var(--fg);
   flex-direction: row; /* Change for mobile to column  */
   align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
 
   /* @media (min-width: 768px) {
     margin-right: 30px;

@@ -22,6 +22,8 @@ const ThemeToggle = styled.div`
   border-radius: 30px;
   padding: 2px;
   background-color: var(--fg);
+  max-height: fit-content;
+  margin: auto 1px;
   transition: background-color 0.3s;
 `;
 

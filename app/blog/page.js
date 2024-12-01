@@ -45,7 +45,7 @@ const BlogPage = () => {
 export default BlogPage;
 
 export const metadata = {
-  title: "Blog | Eric's Portfolio",
+  title: "Blog | Eric Lucero González",
   description:
     "Explora artículos sobre Inteligencia Artificial, programación, algoritmos metaheurísticos y más. Comparte mi viaje académico y profesional.",
   openGraph: {

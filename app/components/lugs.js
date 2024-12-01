@@ -73,6 +73,7 @@ export const GridContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: var(--fg);
   border: 2px solid var(--fg);
+  /* min-width: 99%; */
 
   @media (min-width: 768px) {
     /* TODO: Style of blog posts and inner post */
@@ -227,8 +228,9 @@ export const BoxGrid = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: 100%;
+  max-width: 95%;
   flex-wrap: wrap;
+  /* border: 3px solid red; */
 `;
 
 export const LinkList = styled.div`

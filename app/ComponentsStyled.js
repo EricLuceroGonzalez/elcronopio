@@ -1,14 +1,14 @@
 // ComponentsStyled.js
-"use client"
+"use client";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const PageContainer = styled.div`
-display: flex;
-flex-direction: column;
-background-color: var(--bg);
-min-height: 99vh;
-`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  min-height: 99vh;
+`;
 
 export const Main = styled.main`
   flex: 1;
@@ -29,10 +29,10 @@ export const MainBg = styled.div`
 `;
 
 export const TitlePage = styled.h1`
-font-size: x-large;
-color: var(--fg);
-`
+  font-size: x-large;
+  color: var(--fg);
+`;
 
 export const Section = styled.section`
-color: blue;
-`
+  color: blue;
+`;
