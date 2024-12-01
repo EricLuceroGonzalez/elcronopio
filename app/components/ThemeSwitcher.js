@@ -12,7 +12,6 @@ const SunIcon = styled(TbSunFilled)`
 `;
 const MoonIcon = styled(TbMoonFilled)`
   cursor: pointer;
-  /* color: var(--bg); */
   color: ${(props) => (props.theme === "light" ? "var(--bg)" : "var(--fg)")};
   transition: color 0.5s;
 `;

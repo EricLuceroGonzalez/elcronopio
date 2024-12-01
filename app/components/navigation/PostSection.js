@@ -37,14 +37,17 @@ const PostSection = ({
       <Link href={`/posts/${slug}`}>
         <TitleContainer>
           <MdHead>{title}</MdHead>
-          <MetaInfo>
-            <SideInfo>
-              <Date>{date}</Date>
-              {/* <div>{new Date(date).toLocaleDateString()}</div> */}
-              <SectionType doctype={doctype}>{doctype}</SectionType>
-            </SideInfo>
-            <SideInfo>
-              {/* <AuthorInfo>
+        </TitleContainer>
+        {/* <div> */}
+        <ExcerptContainer>{excerpt}</ExcerptContainer>
+        {/* </div> */}
+        <MetaInfo>
+          <SideInfo>
+            <Date>{date}</Date>
+            <SectionType doctype={doctype}>{doctype}</SectionType>
+          </SideInfo>
+          {/* <SideInfo>
+              <AuthorInfo>
                 <Image
                   src={authorAvatar} // Ruta de la imagen del autor
                   alt={author} // Texto alternativo
@@ -53,13 +56,9 @@ const PostSection = ({
                   // objectFit="cover" // Asegura que la imagen se adapte bien al contenedor
                 />
                 <AuthorName>{author}</AuthorName>
-              </AuthorInfo> */}
-            </SideInfo>
-          </MetaInfo>
-        </TitleContainer>
-        {/* <div> */}
-        <ExcerptContainer>{excerpt}</ExcerptContainer>
-        {/* </div> */}
+              </AuthorInfo>
+            </SideInfo> */}
+        </MetaInfo>
       </Link>
     </GridContainer>
   </>

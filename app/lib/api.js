@@ -14,7 +14,7 @@ function getPostBySlug(slug) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-
+  // Make reading time estimation
   return { ...data, slug: realSlug, content };
 }
 
@@ -32,8 +32,9 @@ function getLatexPosts() {
   const latexPosts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post) => {
-      return post.doctype === 'latex'
-    }).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+      return post.doctype === "latex";
+    })
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return latexPosts;
 }
 
@@ -43,8 +44,9 @@ function getBlogPosts() {
   const latexPosts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post) => {
-      return post.doctype === 'blog'
-    }).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+      return post.doctype === "blog";
+    })
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return latexPosts;
 }
 // TODO: Make just una getPost type function with params
@@ -53,5 +55,5 @@ module.exports = {
   getPostBySlug,
   getAllPosts,
   getLatexPosts,
-  getBlogPosts
+  getBlogPosts,
 };

@@ -32,7 +32,6 @@ import {
   MdStrong,
   SocialLink,
   MdHead,
-  MdCode,
 } from "../../components/lugs.js";
 import { MainBg } from "@/app/ComponentsStyled";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -40,10 +39,25 @@ import Link from "next/link.js";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
-
+  // const readTime = readTime(post.content);
+  // console.log(readTime);
   if (!post) {
     return notFound();
   }
+  const readingTime = (post) => {
+    const WORDS_PER_MINUTE = 200;
+    let result = {};
+    //Matches words
+    //See
+    //https://regex101.com/r/q2Kqjg/6
+    const regex = /\w+/g;
+    result.wordCount = (post || "").match(regex).length;
+
+    result.readingTime = Math.ceil(result.wordCount / WORDS_PER_MINUTE);
+
+    return result;
+  };
+  const readT = readingTime(post.content);
   // Override react-markdown elements to add class names
   const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
   const Li = ({ children }) => <MdListItem>{children}</MdListItem>;
@@ -52,7 +66,7 @@ export default async function Post({ params }) {
   const HeadTwo = ({ children }) => <MdSubHeadA>{children}</MdSubHeadA>;
   const HeadThree = ({ children }) => <MdSubHeadB>{children}</MdSubHeadB>;
   const HeadFour = ({ children }) => <MdSubHeadC>{children}</MdSubHeadC>;
-  const TheCode = ({ children }) => <MdCode>{children}</MdCode>;
+  // const TheCode = ({ children }) => <MdCode>{children}</MdCode>;
   const Strong = ({ children }) => <MdStrong>{children}</MdStrong>;
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
   // const Hr = () => <hr className="md-post-hr" />
@@ -63,21 +77,19 @@ export default async function Post({ params }) {
         <MdHead>{post.title}</MdHead>
         <MetaInfo>
           <Date>{post.date}</Date>
-          {/* <AuthorInfo>
-              <Image
-                src={post.authorAvatar} // Ruta de la imagen del autor
-                alt={post.author} // Texto alternativo
-                width={40} // Ancho de la imagen
-                height={40} // Alto de la imagen
-              />
-              <AuthorName>{post.author}</AuthorName>
-            </AuthorInfo> */}
           <SideInfo>
             {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
             <Link href={`/${post.doctype}`}>
-              <SectionType doctype={post.doctype}>{post.doctype}</SectionType>
+              <SectionType
+              // doctype={post.doctype}
+              >
+                {post.doctype}
+              </SectionType>
             </Link>
           </SideInfo>
+          <Date style={{ marginLeft: "10px" }}>
+            Tiempo de lectura: {readT.readingTime} minutos
+          </Date>
         </MetaInfo>
         <ReactMarkdown
           components={{
@@ -92,15 +104,13 @@ export default async function Post({ params }) {
             em: Empha,
             a: (props) => {
               return (
-                <MdLink 
-                target="_blank"
-                href={props.href}>
+                <MdLink target="_blank" href={props.href}>
                   {props.children}{" "}
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     height="1em"
-                    width="1em" 
+                    width="1em"
                     {...props}
                   >
                     <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
@@ -180,8 +190,6 @@ export default async function Post({ params }) {
 export async function generateMetadata({ params, searchParams }, parent) {
   // fetch data
   const post = getPostBySlug(params.slug);
-  console.log(`post.title: ${post.title}`);
-  console.log(post.excerpt);
 
   return {
     title: post.title,

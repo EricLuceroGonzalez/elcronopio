@@ -18,8 +18,6 @@ const StyledAnchor = styled.div`
     background-color: var(--fg);
     color: var(--bg);
   }
-  border-bottom: ${(props) =>
-    props.thisPath === "Not" ? "none" : "2px solid var(--border-stroke)"};
 `;
 
 const StyledLink = ({ pathName, href, children }) => {
@@ -32,7 +30,7 @@ const StyledLink = ({ pathName, href, children }) => {
   }, [currentPath]);
   return (
     <Link href={href} passHref>
-      <StyledAnchor thisPath={actualPath}>{children}</StyledAnchor>
+      <StyledAnchor>{children}</StyledAnchor>
     </Link>
   );
 };

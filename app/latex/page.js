@@ -13,8 +13,6 @@ const Latex = ({ params }) => {
   if (!latexPosts) {
     return notFound();
   }
-  console.log("All latex:");
-  console.log(latexPosts.length);
 
   return (
     <MainBg>
