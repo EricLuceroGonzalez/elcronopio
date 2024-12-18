@@ -14,16 +14,16 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "avatar.iran.liara.run",
-        port: "", // Si es necesario especificar el puerto, agrégalo aquí. Deja vacío si no.
-        pathname: "/public/**", // Puedes usar comodines para definir rutas más específicas
-      },
-      {
-        protocol: "https",
         hostname: "res.cloudinary.com",
         pathname: "**",
       },
     ],
+  },
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
   },
 };
 

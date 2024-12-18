@@ -2,7 +2,6 @@ import React from "react";
 import { MainBg, TitlePage } from "../ComponentsStyled";
 import { getBlogPosts } from "../lib/api";
 import { notFound } from "next/navigation";
-import PostSection from "../components/navigation/PostSection";
 import HomeBoxes from "../components/HomeBoxes";
 import { MdListItem, MdParagraph } from "../components/lugs";
 

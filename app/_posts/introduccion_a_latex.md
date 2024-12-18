@@ -1,7 +1,8 @@
 ---
-slug: 'latex-001'
+slug: 'introduccion_a_latex'
 id: 'latex-001'
 title: "Introducción al mundo del LaTeX"
+shortTitle: "Introducción"
 date: "2024-08-04"
 author: "Eric Lucero"
 authorAvatar: https://avatar.iran.liara.run/public/boy

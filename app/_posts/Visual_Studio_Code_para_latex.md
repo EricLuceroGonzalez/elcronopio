@@ -1,10 +1,11 @@
 ---
-slug: 'latex-003'
+slug: 'Visual_Studio_Code_para_latex'
 id: 'latex-003'
 author: "Eric Lucero"
 authorAvatar: https://avatar.iran.liara.run/public/boy
 doctype: "latex"
-title: "Recomendación de Visual Studio Code para LaTeX"
+title: "Visual Studio Code para LaTeX"
+shortTitle: "Editores de texto"
 date: "2024-07-01"
 entryType: "latex"
 excerpt: "Explora cómo usar Visual Studio Code como editor principal para LaTeX, destacando su integración con GitHub, extensiones y la preferencia por TeX Live."

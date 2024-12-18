@@ -1,8 +1,9 @@
 ---
-slug: 'latex-002'
+slug: 'instalacion_de_latex'
 id: 'latex-002'
 date: "2024-06-20"
-title: "Instalación de LaTeX en distintos sistemas operativos"
+title: "Instalación de LaTeX"
+shortTitle: "Instalación"
 author: "Eric Lucero"
 authorAvatar: https://avatar.iran.liara.run/public/boy
 doctype: "latex"

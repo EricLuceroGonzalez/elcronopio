@@ -6,7 +6,7 @@ id: 'asds'
 author: 'Eric Lucero'
 authorAvatar: https://avatar.iran.liara.run/public/boy
 excerpt: 'Can I pre-render this page ahead of a user request? If the answer is yes, then you should choose Static Generation.'
-doctype: 'blog'
+doctype: "blog"
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

@@ -6,7 +6,7 @@ author: 'Eric Lucero'
 authorAvatar: 'https://avatar.iran.liara.run/public/boy'
 excerpt: 'Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page'
 slug: 'pre-rendering'
-doctype: 'blog'
+doctype: "blog"
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

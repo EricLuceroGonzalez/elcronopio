@@ -13,14 +13,14 @@ import {
   SectionType,
   ExcerptContainer,
   MdHead,
-} from "../../components/lugs.js";
+} from "../lugs.js";
 
 const Section = styled.section`
   /* No hay estilos en esta sección en tu código original */
 `;
 
 // JSX Component
-const PostSection = ({
+const AllPosts = ({
   title,
   slug,
   date,
@@ -34,9 +34,11 @@ const PostSection = ({
     {/* <CoverImage title={title} src={coverImage} slug={slug} /> */}
     {/* </CoverImageContainer> */}
     <GridContainer>
-      <Link href={`/posts/${slug}`}>
+      <Link href={`/${doctype}/${slug}`}>
         <TitleContainer>
-          <MdHead>{title}</MdHead>
+          <MdHead>
+            {title} {doctype}
+          </MdHead>
         </TitleContainer>
         {/* <div> */}
         <ExcerptContainer>{excerpt}</ExcerptContainer>
@@ -64,4 +66,5 @@ const PostSection = ({
   </>
 );
 
-export default PostSection;
+export default AllPosts;
+// ex-LatexPost;

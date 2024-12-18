@@ -19,9 +19,11 @@ export const Main = styled.main`
 
 export const MainBg = styled.div`
   flex: 1;
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--bg);
-  min-height: 83vh;
+  /* min-height: 83vh; */
+  min-height: 100vh;
+  /* max-width: 80%; */
   @media (max-width: 728px) {
     text-align: justify;
     padding: 1rem 7px;

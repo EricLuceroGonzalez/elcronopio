@@ -5,13 +5,14 @@ import Image from "next/image";
 
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
-  max-width: 70%;
+  max-width: 60%;
   margin: 0 auto;
   padding: 20px;
   background-color: --var(--bg);
   color: --var(--fg);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: small;
 
   @media (max-width: 1080px) {
     max-width: 90%;
@@ -123,9 +124,10 @@ export const MetaInfo = styled.div`
   justify-content: start;
 
   @media (min-width: 668px) {
-    width: 40%;
+    width: 100%;
     margin-bottom: 0;
     flex-direction: row;
+    justify-content: space-around;
   }
 `;
 
@@ -272,5 +274,94 @@ export const PhotoAvatar = styled.div`
   @media (max-width: 600px) {
     width: 100px; /* Tamaño del círculo */
     height: 100px;
+  }
+`;
+
+// For the sidebar
+export const Sidebar = styled.aside`
+  width: 250px;
+  background-color: var(--bg);
+  padding: 1rem;
+  border-right: 1px solid var(--primary-border);
+`;
+
+export const SidebarHeading = styled.h2`
+  font-size: 1.5rem;
+  color: var(--heading);
+  margin-bottom: 1rem;
+`;
+
+export const SidebarList = styled.ul`
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--link-fg);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--primary-btn-bg);
+    }
+  }
+`;
+
+// Contenedor principal para manejar diseño responsivo
+export const Layout = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+  }
+`;
+
+export const CodeBlockWrapper = styled.div`
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  pre {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+`;
+
+export const Toolbar = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  z-index: 1;
+`;
+
+export const LanguageBadge = styled.span`
+  background: var(--primary-btn-bg);
+  color: var(--primary-btn-fg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+`;
+
+export const CopyButton = styled.button`
+  background: var(--secondary-btn-bg);
+  color: var(--secondary-btn-fg);
+  border: none;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--secondary-btn-hover);
+    color: var(--fg);
   }
 `;

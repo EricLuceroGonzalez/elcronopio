@@ -3,7 +3,7 @@ import Image from "next/image";
 import Footer from "./components/navigation/footer";
 import { MainBg, PageContainer, Section, TitlePage } from "./ComponentsStyled";
 // import { getAllPosts } from "./lib/post-api";
-import PostSection from "./components/navigation/PostSection";
+import AllPosts from "./components/navigation/AllPosts";
 import { getAllPosts } from "@/app/lib/api";
 import HomeBoxes from "./components/HomeBoxes";
 import { MdParagraph } from "./components/lugs";

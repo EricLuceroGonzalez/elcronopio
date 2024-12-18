@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import PostSection from "./navigation/PostSection";
+import AllPosts from "./navigation/AllPosts";
 import { BoxGrid } from "./lugs";
 
 // const BoxGrid = styled.div`
@@ -25,7 +25,7 @@ const HomeBoxes = (posts) => {
             authorAvatar,
             doctype,
           }) => (
-            <PostSection
+            <AllPosts
               key={id}
               title={title}
               slug={slug}
