@@ -21,6 +21,7 @@ import {
   CopyButton,
 } from "./lugs";
 import { useState } from "react";
+import CodeBlock from "./CodeWrapper";
 
 const RenderCodeBlock = ({ props }) => {
   console.log("propssss");
@@ -66,38 +67,12 @@ const RenderCodeBlock = ({ props }) => {
           );
         },
         code({ node, inline, className, children, ...props }) {
-          const [copied, setCopied] = useState(false);
-
-          const handleCopy = () => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000); // Mostrar el mensaje "Copiado" durante 2 segundos
-          };
           const match = /language-(\w+)/.exec(className || "");
-
           return !inline && match ? (
-            <CodeBlockWrapper>
-              <Toolbar>
-                <LanguageBadge>{match[1]}</LanguageBadge>
-                <CopyToClipboard
-                  text={String(children).replace(/\n$/, "")}
-                  onCopy={handleCopy}
-                >
-                  <CopyButton>{copied ? "¡Copiado!" : "Copiar"}</CopyButton>
-                </CopyToClipboard>
-              </Toolbar>
-              <SyntaxHighlighter
-                // children={String(children).replace(/\n$/, '')}
-                language={match[1]}
-                wrapLines={true}
-                wrapLongLines={false}
-                showLineNumbers={true}
-                style={dracula}
-                customStyle={{ lineHeight: "0.75", fontSize: "small" }}
-                {...props}
-              >
-                {String(children).replace(/\n$/, "")}
-              </SyntaxHighlighter>
-            </CodeBlockWrapper>
+            <CodeBlock
+              language={match[1]}
+              value={String(children).replace(/\n$/, "")}
+            />
           ) : (
             <code className={className} {...props}>
               {children}
