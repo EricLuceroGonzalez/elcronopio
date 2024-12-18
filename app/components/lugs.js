@@ -120,14 +120,12 @@ export const MetaInfo = styled.div`
   color: gray;
   display: flex;
   flex-direction: column;
-  /* align-items:  */
   justify-content: start;
 
   @media (min-width: 668px) {
-    width: 100%;
+    width: 50%;
     margin-bottom: 0;
     flex-direction: row;
-    justify-content: space-around;
   }
 `;
 
@@ -196,15 +194,18 @@ export const MdBlockQuote = styled.blockquote`
 
 export const MdHead = styled.h1`
   color: var(--fg);
-  font-size: larger;
   text-align: left;
+  font-size: large;
 `;
 export const MdSubHeadA = styled.h2`
-  font-size: large;
   color: var(--fg);
+  font-size: larger;
 `;
 export const MdSubHeadB = styled.h3`
-  color: var(--fg);
+  /* border: 1px solid red; */
+  color: var(--emphasis-fg);
+  margin: 25px 0;
+  font-size: larger;
 `;
 export const MdSubHeadC = styled.h4`
   color: var(--fg);
@@ -318,6 +319,8 @@ export const Layout = styled.div`
   @media (max-width: 768px) {
     flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
   }
+  /* border: 1px solid red; */
+  background-color: var(--bg);
 `;
 
 export const CodeBlockWrapper = styled.div`

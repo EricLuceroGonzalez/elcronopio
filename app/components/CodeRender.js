@@ -1,8 +1,5 @@
 "use client";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import {
   MdParagraph,
@@ -15,18 +12,10 @@ import {
   MdLink,
   MdStrong,
   MdHead,
-  CodeBlockWrapper,
-  Toolbar,
-  LanguageBadge,
-  CopyButton,
 } from "./lugs";
-import { useState } from "react";
 import CodeBlock from "./CodeWrapper";
 
 const RenderCodeBlock = ({ props }) => {
-  console.log("propssss");
-  console.log(props);
-
   const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
   const Li = ({ children }) => <MdListItem>{children}</MdListItem>;
   const Bq = ({ children }) => <MdBlockQuote>{children}</MdBlockQuote>;

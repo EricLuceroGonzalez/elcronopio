@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import styled from "styled-components";
-
+import { LuCopy, LuCopyCheck } from "react-icons/lu";
 const CodeBlockWrapper = styled.div`
   position: relative;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.71);
 `;
 
 const Toolbar = styled.div`
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.25rem;
+  right: 0.25rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -24,18 +25,23 @@ const LanguageBadge = styled.span`
   color: var(--primary-btn-fg);
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
-  font-size: 0.75rem;
+  font-size: smaller;
   font-weight: bold;
   text-transform: uppercase;
 `;
 
 const CopyButton = styled.button`
-  background: var(--secondary-btn-bg);
+  background: ${(props) =>
+    props.isCopy
+      ? "red"
+      : "var(--secondary-btn-bg)"}; /* Verde para blog, Naranja para latex */
+  /* var(--secondary-btn-bg); */
+  transition: background-color 0.33s;
   color: var(--secondary-btn-fg);
   border: none;
   border-radius: 5px;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
+  /* padding: 0.2rem 0.5rem; */
+  font-size: smaller;
   cursor: pointer;
 
   &:hover {
@@ -57,12 +63,14 @@ const CodeBlock = ({ language, value }) => {
       <Toolbar>
         <LanguageBadge>{language}</LanguageBadge>
         <CopyToClipboard text={value} onCopy={handleCopy}>
-          <CopyButton>{copied ? "¡Copiado!" : "Copiar"}</CopyButton>
+          <CopyButton isCopy={copied}>
+            {copied ? <LuCopyCheck /> : <LuCopy />}
+          </CopyButton>
         </CopyToClipboard>
       </Toolbar>
       <SyntaxHighlighter
         language={language}
-        style={dracula}
+        style={coldarkDark}
         wrapLines={true}
         showLineNumbers={true}
         customStyle={{ lineHeight: "0.75", fontSize: "small" }}

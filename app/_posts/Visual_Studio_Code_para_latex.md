@@ -43,8 +43,6 @@ Recomendamos usar **TeX Live** como la distribución preferida para LaTeX en tod
 2. Luego, instala TeX Live con Homebrew:
     ```bash
     brew install --cask mactex
-
-
 # Instalación de Visual Studio Code
 
 Puedes descargar **VS Code** desde su [sitio oficial](https://code.visualstudio.com/). Está disponible para **Windows**, **macOS** y **Linux**.

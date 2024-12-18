@@ -68,9 +68,9 @@ export default async function Post({ params }) {
   const readT = readingTime(post.content);
   // Override react-markdown elements to add class names
   return (
-    <MainBg>
-      <Layout>
-        <ResponsiveSidebar sidebarItems={sidebarItems} />
+    <Layout>
+      <ResponsiveSidebar sidebarItems={sidebarItems} />
+      <MainBg>
         <Article>
           <MdHead>{post.title}</MdHead>
           <MetaInfo>
@@ -91,8 +91,8 @@ export default async function Post({ params }) {
           </MetaInfo>
           <RenderCodeBlock props={post.content} />
         </Article>
-      </Layout>
-    </MainBg>
+      </MainBg>
+    </Layout>
   );
 }
 

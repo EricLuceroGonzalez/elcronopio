@@ -19,7 +19,7 @@ export const Main = styled.main`
 
 export const MainBg = styled.div`
   flex: 1;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   background-color: var(--bg);
   /* min-height: 83vh; */
   min-height: 100vh;
@@ -28,6 +28,7 @@ export const MainBg = styled.div`
     text-align: justify;
     padding: 1rem 7px;
   }
+  /* border: 1px solid red; */
 `;
 
 export const TitlePage = styled.h1`

@@ -62,8 +62,8 @@ code {
     --quote-fg: #87CEEB; /* Azul cielo para citas */
     --quote-bg: #1F2933; /* Un fondo oscuro pero claro para citas */
     --primary-border: #1C7ED6; /* Borde consistente con botones primarios */
-    --emphasis-bg: rgba(240, 255, 0, 0.8); /* Un amarillo fuerte para énfasis */
-    --emphasis-fg: #343434;
+    --emphasis-fg: rgba(240, 255, 0, 0.8); /* Un amarillo fuerte para énfasis */
+    --emphasis-bg: #343434;
     --code-bg: #282C34; /* Fondo gris oscuro para bloques de código */
     --code-fg: #E06C75; /* Rojo suave para palabras reservadas */
     --link-bg: transparent;

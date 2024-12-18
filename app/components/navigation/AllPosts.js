@@ -36,9 +36,7 @@ const AllPosts = ({
     <GridContainer>
       <Link href={`/${doctype}/${slug}`}>
         <TitleContainer>
-          <MdHead>
-            {title} {doctype}
-          </MdHead>
+          <MdHead>{title}</MdHead>
         </TitleContainer>
         {/* <div> */}
         <ExcerptContainer>{excerpt}</ExcerptContainer>
