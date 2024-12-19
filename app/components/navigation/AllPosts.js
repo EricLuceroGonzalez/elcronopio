@@ -44,7 +44,7 @@ const AllPosts = ({
         <MetaInfo>
           <SideInfo>
             <Date>{date}</Date>
-            <SectionType doctype={doctype}>{doctype}</SectionType>
+            <SectionType>{doctype}</SectionType>
           </SideInfo>
           {/* <SideInfo>
               <AuthorInfo>

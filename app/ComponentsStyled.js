@@ -26,7 +26,7 @@ export const MainBg = styled.div`
   /* max-width: 80%; */
   @media (max-width: 728px) {
     text-align: justify;
-    padding: 1rem 7px;
+    padding: 1rem 2rem;
   }
   /* border: 1px solid red; */
 `;

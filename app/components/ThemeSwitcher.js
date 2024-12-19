@@ -34,10 +34,6 @@ const ThemeSwitcher = () => {
     setMounted(true);
   }, [mounted]);
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   if (!mounted) return null;
 
   return (

@@ -9,7 +9,6 @@ function CodeCopyBtn({ children }) {
 
   const handleClick = (e) => {
     navigator.clipboard.writeText(children[0].props.children[0]);
-    console.log(children);
 
     setCopyOk(true);
     setTimeout(() => {

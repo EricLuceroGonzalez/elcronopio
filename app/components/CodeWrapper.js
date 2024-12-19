@@ -31,11 +31,8 @@ const LanguageBadge = styled.span`
 `;
 
 const CopyButton = styled.button`
-  background: ${(props) =>
-    props.isCopy
-      ? "red"
-      : "var(--secondary-btn-bg)"}; /* Verde para blog, Naranja para latex */
-  /* var(--secondary-btn-bg); */
+  background: ${($props) =>
+    $props.$isCopy ? "red" : "var(--secondary-btn-bg)"};
   transition: background-color 0.33s;
   color: var(--secondary-btn-fg);
   border: none;
@@ -63,7 +60,7 @@ const CodeBlock = ({ language, value }) => {
       <Toolbar>
         <LanguageBadge>{language}</LanguageBadge>
         <CopyToClipboard text={value} onCopy={handleCopy}>
-          <CopyButton isCopy={copied}>
+          <CopyButton $isCopy={copied}>
             {copied ? <LuCopyCheck /> : <LuCopy />}
           </CopyButton>
         </CopyToClipboard>
@@ -73,7 +70,7 @@ const CodeBlock = ({ language, value }) => {
         style={coldarkDark}
         wrapLines={true}
         showLineNumbers={true}
-        customStyle={{ lineHeight: "0.75", fontSize: "small" }}
+        customStyle={{ lineHeight: "0.75", fontSize: "x-small" }}
       >
         {value}
       </SyntaxHighlighter>

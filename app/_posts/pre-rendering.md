@@ -55,3 +55,12 @@ for i in range(len(dataset)):
                     fill_opacity=0.3,
                     ).add_to(map_California)
 ```
+
+# Cómo crear un div con fondo azul y borde rojo
+
+En este tutorial, aprenderás cómo crear un `div` con un fondo azul y un borde rojo de 2px. Este es el código que necesitas:
+
+```html
+<div style="background-color: blue; border: 2px solid red; padding: 1rem; color: white;">
+  Esto es un ejemplo de div con fondo azul y borde rojo.
+</div>

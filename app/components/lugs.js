@@ -66,6 +66,14 @@ export const CoverImageContainer = styled.div`
   }
 `;
 
+export const BoxGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 99%;
+  flex-wrap: wrap;
+  /* border: 3px solid greenyellow; */
+`;
 export const GridContainer = styled.div`
   margin: 0.55rem 0.55rem;
   background-color: var(--bg);
@@ -77,17 +85,20 @@ export const GridContainer = styled.div`
   /* min-width: 99%; */
 
   @media (min-width: 768px) {
+    /* border: 2px solid red; */
     /* TODO: Style of blog posts and inner post */
     /* display: flex; */
-    flex-direction: column;
+    flex-direction: row;
+    width: 80%;
   }
 
   @media (min-width: 1024px) {
-    max-width: 25%;
+    max-width: 45%;
     gap: 2rem;
   }
   &:hover {
     border: 2px solid var(--border-stroke);
+    transition: border 0.5s;
   }
 `;
 
@@ -156,15 +167,13 @@ export const AuthorName = styled.span`
 `;
 export const SectionType = styled.div`
   font-weight: bold;
-  background-color: ${(props) =>
-    props.doctype === "blog"
-      ? "#4CAF50"
-      : "#FF9800"}; /* Verde para blog, Naranja para latex */
-  color: white;
+  background-color: var(--fg); /* Verde para blog, Naranja para latex */
+  color: var(--bg);
   padding: 4px 8px;
   border-radius: 4px;
   display: inline-block;
   margin-left: 10px;
+  font-size: x-small;
 `;
 export const SideInfo = styled.div`
   display: flex;
@@ -182,7 +191,8 @@ export const MdParagraph = styled.p`
 
 export const MdListItem = styled.li`
   color: var(--item-fg);
-  margin: 3px 22px;
+  margin: 3px 0px;
+  font-size: inherit;
 `;
 export const MdBlockQuote = styled.blockquote`
   border-left: 12px solid var(--primary-border);
@@ -225,15 +235,6 @@ export const MdEmph = styled.em`
   color: var(--emphasis-fg);
   padding: 0 5px;
   font-style: normal;
-`;
-
-export const BoxGrid = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  max-width: 95%;
-  flex-wrap: wrap;
-  /* border: 3px solid red; */
 `;
 
 export const LinkList = styled.div`

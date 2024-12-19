@@ -17,19 +17,22 @@ const BlogPage = () => {
       <MdParagraph>
         En esta sección encontrarás artículos y reflexiones sobre temas que me
         apasionan:
-        <ul>
-          <MdListItem>
-            Inteligencia Artificial: avances, algoritmos y mi experiencia en el
-            doctorado.
-          </MdListItem>
-          <MdListItem>
-            Matemáticas aplicadas: soluciones a problemas reales y enfoques
-            innovadores.
-          </MdListItem>
-          <MdListItem>
-            Programación: guías, proyectos y recursos para aprender y mejorar.
-          </MdListItem>
-        </ul>
+      </MdParagraph>
+      <ul>
+        <MdListItem>
+          Inteligencia Artificial: avances, algoritmos y mi experiencia en el
+          doctorado.
+        </MdListItem>
+        <MdListItem>
+          Matemáticas aplicadas: soluciones a problemas reales y enfoques
+          innovadores.
+        </MdListItem>
+        <MdListItem>
+          Programación: guías, proyectos y recursos para aprender y mejorar.
+        </MdListItem>
+      </ul>
+
+      <MdParagraph>
         Estoy construyendo este blog poco a poco, así que vuelve pronto para
         explorar nuevas publicaciones.
       </MdParagraph>
