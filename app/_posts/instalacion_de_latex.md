@@ -2,6 +2,7 @@
 slug: 'instalacion_de_latex'
 id: 'latex-002'
 date: "2024-06-20"
+order: 1
 title: "Instalación de LaTeX"
 shortTitle: "Instalación"
 author: "Eric Lucero"

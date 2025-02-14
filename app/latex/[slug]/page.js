@@ -86,7 +86,10 @@ export default async function Post({ params }) {
               </Link>
             </SideInfo>
             <Date style={{ marginLeft: "10px" }}>
-              Tiempo de lectura: {readT.readingTime} minutos
+              Tiempo de lectura:{" "}
+              {readT.readingTime < 2
+                ? `${readT.readingTime} minuto`
+                : `${readT.readingTime} minutos`}{" "}
             </Date>
           </MetaInfo>
           <RenderCodeBlock props={post.content} />
@@ -139,7 +142,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(params.slug);
 
   return {
-    title: post.title,
+    title: `${post.title} | LaTeX`,
     description: post.excerpt,
     slug: post.slug,
     shortTitle: post.shortTitle,

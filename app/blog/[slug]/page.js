@@ -157,7 +157,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(params.slug);
 
   return {
-    title: post.title,
+    title: `${post.title} | Blog`,
     description: post.excerpt,
   };
 }

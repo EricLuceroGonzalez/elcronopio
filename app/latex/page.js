@@ -20,18 +20,20 @@ import ResponsiveSidebar from "../components/SideBar";
 
 const Latex = ({ params }) => {
   const latexPosts = getLatexPosts();
+
   // Mapear los posts para devolver solo los datos necesarios
-  const sidebarItems = latexPosts.map((post) => ({
-    slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
-    shortTitle: post.shortTitle, // Título del post
-  }));
+  const sidebarItems = latexPosts
+    .map((post) => ({
+      slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
+      shortTitle: post.shortTitle, // Título del post
+      order: post.order,
+    }))
+    .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
+
+  console.warn(sidebarItems);
   if (!latexPosts) {
     return notFound();
   }
-  // const sidebarItems = [
-  //   { slug: "introduccion_a_latex", title: "Introducción a LaTeX" },
-  //   { slug: "instalacion_de_latex", title: "Instalación y configuración" },
-  // ];
 
   return (
     <Layout>

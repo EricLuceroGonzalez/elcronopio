@@ -34,7 +34,7 @@ function getLatexPosts() {
     .filter((post) => {
       return post.doctype === "latex";
     })
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
   return latexPosts;
 }
 

@@ -7,8 +7,9 @@ import Image from "next/image";
 // Sidebar estilo fijo al costado
 const Sidebar = styled.aside`
   min-width: 130px;
+  max-width: 140px;
   background-color: var(--fg);
-  color: red; //var(--bg);;
+  color: var(--bg);
   padding: 1rem;
   border-right: 1px solid var(--primary-border);
   display: flex;
@@ -26,6 +27,10 @@ const Sidebar = styled.aside`
     height: 100vh;
     transition: left 0.4s ease;
   }
+`;
+const SideBarTextInstruction = styled.div`
+  color: var(--quote-bg);
+  font-size: x-small;
 `;
 // Fondo oscuro para detectar clics fuera del Sidebar
 const Backdrop = styled.div`
@@ -80,7 +85,15 @@ const Content = styled.main`
     margin-top: 3rem; /* Espacio para el botón hamburguesa */
   }
 `;
-
+const ContentTitle = styled.div`
+  text-decoration: none;
+  color: var(--bg);
+  padding: 3px 0;
+  &:hover {
+    background-color: rgba(155, 155, 155, 0.4);
+    font-weight: bold;
+  }
+`;
 export default function ResponsiveSidebar({ sidebarItems }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const closeSidebar = () => setSidebarOpen(false); // Función para cerrar el Sidebar
@@ -93,22 +106,19 @@ export default function ResponsiveSidebar({ sidebarItems }) {
       </HamburgerButton>
       <Sidebar open={sidebarOpen}>
         <CloseButton onClick={closeSidebar}>×</CloseButton>
-
-        <Image
+        {/* <Image
           src={
             "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732908752/elCronopio/LaTeX_logo_ou5hme.svg"
           } // Ruta de la imagen del autor
           alt={"Logo de LaTeX"} // Texto alternativo
           width={90} // Ancho de la imagen
           height={37.5} // Alto de la imagen
-        />
+        /> */}
+        <h1>Contenido</h1>
+        {/* <SideBarTextInstruction>Algunas instruccuines</SideBarTextInstruction> */}
         {sidebarItems.map(({ slug, shortTitle }) => (
-          <Link
-            key={slug}
-            href={slug}
-            style={{ textDecoration: "none", color: "var(--bg)" }}
-          >
-            {shortTitle}
+          <Link key={slug} href={slug}>
+            <ContentTitle>{shortTitle}</ContentTitle>
           </Link>
         ))}
       </Sidebar>

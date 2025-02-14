@@ -192,7 +192,8 @@ export const MdParagraph = styled.p`
 export const MdListItem = styled.li`
   color: var(--item-fg);
   margin: 3px 0px;
-  font-size: inherit;
+  font-size: small;
+  /* border: 1px solid red; */
 `;
 export const MdBlockQuote = styled.blockquote`
   border-left: 12px solid var(--primary-border);
