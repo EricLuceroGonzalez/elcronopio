@@ -11,12 +11,7 @@ excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calida
 doctype: "latex"
 ---
 
-LaTeX es un sistema de preparación de documentos de alta calidad, utilizado frecuentemente en la escritura de documentos científicos y *técnicos debido a su capacidad para manejar ecuaciones matemáticas complejas, tablas y referencias bibliográficas*.
-
->Sitios web: 
-> - [learnlatex.org](https://www.learnlatex.org/es/)
-> - [texlive.net/run](https://texlive.net/run) 
-> - [Overleaf.com](https://www.overleaf.com/)
+LaTeX es un sistema de preparación de documentos de alta calidad, utilizado frecuentemente en la escritura de documentos científicos y técnicos debido a su capacidad para *manejar ecuaciones matemáticas* complejas, tablas y *referencias bibliográficas*.
 
 > A diferencia de los editores de texto tradicionales, LaTeX utiliza un enfoque basado en etiquetas para formatear el contenido, lo que permite un control más preciso sobre el diseño del documento.
 
@@ -34,7 +29,12 @@ Hello, World! Este es un ejemplo simple de un documento en LaTeX.
 \end{document}
 ```
 
-Como puedes ver este es un gran inicio. Puedes correr tus propios proyectos en [Overleaf](https://www.overleaf.com/) sin necesidad de descargar latex.
+- Rápido
+- Básico 
+- Fundamental 
+- Como puedes ver
+
+Como puedes ver este es un *gran inicio*. Puedes correr tus **propios proyectos** en [Overleaf](https://www.overleaf.com/) sin necesidad de descargar latex.
 
 Antes de todo, asegúrate de instalar Latex en tu computadora. Puedes verlo en [esta entrada del blog](/posts/latex-002)
 
@@ -48,10 +48,6 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 ### Testing algunos Md syntax
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
-
-## Test some equations: 
-This is an inline equation \\(\displaystyle \int_0^1 x^2+2s
-\quad dx \\) for inline and \\[ x^2+2 \\] for not inline.
 
 ### Algunos tipos de énfasis:
 * Uso de `<Strong/>`: Con **Doble Asterisco** o __Doble guion bajo__

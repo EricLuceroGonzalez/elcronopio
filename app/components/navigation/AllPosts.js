@@ -35,9 +35,7 @@ const AllPosts = ({
     {/* </CoverImageContainer> */}
     <GridContainer>
       <Link href={`/${doctype}/${slug}`}>
-        <TitleContainer>
-          <MdHead>{title}</MdHead>
-        </TitleContainer>
+        <TitleContainer>{title}</TitleContainer>
         {/* <div> */}
         <ExcerptContainer>{excerpt}</ExcerptContainer>
         {/* </div> */}

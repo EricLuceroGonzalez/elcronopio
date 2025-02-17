@@ -8,6 +8,10 @@ export const PageContainer = styled.div`
   flex-direction: column;
   background-color: var(--bg);
   min-height: 99vh;
+  font-size: xx-small;
+  @media (min-width: 1080px) {
+    font-size: large;
+  }
 `;
 
 export const Main = styled.main`
@@ -24,11 +28,12 @@ export const MainBg = styled.div`
   /* min-height: 83vh; */
   min-height: 100vh;
   /* max-width: 80%; */
+  font-size: small;
   @media (max-width: 728px) {
     text-align: justify;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
   }
-  /* border: 1px solid red; */
+  /* border: 3px solid palevioletred; */
 `;
 
 export const TitlePage = styled.h1`

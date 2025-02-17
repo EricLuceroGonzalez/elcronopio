@@ -48,14 +48,15 @@ const HamburgerButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: var(--fg);
+  color: var(--accent);
   font-size: 2rem;
   cursor: pointer;
+  /* border: 1px solid green; */
 
   @media (max-width: 768px) {
     display: block; /* Visible solo en pantallas pequeñas */
     position: absolute;
-    top: 1rem;
+    top: 0.7rem;
     left: 1rem;
   }
 `;

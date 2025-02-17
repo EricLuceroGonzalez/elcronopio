@@ -6,7 +6,7 @@ import { MainBg, PageContainer, Section, TitlePage } from "./ComponentsStyled";
 import AllPosts from "./components/navigation/AllPosts";
 import { getAllPosts } from "@/app/lib/api";
 import HomeBoxes from "./components/HomeBoxes";
-import { MdParagraph } from "./components/lugs";
+import { MdListItem, MdParagraph, MdUnorderedList } from "./components/lugs";
 
 function Home() {
   const allPostsData = getAllPosts();
@@ -14,27 +14,27 @@ function Home() {
     <PageContainer>
       <MainBg>
         {/* <div style={{ width: "80%" }}> */}
-        <TitlePage>¡Bienvenido a mi espacio personal! </TitlePage>
+        <TitlePage>Hola! </TitlePage>
 
         <MdParagraph>
           Este sitio web está en construcción, pero pronto será un lugar donde
           compartiré mi trabajo y aprendizaje en áreas como inteligencia
           artificial, LaTeX, y algoritmos de optimización. Aquí encontrarás:
         </MdParagraph>
-        <ul>
-          <li>
+        <MdUnorderedList>
+          <MdListItem>
             Un blog con reflexiones, tutoriales, y temas técnicos relacionados
             con la IA.
-          </li>
-          <li>
+          </MdListItem>
+          <MdListItem>
             Recursos sobre LaTeX para quienes deseen perfeccionar sus
             habilidades en la escritura científica.
-          </li>
-          <li>
+          </MdListItem>
+          <MdListItem>
             Un portafolio donde documentaré proyectos e ideas relacionadas con
             programación y matemáticas aplicadas.
-          </li>
-        </ul>
+          </MdListItem>
+        </MdUnorderedList>
         <MdParagraph>
           Gracias por visitar. Te invito a explorar las secciones disponibles y
           volver pronto para más contenido. ¡Esto es solo el comienzo!

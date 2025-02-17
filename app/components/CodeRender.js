@@ -13,6 +13,7 @@ import {
   MdLink,
   MdStrong,
   MdHead,
+  MdUnorderedList,
 } from "./lugs";
 import CodeBlock from "./CodeWrapper";
 
@@ -27,6 +28,7 @@ const RenderCodeBlock = ({ props }) => {
   // const TheCode = ({ children }) => <MdCode>{children}</MdCode>;
   const Strong = ({ children }) => <MdStrong>{children}</MdStrong>;
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
+  const UList = ({ children }) => <MdUnorderedList>{children}</MdUnorderedList>;
   return (
     <MathJaxContext>
       <MathJax dynamic hideUntilTypeset="every">
@@ -34,6 +36,7 @@ const RenderCodeBlock = ({ props }) => {
           components={{
             p: P,
             li: Li,
+            ul: UList,
             blockquote: Bq,
             h1: Head,
             h2: HeadTwo,

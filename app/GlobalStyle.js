@@ -2,31 +2,49 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root{
-    --bg: white;
-    --fg: #2D2D2D; /* Un negro ligeramente gris para suavizar el contraste */
-    --heading: #B80000; /* Un rojo más suave para los encabezados */
-    --footer-bg: #2D2D2D; /* Fondo oscuro para el pie de página */
-    --footer-fg: white;
-    --primary-btn-bg: #0056B3; /* Un azul más profundo y agradable */
-    --primary-btn-fg: white;
-    --primary-btn-hover: #0041A0; /* Hover ligeramente más oscuro */
-    --secondary-btn-bg: #28A745; /* Un verde más suave para botones secundarios */
-    --secondary-btn-fg: white; /* Contraste más limpio */
-    --secondary-btn-hover: #218838;
-    --item-fg: #2D2D2D; /* Color de texto general */
-    --quote-fg: #1E90FF; /* Un azul vívido pero claro */
-    --quote-bg: #F0F8FF; /* Un fondo azul claro muy suave */
-    --primary-border: #1E90FF; /* Borde azul consistente con las citas */
-    --emphasis-bg: #FFFACD; /* Un amarillo suave */
-    --emphasis-fg: #2D2D2D;
-    --code-bg: #F5F5F5; /* Fondo claro para código */
-    --code-fg: #C7254E; /* Un rojo/magenta tenue */
-    --link-bg: transparent;
-    --link-fg: #007BFF; /* Un azul claro pero legible */
-    --strong-bg: #FFD700; /* Un dorado suave */
-    --theme-font: #0a1ef5;
-    --border-stroke: #0a1ef5;
-    
+    /* Fondos y Textos */
+    --bg: #F8F9FA; /* Fondo principal blanco suave */
+    --fg: #222222; /* Texto oscuro principal */
+    --accent: #D72638; /* Rojo vibrante para acentos */
+
+    /* Títulos y Encabezados */
+    --heading: #D18B00; /* Dorado oscuro para títulos */
+    --subheading: #E0A800; /* Amarillo más claro para subtítulos */
+
+    /* Botones */
+    --primary-btn-bg: #D72638; /* Rojo para botones principales */
+    --primary-btn-fg: white; /* Texto en botones principales */
+    --primary-btn-hover: #F1C40F; /* Amarillo brillante para hover */
+    --secondary-btn-bg: #0077FF; /* Azul fuerte para botones secundarios */
+    --secondary-btn-fg: white; /* Texto en botones secundarios */
+    --secondary-btn-hover: #005FCC; /* Azul más oscuro para hover */
+
+    /* Enlaces y Énfasis */
+    --link-fg: #5A47AB; /* Azul morado para enlaces */
+    --link-bg: transparent; /* Fondo transparente para enlaces */
+    --strong-fg: #0077FF; /* Azul fuerte para negritas */
+    --strong-bg: transparent; /* Azul fuerte para negritas */
+    --emphasis-fg: #222222; /* Naranja semitransparente para énfasis */
+    --emphasis-bg:  #FFFA75; /* Naranja semitransparente para énfasis */
+
+    /* Citas y Bloques de Código */
+    --quote-bg: #FFF3CD; /* Amarillo pálido para fondo de citas */
+    --quote-fg: #6C757D; /* Gris oscuro para texto de citas */
+    --code-fg: #C7254E; /* Rojo fuerte para palabras reservadas en código */
+    --code-bg: #EAEAEA; /* Fondo claro para bloques de código */
+
+    /* Bordes */
+    --primary-border: #0077FF; /* Azul para bordes */
+    --border-stroke: #D72638; /* Rojo brillante para bordes */
+
+    /* Colores Adicionales */
+    --gray-dark: #4A4A4A; /* Gris medio-oscuro */
+    --gray-medium: #B0B0B0; /* Gris medio */
+    --gray-light:#B0B0B0;
+    --accent-yellow: #FFD700; /* Amarillo dorado */
+    --accent-orange: #FFA500; /* Naranja */
+    --box-border-hover:#0077FF;
+
 a {
   text-decoration: none;
 }
@@ -44,35 +62,52 @@ code {
     border-radius: 4px;
     font-weight: bold;
 }
-    
+    /* #FF3366 #FFE381 #00FFE7 */
 }
 [data-theme='dark'] {
-    --bg: #343434; /* Mantiene el fondo oscuro */
-    --fg: #EAEAEA; /* Un gris claro para mejorar la lectura */
-    --heading: #87CEEB; /* Un azul cielo suave para títulos */
-    --footer-bg: #2D2D2D; /* Fondo oscuro para el pie de página */
-    --footer-fg: #EAEAEA; /* Contraste ligero en el pie de página */
-    --primary-btn-bg: #1C7ED6; /* Azul más brillante para botones principales */
-    --primary-btn-fg: white;
-    --primary-btn-hover: #1864AB;
-    --secondary-btn-bg: #38D9A9; /* Un verde más relajado */
-    --secondary-btn-fg: #343434;
-    --secondary-btn-hover: #2B8A6E;
-    --item-fg: #EAEAEA; /* Color de texto principal */
-    --quote-fg: #87CEEB; /* Azul cielo para citas */
-    --quote-bg: #1F2933; /* Un fondo oscuro pero claro para citas */
-    --primary-border: #1C7ED6; /* Borde consistente con botones primarios */
-    --emphasis-fg: rgba(240, 255, 0, 0.8); /* Un amarillo fuerte para énfasis */
-    --emphasis-bg: #343434;
-    --code-bg: #282C34; /* Fondo gris oscuro para bloques de código */
-    --code-fg: #E06C75; /* Rojo suave para palabras reservadas */
-    --link-bg: transparent;
-    --link-fg: #61AEEE; /* Azul claro para enlaces */
-    --strong-bg: rgba(250, 128, 114, 0.7); /* Salmón claro para negritas */
-    --theme-font: #FFF4B7;
-    --border-stroke: #0a1ef5;
-}
+    /* Fondos y Textos */
+    --bg: #002332; /* Fondo oscuro principal */
+    --fg: #EAEAEA; /* Texto principal */
+    --accent: #FF3366;
+    
+    /* Títulos y Encabezados */
+    --heading: #FFE381; /* Amarillo claro para títulos principales */
+    --subheading: #FFF4B7; /* Amarillo más claro para subtítulos */
+    
+    /* Botones */
+    --primary-btn-bg: #FF3366; /* Rosa brillante para botones principales */
+    --primary-btn-fg: white; /* Texto en botones principales */
+    --primary-btn-hover: #FFF4B7; /* Naranja para hover */
+    --secondary-btn-bg: #38D9A9; /* Verde claro para botones secundarios */
+    --secondary-btn-fg: #343434; /* Texto en botones secundarios */
+    --secondary-btn-hover: #2B8A6E; /* Verd e oscuro para hover */
+    
+    /* Enlaces y Énfasis */
+    --link-fg: #E2ADF2; /* Lila claro para enlaces */
+    --link-bg: transparent; /* Fondo transparente para enlaces */
+    --strong-fg: #FF3366; /* Cyan para negritas */
+    --strong-bg: transparent; /* Fondo para negritas */
+    --emphasis-fg: #00FFE7; /* Fondo para elementos destacados */
+    --emphasis-bg: transparent; /* Amarillo semitransparente para énfasis */
+    
+    /* Citas y Bloques de Código */
+    --quote-bg: #FFE381; /* Amarillo claro para fondo de citas */
+    --quote-fg: #002332; /* Azul oscuro para texto de citas */
+    --code-fg: #E06C75; /* Rojo suave para palabras reservadas en código */
+    --code-bg: #282C34; /* Fondo para bloques de código */
 
+    /* Bordes */
+    --primary-border: #1C7ED6; /* Azul para bordes */
+    --border-stroke: #FF3366; /* Rosa brillante para bordes (unificado con botones primarios) */
+
+    /* Colores Adicionales */
+    --gray-dark: #1E1E1E; /* Gris muy oscuro */
+    --gray-medium: #4A4A4A; /* Gris medio */
+    --gray-light:#DEDEDE;
+    --accent-yellow: #FFD700; /* Amarillo dorado */
+    --accent-orange: #FFA500; /* Naranja */
+    --box-border-hover:#FF3366;
+}
 
 [data-theme='dark'] [data-hide-on-theme='dark'],
 [data-theme='light'] [data-hide-on-theme='light'] {

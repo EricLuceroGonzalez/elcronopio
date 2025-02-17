@@ -1,7 +1,7 @@
 ---
 slug: 'que_es_latex'
-id: 'latex-003'
-date: "2022-08-04"
+id: 'latex-000'
+date: "2025-02-04"
 order: 0
 title: "Qué es LaTeX"
 shortTitle: "Qué es LaTeX"

@@ -3,24 +3,42 @@ import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
 
+// Contenedor principal para manejar diseño responsivo
+export const Layout = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 99%;
+  font-size: small;
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+    /* border: 2px solid yellow; */
+  }
+  @media (min-width: 1080px) {
+    font-size: large;
+  }
+`;
+
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
   max-width: 60%;
   margin: 0 auto;
   padding: 20px;
-  background-color: --var(--bg);
-  color: --var(--fg);
+  background-color: var(--bg);
+  color: var(--fg);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: small;
+  /* border: 2px solid red; */
 
   @media (max-width: 1080px) {
     max-width: 90%;
   }
   @media (max-width: 728px) {
-    min-width: 92%;
+    min-width: 98%;
     padding: 5px;
     box-shadow: none;
+    font-size: small;
+    /* border: 1px dashed white; */
   }
 `;
 
@@ -31,8 +49,9 @@ export const Title = styled.h1`
 
 export const Date = styled.p`
   font-size: 0.65rem;
-  color: var(--theme-font);
   /* margin-bottom: 2rem; */
+  color: var(--gray-light);
+  font-family: monospace;
 `;
 
 export const Author = styled.p`
@@ -41,16 +60,6 @@ export const Author = styled.p`
   color: var(--fg);
   margin-bottom: 1.5rem;
 `;
-
-// export const MetaInfo = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-bottom: 1.5rem;
-//   font-size: 0.9rem;
-//   color: #777;
-//   border: 1px solid red;
-// `;
 
 export const CodeBlock = styled(SyntaxHighlighter)`
   margin: 20px 0;
@@ -72,6 +81,7 @@ export const BoxGrid = styled.div`
   justify-content: center;
   max-width: 99%;
   flex-wrap: wrap;
+  padding: 30px 1px;
   /* border: 3px solid greenyellow; */
 `;
 export const GridContainer = styled.div`
@@ -80,8 +90,7 @@ export const GridContainer = styled.div`
   padding: 16px 8px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: var(--fg);
-  border: 2px solid var(--fg);
+  border: 1px solid var(--gray-light);
   /* min-width: 99%; */
 
   @media (min-width: 768px) {
@@ -97,12 +106,12 @@ export const GridContainer = styled.div`
     gap: 2rem;
   }
   &:hover {
-    border: 2px solid var(--border-stroke);
+    border: 2px solid var(--box-border-hover);
     transition: border 0.5s;
   }
 `;
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled.h2`
   margin-bottom: 1rem;
   color: var(--fg);
 
@@ -113,15 +122,18 @@ export const TitleContainer = styled.div`
 
     @media (min-width: 1024px) {
       font-size: x-large;
-    }
 
-    a {
-      text-decoration: none;
+      a {
+        text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
+  }
+  @media (max-width: 688px) {
+    font-size: medium;
   }
 `;
 
@@ -130,21 +142,29 @@ export const MetaInfo = styled.div`
   font-size: small;
   color: gray;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid red; */
   @media (min-width: 668px) {
     width: 50%;
     margin-bottom: 0;
     flex-direction: row;
   }
+  @media (min-width: 990px) {
+    width: 33%;
+  }
+  @media (max-width: 490px) {
+    width: 65%;
+  }
 `;
 
 export const ExcerptContainer = styled.p`
-  font-size: small;
-  line-height: 1.75;
+  font-family: monospace;
   margin-bottom: 1rem;
   color: var(--fg);
+  @media (max-width: 668px) {
+    font-size: smaller;
+  }
 `;
 // Contenedor para el avatar y el nombre del autor
 export const AuthorInfo = styled.div`
@@ -174,6 +194,7 @@ export const SectionType = styled.div`
   display: inline-block;
   margin-left: 10px;
   font-size: x-small;
+  font-family: monospace;
 `;
 export const SideInfo = styled.div`
   display: flex;
@@ -182,44 +203,48 @@ export const SideInfo = styled.div`
 `;
 
 export const MdParagraph = styled.p`
-  font-size: small;
   margin: 2em 0;
-  @media (min-width: 1080px) {
-    font-size: medium;
-  }
 `;
 
 export const MdListItem = styled.li`
-  color: var(--item-fg);
-  margin: 3px 0px;
-  font-size: small;
-  /* border: 1px solid red; */
+  /* color: var(--primary-btn-bg); */
+  color: var(--fg);
+  /* margin: 3px 0px; */
+  /* font-size: 0; */
+  /* list-style-type: circle; */
+  /* list-style-position: inside; */
 `;
+export const MdUnorderedList = styled.ul`
+  margin: auto;
+`;
+
 export const MdBlockQuote = styled.blockquote`
-  border-left: 12px solid var(--primary-border);
+  /* border-left: 12px solid var(--primary-border); */
   background-color: var(--quote-bg);
   color: var(--quote-fg);
-  padding: 1px 2px;
-  margin: 3px 12px;
+  padding: 2px 8px;
+  margin: 3px auto;
+  border-radius: 12px;
+  min-width: 85%;
 `;
 
 export const MdHead = styled.h1`
-  color: var(--fg);
+  /* color: var(--fg); */
   text-align: left;
-  font-size: large;
+  font-size: x-large;
 `;
 export const MdSubHeadA = styled.h2`
-  color: var(--fg);
+  color: var(--subheading);
   font-size: larger;
 `;
 export const MdSubHeadB = styled.h3`
   /* border: 1px solid red; */
-  color: var(--emphasis-fg);
+  color: var(--subheading);
   margin: 25px 0;
   font-size: larger;
 `;
 export const MdSubHeadC = styled.h4`
-  color: var(--fg);
+  color: var(--heading);
 `;
 export const MdLink = styled.a`
   background-color: var(--link-bg);
@@ -228,14 +253,21 @@ export const MdLink = styled.a`
 `;
 
 export const MdStrong = styled.strong`
+  /* background- */
+  color: var(--strong-fg);
   background-color: var(--strong-bg);
-  color: white;
+  /* color: var(--bg); */
+  font-weight: bold;
+  padding: 2px 2px;
+  border-radius: 6px;
 `;
 export const MdEmph = styled.em`
-  background-color: var(--emphasis-bg);
   color: var(--emphasis-fg);
-  padding: 0 5px;
-  font-style: normal;
+  background-color: var(--emphasis-bg);
+  /* var(--emphasis-bg); */
+  /* padding: 0 1px; */
+  /* font-style: normal; */
+  font-weight: 500;
 `;
 
 export const LinkList = styled.div`
@@ -245,7 +277,7 @@ export const LinkList = styled.div`
 `;
 
 export const IconLink = styled.a`
-  color: var(--fg);
+  color: var(--subheading);
   text-decoration: none;
   svg {
     width: 14px;
@@ -254,7 +286,9 @@ export const IconLink = styled.a`
     transition: fill 0.3s ease;
   }
   &:hover {
-    color: var(--primary-btn-bg);
+    color: var(--accent);
+    font-size: larger;
+    font-weight: bold;
   }
 `;
 
@@ -310,19 +344,6 @@ export const SidebarList = styled.ul`
       color: var(--primary-btn-bg);
     }
   }
-`;
-
-// Contenedor principal para manejar diseño responsivo
-export const Layout = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-
-  @media (max-width: 768px) {
-    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
-  }
-  /* border: 1px solid red; */
-  background-color: var(--bg);
 `;
 
 export const CodeBlockWrapper = styled.div`

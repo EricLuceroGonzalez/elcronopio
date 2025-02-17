@@ -35,7 +35,7 @@ const FoooterLink = styled.a`
   align-items: center;
   text-decoration: none;
   transition: color 0.3s ease;
-  color: var(--footer-fg);
+  color: var(--fg);
 
   svg {
     width: 18px;

@@ -6,7 +6,7 @@ import {
   materialLight,
   oneLight,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
+import { FaClock, FaPencilAlt } from "react-icons/fa";
 import { getLatexPosts, getPostBySlug } from "@/app/lib/api";
 import {
   Article,
@@ -74,7 +74,16 @@ export default async function Post({ params }) {
         <Article>
           <MdHead>{post.title}</MdHead>
           <MetaInfo>
-            <Date>{post.date}</Date>
+            <Date>
+              <FaPencilAlt style={{ marginRight: "5px" }} />
+              {post.date}
+            </Date>
+            <Date style={{ marginLeft: "10px" }}>
+              <FaClock style={{ marginRight: "5px" }} />
+              {readT.readingTime < 2
+                ? `${readT.readingTime} minuto`
+                : `${readT.readingTime} minutos`}{" "}
+            </Date>
             <SideInfo>
               {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
               <Link href={`/${post.doctype}`}>
@@ -85,12 +94,6 @@ export default async function Post({ params }) {
                 </SectionType>
               </Link>
             </SideInfo>
-            <Date style={{ marginLeft: "10px" }}>
-              Tiempo de lectura:{" "}
-              {readT.readingTime < 2
-                ? `${readT.readingTime} minuto`
-                : `${readT.readingTime} minutos`}{" "}
-            </Date>
           </MetaInfo>
           <RenderCodeBlock props={post.content} />
         </Article>
