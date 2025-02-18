@@ -21,7 +21,6 @@ const Latex = ({ params }) => {
     }))
     .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
 
-  // console.warn(sidebarItems);
   if (!latexPosts) {
     return notFound();
   }
