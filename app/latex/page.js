@@ -25,7 +25,6 @@ const Latex = ({ params }) => {
   if (!latexPosts) {
     return notFound();
   }
-
   return (
     <Layout>
       <ResponsiveSidebar sidebarItems={sidebarItems} />
