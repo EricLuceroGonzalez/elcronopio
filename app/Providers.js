@@ -1,25 +1,28 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { useTheme } from "next-themes";
+
 import { useState, useEffect } from "react";
-import GlobalStyle from './GlobalStyle.js'
+import GlobalStyleWrapper from "./themes/GlobalStyleWrapper.js";
+import StyledComponentsRegistry from "./lib/registry.js";
 
 const Providers = ({ children }) => {
+  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
-    return () => {};
+    setMounted(true); // Ensure theme is set before rendering
   }, []);
 
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
-  return <ThemeProvider>
-    <GlobalStyle/>
-    {children}</ThemeProvider>;
+  return (
+    <StyledComponentsRegistry>
+      <ThemeProvider theme={{ mode: theme }}>
+        <GlobalStyleWrapper />
+        {children}
+      </ThemeProvider>
+    </StyledComponentsRegistry>
+  );
 };
 
 export default Providers;

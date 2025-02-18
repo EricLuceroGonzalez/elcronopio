@@ -1,20 +1,12 @@
-import localFont from "next/font/local";
+import React, { Suspense } from "react";
 
 import Footer from "./components/navigation/footer";
-import dynamic from "next/dynamic";
-import NaviBar from "./components/navigation/navbar/NaviBar";
 import Providers from "./Providers.js";
+import { Rubik } from "next/font/google";
+import dynamic from "next/dynamic";
+// import NaviBar from "./components/navigation/navbar/NaviBar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+export const inter = Rubik({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Inicio | Eric Lucero González",
@@ -43,12 +35,23 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
+
+// export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
-    <html lang="es">
+    // <html lang="es" suppressHydrationWarning className={`${inter.className}`}>
+    <html
+      lang="es"
+      data-theme="dark"
+      suppressHydrationWarning
+      className={`${inter.className}`}
+    >
+      <head />
       <body
         style={{ width: "100%" }}
-        className={`${geistSans.variable} ${geistMono.variable}`}
+        antialiased="true"
+        className={inter.className}
       >
         <Providers>
           <NaviBar />

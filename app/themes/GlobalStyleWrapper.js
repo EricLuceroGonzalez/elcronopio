@@ -1,6 +1,22 @@
+"use client"; // Ensure it's a client component
 import { createGlobalStyle } from "styled-components";
-
+import { useEffect, useState } from "react";
 const GlobalStyle = createGlobalStyle`
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,body {
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
 :root{
     /* Fondos y Textos */
     --bg: #F8F9FA; /* Fondo principal blanco suave */
@@ -44,24 +60,6 @@ const GlobalStyle = createGlobalStyle`
     --accent-yellow: #FFD700; /* Amarillo dorado */
     --accent-orange: #FFA500; /* Naranja */
     --box-border-hover:#0077FF;
-
-a {
-  text-decoration: none;
-}
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-code {
-    background-color: var(--code-bg);
-    color: var(--code-fg);
-    padding: 3px 2px;
-    border-radius: 4px;
-    font-weight: bold;
-}
     /* #FF3366 #FFE381 #00FFE7 */
 }
 [data-theme='dark'] {
@@ -113,4 +111,13 @@ code {
 [data-theme='light'] [data-hide-on-theme='light'] {
   display: none;
 }`;
-export default GlobalStyle;
+
+export default function GlobalStyleWrapper() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // Ensure styles apply only after mount
+  }, []);
+
+  return mounted ? <GlobalStyle /> : null;
+}

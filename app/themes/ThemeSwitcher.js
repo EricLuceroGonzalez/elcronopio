@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const SunIcon = styled(TbSunFilled)`
   cursor: pointer;
-  color: ${(props) => (props.theme === "dark" ? "#FF9800" : "var(--fg)")};
+  color: ${(props) => (props.theme === "dark" ? "var(--bg)" : "var(--fg)")};
   transition: color 0.5s;
 `;
 const MoonIcon = styled(TbMoonFilled)`

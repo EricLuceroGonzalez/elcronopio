@@ -30,9 +30,6 @@ const AllPosts = ({
   doctype,
 }) => (
   <>
-    {/* <CoverImageContainer> */}
-    {/* <CoverImage title={title} src={coverImage} slug={slug} /> */}
-    {/* </CoverImageContainer> */}
     <GridContainer>
       <Link href={`/${doctype}/${slug}`}>
         <TitleContainer>{title}</TitleContainer>

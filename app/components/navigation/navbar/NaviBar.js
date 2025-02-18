@@ -1,19 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import {
-  Bar,
-  Hamburger,
-  MainNav,
-  NavBarToggle,
-  NavLi,
-  Logo,
-  NavLink,
-  NavigationBar,
-} from "./navCompos";
+import { Bar, MainNav } from "./navCompos";
 import StyledLink from "./StyledLink";
-import ThemeSwitcher from "../../ThemeSwitcher.js";
-import { usePathname } from "next/navigation";
+import ThemeSwitcher from "../../../themes/ThemeSwitcher.js";
 /*
  * This is a ready to use component, just import it and plop it into your project as:
  * <Navbar/>
@@ -43,7 +32,7 @@ const NaviBar = () => {
       {/* <NavBarToggle onClick={() => this.toggleNavBar()}>
           <Hamburger />
         </NavBarToggle> */}
-      <Logo href="/"></Logo>
+      {/* <Logo href="/"></Logo> */}
       <MainNav
         display={"flex"}
         // onClick={() => this.toggleNavBar()}
@@ -62,7 +51,6 @@ const NaviBar = () => {
           About
         </StyledLink>
       </MainNav>
-      {/* TODO change this */}
       <ThemeSwitcher />
       {/* <StyledLink href={"/"}>Suscribe</StyledLink> */}
       {/* </NavigationBar> */}

@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { Main, MainBg } from "./ComponentsStyled";
+import { Main } from "./ui/ComponentsStyled";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+// const Main = dynamic(() => import('./ComponentsStyled'))
 
 export default function NotFound() {
   return (
@@ -31,8 +34,8 @@ export default function NotFound() {
             alt={"Un ovni llevándose a los usuarios de la pagina no encontrada"} // Texto alternativo
             width={180} // Ancho de la imagen
             height={180} // Alto de la imagen
-            priority
-            // placeholder="blur"
+            // priority
+            placeholder="blur"
             // Make the image display full width
             style={{
               width: "100%",

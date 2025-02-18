@@ -1,6 +1,6 @@
 // "use client";
 import React, { Suspense } from "react";
-import { MainBg, TitlePage } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import {
   AboutWrapper,
   IconLink,

@@ -14,14 +14,6 @@ export const Bar = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* border: 1px solid red; */
-  /* @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 0;
-    height: 70px;
-    align-items: center;
-  } */
 `;
 export const MainNav = styled.div`
   width: 80%;

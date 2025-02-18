@@ -34,7 +34,7 @@ import {
   MdHead,
   Layout,
 } from "../../components/lugs.js";
-import { MainBg } from "@/app/ComponentsStyled";
+import { MainBg } from "@/app/ui/ComponentsStyled.js";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Link from "next/link.js";
 import ResponsiveSidebar from "@/app/components/SideBar.js";

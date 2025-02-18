@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compiler: {
-    styledComponents: {
-      // Enable display of the component name along with the generated className (needed for debugging).
-      displayName: true,
-      // Enable SSR support
-      ssr: true,
-      // Optional
-      fileName: false,
-    },
+    styledComponents: true,
+    // styledComponents: {
+    //   // Enable display of the component name along with the generated className (needed for debugging).
+    //   displayName: true,
+    //   // Enable SSR support
+    //   ssr: true,
+    //   // Optional
+    //   fileName: false,
+    // },
   },
   images: {
     remotePatterns: [
@@ -26,5 +27,4 @@ const nextConfig = {
     return config;
   },
 };
-
-export default nextConfig;
+module.exports = nextConfig;

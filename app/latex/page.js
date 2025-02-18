@@ -1,18 +1,9 @@
 // "use client";
 // import { headers } from "next/headers";
 import React from "react";
-import { MainBg, TitlePage } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import { getLatexPosts } from "../lib/api";
-import Image from "next/image";
-import {
-  BoxGrid,
-  Layout,
-  MdListItem,
-  MdParagraph,
-  Sidebar,
-  SidebarHeading,
-  SidebarList,
-} from "../components/lugs";
+import { Layout, MdListItem, MdParagraph } from "../components/lugs";
 import HomeBoxes from "../components/HomeBoxes";
 import Link from "next/link";
 import ResponsiveSidebar from "../components/SideBar";
@@ -30,7 +21,7 @@ const Latex = ({ params }) => {
     }))
     .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
 
-  console.warn(sidebarItems);
+  // console.warn(sidebarItems);
   if (!latexPosts) {
     return notFound();
   }

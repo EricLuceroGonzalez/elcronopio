@@ -1,5 +1,5 @@
 import React from "react";
-import { MainBg, TitlePage } from "../ComponentsStyled";
+import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import { getBlogPosts } from "../lib/api";
 import { notFound } from "next/navigation";
 import HomeBoxes from "../components/HomeBoxes";
