@@ -28,7 +28,7 @@ const Latex = ({ params }) => {
     <Layout>
       <ResponsiveSidebar sidebarItems={sidebarItems} />
       <MainBg>
-        {/* <Sidebar> a
+        {/* <Sidebar>
         <SidebarHeading>Contenido</SidebarHeading>
         <SidebarList>
           {sidebarItems.map((item) => (
