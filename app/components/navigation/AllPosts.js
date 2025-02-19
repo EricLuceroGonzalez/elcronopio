@@ -13,7 +13,7 @@ import {
   SectionType,
   ExcerptContainer,
   MdHead,
-} from "../lugs.js";
+} from "../../ui/lugs.js";
 
 const Section = styled.section`
   /* No hay estilos en esta sección en tu código original */

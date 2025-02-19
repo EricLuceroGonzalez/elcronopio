@@ -3,11 +3,13 @@ import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import { getBlogPosts } from "../lib/api";
 import { notFound } from "next/navigation";
 import HomeBoxes from "../components/HomeBoxes";
-import { Layout, MdListItem, MdParagraph } from "../components/lugs";
+import { Layout } from "../ui/lugs";
+import { MdParagraph, MdListItem } from "../ui/MarkDownComponents";
 
 const BlogPage = () => {
   const blogPosts = getBlogPosts();
-  if (!blogPosts) {
+  console.log(blogPosts.posts);
+  if (!blogPosts.posts) {
     return notFound();
   }
   return (
@@ -40,7 +42,7 @@ const BlogPage = () => {
         <MdParagraph>
           ¡Espero que encuentres algo útil e interesante aquí!
         </MdParagraph>
-        <HomeBoxes props={blogPosts} />
+        <HomeBoxes props={blogPosts.posts} />
       </MainBg>
     </Layout>
   );

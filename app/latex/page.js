@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import { getLatexPosts } from "../lib/api";
-import { Layout, MdListItem, MdParagraph } from "../components/lugs";
+import { Layout } from "../ui/lugs";
 import HomeBoxes from "../components/HomeBoxes";
-import Link from "next/link";
 import ResponsiveSidebar from "../components/SideBar";
+import { MdListItem, MdParagraph } from "../ui/MarkDownComponents";
 
 const Latex = ({ params }) => {
-  const latexPosts = getLatexPosts();
-
+  const AllLatexPosts = getLatexPosts();
+  // console.log(AllLatexPosts);
+  const latexPosts = AllLatexPosts.posts;
   // Mapear los posts para devolver solo los datos necesarios
   const sidebarItems = latexPosts
     .map((post) => ({

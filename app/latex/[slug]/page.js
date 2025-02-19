@@ -1,51 +1,30 @@
-import ReactMarkdown from "react-markdown";
-import Image from "next/image";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  materialDark,
-  materialLight,
-  oneLight,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import { getLatexPosts, getPostBySlug } from "@/app/lib/api";
+import { getLatexPosts, getPostByOrder, getPostBySlug } from "@/app/lib/api";
 import {
   Article,
-  Author,
-  CodeBlock,
-  Content,
-  StyledMarkdown,
-  AuthorInfo,
-  AuthorName,
   Date,
-  MdParagraph,
   MetaInfo,
-  Title,
   SideInfo,
   SectionType,
-  MdListItem,
-  MdBlockQuote,
-  MdSubHeadA,
-  MdSubHeadB,
-  MdSubHeadC,
-  MdEmph,
-  MdLink,
-  MdStrong,
-  SocialLink,
-  MdHead,
   Layout,
-} from "../../components/lugs.js";
+} from "../../ui/lugs.js";
 import { MainBg } from "@/app/ui/ComponentsStyled.js";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Link from "next/link.js";
 import ResponsiveSidebar from "@/app/components/SideBar.js";
 import RenderCodeBlock from "@/app/components/CodeRender.js";
+import { MdHead } from "@/app/ui/MarkDownComponents.js";
+import PostNavigationCard from "@/app/components/PostNavigation.js";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
-  const latexPosts = getLatexPosts();
+  const latexPosts = getLatexPosts(post.order);
+  console.log(latexPosts);
+  const nextPost = latexPosts.nextPost[0];
+  const prevPost = latexPosts.previousPost[0];
+  console.log(nextPost);
+  console.log(prevPost);
   // const readTime = readTime(post.content);
-  // console.log(readTime);
-  const sidebarItems = latexPosts.map((post) => ({
+  const sidebarItems = latexPosts.posts.map((post) => ({
     slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
     shortTitle: post.shortTitle, // Título del post
   }));
@@ -96,6 +75,31 @@ export default async function Post({ params }) {
             </SideInfo>
           </MetaInfo>
           <RenderCodeBlock props={post.content} />
+          <div
+            style={{
+              marginTop: "10rem",
+            }}
+          >
+            <h1>Otros posts:</h1>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              {prevPost === 0 ? (
+                ""
+              ) : (
+                <PostNavigationCard type={"prev"} post={prevPost} />
+              )}
+              {nextPost === 0 ? (
+                ""
+              ) : (
+                <PostNavigationCard type={"next"} post={nextPost} />
+              )}
+            </div>
+          </div>
         </Article>
       </MainBg>
     </Layout>
@@ -140,9 +144,9 @@ export default async function Post({ params }) {
 //   },
 // };
 // return ()....
-export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params }, parent) {
   // fetch data
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(await params.slug);
 
   return {
     title: `${post.title} | LaTeX`,

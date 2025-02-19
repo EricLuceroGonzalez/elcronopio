@@ -2,7 +2,7 @@
 slug: 'introduccion_a_latex'
 id: 'latex-001'
 date: "2024-08-04"
-order: 3
+order: 2
 title: "Introducción al mundo del LaTeX"
 shortTitle: "Introducción"
 author: "Eric Lucero"

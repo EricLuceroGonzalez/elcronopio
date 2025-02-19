@@ -2,6 +2,7 @@
 title: 'Two Forms of Pre-rendering'
 date: '2024-08-03'
 id: 'asd'
+order: 1
 author: 'Eric Lucero'
 authorAvatar: 'https://avatar.iran.liara.run/public/boy'
 excerpt: 'Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page'
@@ -15,6 +16,7 @@ Next.js has two forms of pre-rendering: **Static Generation** and **Server-side 
 - **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
 
 Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+
 
 For example, you should understand code like this:
 
@@ -64,3 +66,10 @@ En este tutorial, aprenderás cómo crear un `div` con un fondo azul y un borde 
 <div style="background-color: blue; border: 2px solid red; padding: 1rem; color: white;">
   Esto es un ejemplo de div con fondo azul y borde rojo.
 </div>
+```
+
+## Imagen:
+
+![AltText {258x212} {priority} {caption: Photo by Someone}](https://res.cloudinary.com/dcvnw6hvt/image/upload/v1739809759/elCronopio/xle8npibijpsgk9qkfnd.png)
+
+Some paragraph text below image.

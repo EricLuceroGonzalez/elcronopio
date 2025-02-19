@@ -1,5 +1,4 @@
 "use client";
-
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
@@ -32,6 +31,7 @@ export const MainBg = styled.div`
     text-align: justify;
     padding: 1rem 1rem;
   }
+  /* border: 2px solid red; */
 `;
 
 export const TitlePage = styled.h1`

@@ -1,8 +1,11 @@
 import { getAllPosts } from "@/app/lib/api";
 import { MainBg, PageContainer, TitlePage } from "./ui/ComponentsStyled";
 import HomeBoxes from "./components/HomeBoxes";
-import { MdListItem, MdParagraph, MdUnorderedList } from "./components/lugs";
-import Image from "next/image";
+import {
+  MdListItem,
+  MdParagraph,
+  MdUnorderedList,
+} from "./ui/MarkDownComponents";
 
 // const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
 

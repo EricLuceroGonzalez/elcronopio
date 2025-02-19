@@ -14,8 +14,10 @@ import {
   MdStrong,
   MdHead,
   MdUnorderedList,
-} from "./lugs";
+} from "../ui/MarkDownComponents";
+
 import CodeBlock from "./CodeWrapper";
+import Image from "next/image";
 
 const RenderCodeBlock = ({ props }) => {
   const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
@@ -34,7 +36,29 @@ const RenderCodeBlock = ({ props }) => {
       <MathJax dynamic hideUntilTypeset="every">
         <ReactMarkdown
           components={{
-            p: P,
+            // p: P,
+            p: (paragraph) => {
+              const { node } = paragraph;
+
+              if (node.children[0].tagName === "img") {
+                const image = node.children[0];
+                const metastring = image.properties.alt || "";
+                const alt = metastring.replace(/ *\{[^)]*\} */g, "");
+                const match = metastring.match(/{(\d+)x(\d+)}/);
+                const width = parseInt(match[1], 10);
+                const height = parseInt(match[2], 10);
+
+                return (
+                  <Image
+                    src={image.properties.src}
+                    width={width}
+                    height={height}
+                    alt={alt}
+                  />
+                );
+              }
+              return <MdParagraph>{paragraph.children}</MdParagraph>;
+            },
             li: Li,
             ul: UList,
             blockquote: Bq,

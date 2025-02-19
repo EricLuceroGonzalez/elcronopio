@@ -1,7 +1,6 @@
 "use client";
 import styled from "styled-components";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import Image from "next/image";
 
 // Contenedor principal para manejar diseño responsivo
 export const Layout = styled.div`
@@ -200,74 +199,6 @@ export const SideInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
-
-export const MdParagraph = styled.p`
-  margin: 2em 0;
-`;
-
-export const MdListItem = styled.li`
-  /* color: var(--primary-btn-bg); */
-  color: var(--fg);
-  /* margin: 3px 0px; */
-  /* font-size: 0; */
-  /* list-style-type: circle; */
-  /* list-style-position: inside; */
-`;
-export const MdUnorderedList = styled.ul`
-  margin: auto;
-`;
-
-export const MdBlockQuote = styled.blockquote`
-  /* border-left: 12px solid var(--primary-border); */
-  background-color: var(--quote-bg);
-  color: var(--quote-fg);
-  padding: 2px 8px;
-  margin: 3px auto;
-  border-radius: 12px;
-  min-width: 85%;
-`;
-
-export const MdHead = styled.h1`
-  /* color: var(--fg); */
-  text-align: left;
-  font-size: x-large;
-`;
-export const MdSubHeadA = styled.h2`
-  color: var(--subheading);
-  font-size: larger;
-`;
-export const MdSubHeadB = styled.h3`
-  /* border: 1px solid red; */
-  color: var(--subheading);
-  margin: 25px 0;
-  font-size: larger;
-`;
-export const MdSubHeadC = styled.h4`
-  color: var(--heading);
-`;
-export const MdLink = styled.a`
-  background-color: var(--link-bg);
-  color: var(--link-fg);
-  padding: 2px 5px;
-`;
-
-export const MdStrong = styled.strong`
-  /* background- */
-  color: var(--strong-fg);
-  background-color: var(--strong-bg);
-  /* color: var(--bg); */
-  font-weight: bold;
-  padding: 2px 2px;
-  border-radius: 6px;
-`;
-export const MdEmph = styled.em`
-  color: var(--emphasis-fg);
-  background-color: var(--emphasis-bg);
-  /* var(--emphasis-bg); */
-  /* padding: 0 1px; */
-  /* font-style: normal; */
-  font-weight: 500;
 `;
 
 export const LinkList = styled.div`

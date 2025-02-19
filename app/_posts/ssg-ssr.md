@@ -3,6 +3,7 @@ slug: 'ssg-ssr'
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2024-09-02'
 id: 'asds'
+order: 0
 author: 'Eric Lucero'
 authorAvatar: https://avatar.iran.liara.run/public/boy
 excerpt: 'Can I pre-render this page ahead of a user request? If the answer is yes, then you should choose Static Generation.'

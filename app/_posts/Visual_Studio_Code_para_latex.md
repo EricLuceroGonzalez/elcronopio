@@ -2,7 +2,7 @@
 slug: 'Visual_Studio_Code_para_latex'
 id: 'latex-003'
 date: "2024-07-01"
-order: 4
+order: 3
 author: "Eric Lucero"
 authorAvatar: https://avatar.iran.liara.run/public/boy
 doctype: "latex"

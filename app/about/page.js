@@ -1,13 +1,8 @@
 // "use client";
 import React, { Suspense } from "react";
 import { MainBg, TitlePage } from "../ui/ComponentsStyled";
-import {
-  AboutWrapper,
-  IconLink,
-  LinkList,
-  MdParagraph,
-  PhotoAvatar,
-} from "../components/lugs";
+import { AboutWrapper, IconLink, LinkList, PhotoAvatar } from "../ui/lugs";
+import { MdParagraph } from "../ui/MarkDownComponents";
 import Image from "next/image";
 
 const About = () => {

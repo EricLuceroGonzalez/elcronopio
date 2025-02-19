@@ -2,52 +2,31 @@
 // import { useState } from "react";
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 // import Image from "next/image";
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import {
-  materialDark,
-  materialLight,
-  oneLight,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-import { getPostBySlug } from "@/app/lib/api";
+import { getBlogPosts, getPostBySlug } from "@/app/lib/api";
 import {
   Article,
-  Author,
-  CodeBlock,
-  Content,
-  StyledMarkdown,
-  AuthorInfo,
-  AuthorName,
   Date,
-  MdParagraph,
   MetaInfo,
-  Title,
   SideInfo,
   SectionType,
-  MdListItem,
-  MdBlockQuote,
-  MdSubHeadA,
-  MdSubHeadB,
-  MdSubHeadC,
-  MdEmph,
-  MdLink,
-  MdStrong,
-  SocialLink,
-  MdHead,
-  CodeBlockWrapper,
-  Toolbar,
-  LanguageBadge,
-  CopyButton,
-} from "../../components/lugs.js";
+} from "../../ui/lugs.js";
 import { MainBg } from "@/app/ui/ComponentsStyled.js";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Link from "next/link.js";
 import RenderCodeBlock from "@/app/components/CodeRender.js";
+import { MdHead } from "@/app/ui/MarkDownComponents.js";
+import PostNavigationCard from "@/app/components/PostNavigation.js";
 
 export default function Post({ params }) {
   const post = getPostBySlug(params.slug);
+  const latexPosts = getBlogPosts(post.order);
+  console.log(latexPosts);
+  const nextPost = latexPosts.nextPost[0];
+  const prevPost = latexPosts.previousPost[0];
+  console.log(nextPost);
+  console.log(prevPost);
+  console.log("all blog posts");
   // const [copied, setCopied] = useState(false);
   // const handleCopy = () => {
   //   setCopied(true);
@@ -73,20 +52,7 @@ export default function Post({ params }) {
     return result;
   };
   const readT = readingTime(post.content);
-  // Override react-markdown elements to add class names
-  // //!
-  // const P = ({ children }) => <MdParagraph>{children}</MdParagraph>;
-  // const Li = ({ children }) => <MdListItem>{children}</MdListItem>;
-  // const Bq = ({ children }) => <MdBlockQuote>{children}</MdBlockQuote>;
-  // const Head = ({ children }) => <MdHead>{children}</MdHead>;
-  // const HeadTwo = ({ children }) => <MdSubHeadA>{children}</MdSubHeadA>;
-  // const HeadThree = ({ children }) => <MdSubHeadB>{children}</MdSubHeadB>;
-  // const HeadFour = ({ children }) => <MdSubHeadC>{children}</MdSubHeadC>;
-  // // const TheCode = ({ children }) => <MdCode>{children}</MdCode>;
-  // const Strong = ({ children }) => <MdStrong>{children}</MdStrong>;
-  // const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
-  // const Hr = () => <hr className="md-post-hr" />
-  // //!
+
   return (
     <MainBg>
       <Article>
@@ -114,6 +80,31 @@ export default function Post({ params }) {
           </SideInfo>
         </MetaInfo>
         <RenderCodeBlock props={post.content} />
+        <div
+          style={{
+            marginTop: "10rem",
+          }}
+        >
+          <h1>Otros posts:</h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            {prevPost === 0 ? (
+              ""
+            ) : (
+              <PostNavigationCard type={"prev"} post={prevPost} />
+            )}
+            {nextPost === 0 ? (
+              ""
+            ) : (
+              <PostNavigationCard type={"next"} post={nextPost} />
+            )}
+          </div>
+        </div>
       </Article>
     </MainBg>
   );
@@ -159,7 +150,7 @@ export default function Post({ params }) {
 // return ()....
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(await params.slug);
 
   return {
     title: `${post.title} | LaTeX`,
