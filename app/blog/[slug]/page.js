@@ -21,20 +21,9 @@ import PostNavigationCard from "@/app/components/PostNavigation.js";
 export default function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const latexPosts = getBlogPosts(post.order);
-  console.log(latexPosts);
   const nextPost = latexPosts.nextPost[0];
   const prevPost = latexPosts.previousPost[0];
-  console.log(nextPost);
-  console.log(prevPost);
-  console.log("all blog posts");
-  // const [copied, setCopied] = useState(false);
-  // const handleCopy = () => {
-  //   setCopied(true);
-  //   setTimeout(() => setCopied(false), 2000); // Mostrar el mensaje "Copiado" durante 2 segundos
-  // };
 
-  // const readTime = readTime(post.content);
-  // console.log(readTime);
   if (!post) {
     return notFound();
   }

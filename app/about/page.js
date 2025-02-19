@@ -36,7 +36,16 @@ const About = () => {
           height={120}
         /> */}
 
-          <MdParagraph style={{ fontFamily: "monospace", fontSize: "small" }}>
+          <MdParagraph
+            style={{
+              fontFamily: "monospace",
+              fontSize: "small",
+              textAlign: "justify",
+              maxWidth: "70%",
+              border: "1px dashed var(--gray-light)",
+              padding: "7px",
+            }}
+          >
             Actualmente estoy realizando un doctorado en Inteligencia Artificial
             en la Universidad Politécnica de Madrid. Mis intereses incluyen
             algoritmos de optimización, meta-heurísticas y LaTeX. Disfruto

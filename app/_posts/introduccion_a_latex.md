@@ -13,6 +13,8 @@ doctype: "latex"
 
 LaTeX es un sistema de preparación de documentos de alta calidad, utilizado frecuentemente en la escritura de documentos científicos y técnicos debido a su capacidad para *manejar ecuaciones matemáticas* complejas, tablas y *referencias bibliográficas*.
 
+![Logo de LaTeX {120x50}{priority}{caption: The LaTeX wordmark, typeset with LaTeX's \\(\LaTeX\\) macro}](https://res.cloudinary.com/dcvnw6hvt/image/upload/v1739810044/elCronopio/LaTeX_logo_dark_yorr5e.png)
+
 > A diferencia de los editores de texto tradicionales, LaTeX utiliza un enfoque basado en etiquetas para formatear el contenido, lo que permite un control más preciso sobre el diseño del documento.
 
 ## Primer Documento LaTeX
@@ -48,7 +50,7 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 ### Testing algunos Md syntax
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
-
+#### The quarterly results look great!
 ### Algunos tipos de énfasis:
 * Uso de `<Strong/>`: Con **Doble Asterisco** o __Doble guion bajo__
 * Uso de `<Em/>`: Con *Un Asterisco* o _Un guion bajo_

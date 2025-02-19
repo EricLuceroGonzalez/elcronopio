@@ -18,11 +18,8 @@ import PostNavigationCard from "@/app/components/PostNavigation.js";
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const latexPosts = getLatexPosts(post.order);
-  console.log(latexPosts);
   const nextPost = latexPosts.nextPost[0];
   const prevPost = latexPosts.previousPost[0];
-  console.log(nextPost);
-  console.log(prevPost);
   // const readTime = readTime(post.content);
   const sidebarItems = latexPosts.posts.map((post) => ({
     slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype

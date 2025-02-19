@@ -14,6 +14,8 @@ import {
   MdStrong,
   MdHead,
   MdUnorderedList,
+  MdImage,
+  MdImageCaption,
 } from "../ui/MarkDownComponents";
 
 import CodeBlock from "./CodeWrapper";
@@ -42,19 +44,35 @@ const RenderCodeBlock = ({ props }) => {
 
               if (node.children[0].tagName === "img") {
                 const image = node.children[0];
+                console.log(image.properties.alt);
                 const metastring = image.properties.alt || "";
                 const alt = metastring.replace(/ *\{[^)]*\} */g, "");
                 const match = metastring.match(/{(\d+)x(\d+)}/);
                 const width = parseInt(match[1], 10);
                 const height = parseInt(match[2], 10);
+                const isPriority = metastring.toLowerCase().match("{priority}");
+                const hasCaption = metastring
+                  .toLowerCase()
+                  .includes("{caption:");
+                const caption = metastring.match(/{caption: (.*?)}/)?.pop();
+
+                console.log(alt, width, height);
+                console.log(isPriority);
+                console.log(caption);
 
                 return (
-                  <Image
-                    src={image.properties.src}
-                    width={width}
-                    height={height}
-                    alt={alt}
-                  />
+                  <MdImage>
+                    <Image
+                      src={image.properties.src}
+                      width={width}
+                      height={height}
+                      alt={alt}
+                      priority={isPriority}
+                    />
+                    {hasCaption ? (
+                      <MdImageCaption>{caption}</MdImageCaption>
+                    ) : null}
+                  </MdImage>
                 );
               }
               return <MdParagraph>{paragraph.children}</MdParagraph>;

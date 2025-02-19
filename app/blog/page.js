@@ -8,7 +8,6 @@ import { MdParagraph, MdListItem } from "../ui/MarkDownComponents";
 
 const BlogPage = () => {
   const blogPosts = getBlogPosts();
-  console.log(blogPosts.posts);
   if (!blogPosts.posts) {
     return notFound();
   }

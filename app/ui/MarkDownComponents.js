@@ -7,12 +7,11 @@ export const MdParagraph = styled.p`
 `;
 
 export const MdListItem = styled.li`
-  /* color: var(--primary-btn-bg); */
   color: var(--fg);
+  /* list-style-position: inside; */
   /* margin: 3px 0px; */
   /* font-size: 0; */
   /* list-style-type: circle; */
-  /* list-style-position: inside; */
 `;
 export const MdUnorderedList = styled.ul`
   margin: auto;
@@ -37,13 +36,14 @@ export const MdSubHeadA = styled.h2`
   font-size: larger;
 `;
 export const MdSubHeadB = styled.h3`
-  /* border: 1px solid red; */
   color: var(--subheading);
   margin: 25px 0;
   font-size: larger;
 `;
 export const MdSubHeadC = styled.h4`
   color: var(--heading);
+  margin: 15px 0;
+  font-size: medium;
 `;
 
 export const MdLink = styled.a`
@@ -68,4 +68,23 @@ export const MdEmph = styled.em`
   /* padding: 0 1px; */
   /* font-style: normal; */
   font-weight: 500;
+`;
+
+export const MdImage = styled.div`
+  /* background-color: red; */
+  /* border: 1px solid red; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+`;
+export const MdImageCaption = styled.p`
+  color: var(--gray-light);
+  margin: 5px 0;
+  text-align: justify;
+  max-width: 60%;
+  @media (max-width: 660px) {
+    max-width: 80%;
+  }
 `;
