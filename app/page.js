@@ -2,6 +2,7 @@ import { getAllPosts } from "@/app/lib/api";
 import { MainBg, PageContainer, TitlePage } from "./ui/ComponentsStyled";
 import HomeBoxes from "./components/HomeBoxes";
 import { MdListItem, MdParagraph, MdUnorderedList } from "./components/lugs";
+import Image from "next/image";
 
 // const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
 
@@ -43,38 +44,29 @@ function Home() {
 }
 export default Home;
 
-// export const metadata = {
-//   title: "Inicio | Eric Lucero González",
-//   description:
-//     "Explora el espacio personal de Eric, donde combina su experiencia en Inteligencia Artificial, LaTeX y programación. Descubre su trayectoria, tutoriales y blog.",
-//   openGraph: {
-//     title: "Bienvenido a mi página personal",
-//     description:
-//       "Una mezcla de blog, tutoriales y un vistazo a mi trayectoria en Inteligencia Artificial, LaTeX y programación. Construyendo y compartiendo conocimientos.",
-//     images: [
-//       {
-//         url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Ruta de la imagen para el home
-//         width: 1200,
-//         height: 630,
-//         alt: "Vista previa del sitio web de Eric",
-//       },
-//     ],
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Bienvenido a mi página personal",
-//     description:
-//       "Una mezcla de blog, tutoriales y un vistazo a mi trayectoria en Inteligencia Artificial, LaTeX y programación.",
-//     image:
-//       "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
-//   },
-// };
-
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData,
-//     },
-//   };
-// }
+export const metadata = {
+  title: "Inicio | Eric Lucero González",
+  description:
+    "Explora el espacio personal de Eric, donde combina su experiencia en Inteligencia Artificial, LaTeX y programación. Descubre su trayectoria, tutoriales y blog.",
+  openGraph: {
+    title: "Bienvenido a mi página personal",
+    description:
+      "Una mezcla de blog, tutoriales y un vistazo a mi trayectoria en Inteligencia Artificial, LaTeX y programación. Construyendo y compartiendo conocimientos.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Ruta de la imagen para el home
+        width: 1200,
+        height: 630,
+        alt: "Vista previa del sitio web de Eric",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bienvenido a mi página personal",
+    description:
+      "Una mezcla de blog, tutoriales y un vistazo a mi trayectoria en Inteligencia Artificial, LaTeX y programación.",
+    image:
+      "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
+  },
+};

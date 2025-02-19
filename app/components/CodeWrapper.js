@@ -32,12 +32,12 @@ const LanguageBadge = styled.span`
 
 const CopyButton = styled.button`
   background: ${($props) =>
-    $props.$isCopy ? "red" : "var(--secondary-btn-bg)"};
+    $props.$isCopy ? "var(--emphasis-bg)" : "var(--secondary-btn-bg)"};
   transition: background-color 0.33s;
   color: var(--secondary-btn-fg);
   border: none;
   border-radius: 5px;
-  /* padding: 0.2rem 0.5rem; */
+  padding: 0.2rem 0.5rem;
   font-size: smaller;
   cursor: pointer;
 

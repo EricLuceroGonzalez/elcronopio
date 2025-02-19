@@ -1,13 +1,10 @@
-// "use client";
-// import { headers } from "next/headers";
-import React from "react";
+import React, { useContext } from "react";
 import { MainBg, TitlePage } from "../ui/ComponentsStyled";
 import { getLatexPosts } from "../lib/api";
 import { Layout, MdListItem, MdParagraph } from "../components/lugs";
 import HomeBoxes from "../components/HomeBoxes";
 import Link from "next/link";
 import ResponsiveSidebar from "../components/SideBar";
-// import styled from "styled-components";
 
 const Latex = ({ params }) => {
   const latexPosts = getLatexPosts();
@@ -75,29 +72,29 @@ const Latex = ({ params }) => {
 
 export default Latex;
 
-// export const metadata = {
-//   title: "Tutoriales LaTeX | ElCronopio",
-//   description:
-//     "Descubre guías y tutoriales detallados sobre LaTeX, desde lo básico hasta técnicas avanzadas para crear documentos impecables.",
-//   openGraph: {
-//     title: "Tutoriales de LaTeX",
-//     description:
-//       "Guías prácticas para dominar LaTeX, incluyendo tips avanzados y ejemplos paso a paso para documentos académicos y más.",
-//     images: [
-//       {
-//         url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Imagen temática de LaTeX
-//         width: 1200,
-//         height: 630,
-//         alt: "Tutoriales y tips de LaTeX",
-//       },
-//     ],
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Tutoriales de LaTeX",
-//     description:
-//       "Aprende LaTeX desde lo básico hasta lo avanzado con tutoriales claros y ejemplos prácticos.",
-//     image:
-//       "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
-//   },
-// };
+export const metadata = {
+  title: "Tutoriales LaTeX | Eric Lucero González",
+  description:
+    "Descubre guías y tutoriales detallados sobre LaTeX, desde lo básico hasta técnicas avanzadas para crear documentos impecables.",
+  openGraph: {
+    title: "Tutoriales de LaTeX",
+    description:
+      "Guías prácticas para dominar LaTeX, incluyendo tips avanzados y ejemplos paso a paso para documentos académicos y más.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png", // Imagen temática de LaTeX
+        width: 1200,
+        height: 630,
+        alt: "Tutoriales y tips de LaTeX",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tutoriales de LaTeX",
+    description:
+      "Aprende LaTeX desde lo básico hasta lo avanzado con tutoriales claros y ejemplos prácticos.",
+    image:
+      "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732970163/elCronopio/elcronopio_eewxj0.png",
+  },
+};

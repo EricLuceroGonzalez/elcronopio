@@ -4,7 +4,7 @@
 // import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
+import { FaClock, FaPencilAlt } from "react-icons/fa";
 import {
   materialDark,
   materialLight,
@@ -92,7 +92,16 @@ export default function Post({ params }) {
       <Article>
         <MdHead>{post.title}</MdHead>
         <MetaInfo>
-          <Date>{post.date}</Date>
+          <Date>
+            <FaPencilAlt style={{ marginRight: "5px" }} />
+            {post.date}
+          </Date>
+          <Date style={{ marginLeft: "10px" }}>
+            <FaClock style={{ marginRight: "5px" }} />
+            {readT.readingTime < 2
+              ? `${readT.readingTime} minuto`
+              : `${readT.readingTime} minutos`}{" "}
+          </Date>
           <SideInfo>
             {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
             <Link href={`/${post.doctype}`}>
@@ -103,9 +112,6 @@ export default function Post({ params }) {
               </SectionType>
             </Link>
           </SideInfo>
-          <Date style={{ marginLeft: "10px" }}>
-            Tiempo de lectura: {readT.readingTime} minutos
-          </Date>
         </MetaInfo>
         <RenderCodeBlock props={post.content} />
       </Article>
@@ -153,11 +159,12 @@ export default function Post({ params }) {
 // return ()....
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  // fetch data
   const post = getPostBySlug(params.slug);
 
   return {
-    title: `${post.title} | Blog`,
+    title: `${post.title} | LaTeX`,
     description: post.excerpt,
+    slug: post.slug,
+    shortTitle: post.shortTitle,
   };
 }

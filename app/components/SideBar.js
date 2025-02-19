@@ -56,7 +56,7 @@ const HamburgerButton = styled.button`
   @media (max-width: 768px) {
     display: block; /* Visible solo en pantallas pequeñas */
     position: absolute;
-    top: 0.7rem;
+    top: 0.1rem;
     left: 1rem;
   }
 `;

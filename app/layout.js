@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 
 import Footer from "./components/navigation/footer";
 import Providers from "./Providers.js";
-import { Rubik } from "next/font/google";
+import { Rubik, Roboto_Slab } from "next/font/google";
 import dynamic from "next/dynamic";
 // import NaviBar from "./components/navigation/navbar/NaviBar";
 

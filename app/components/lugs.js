@@ -277,7 +277,7 @@ export const LinkList = styled.div`
 `;
 
 export const IconLink = styled.a`
-  color: var(--subheading);
+  color: var(--strong-fg);
   text-decoration: none;
   svg {
     width: 14px;
@@ -307,7 +307,7 @@ export const PhotoAvatar = styled.div`
   height: 200px;
   border-radius: 50%; /* Hace que la imagen sea circular */
   overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
-  border: 2px solid var(--border-stroke); /* Opcional: borde */
+  border: 2px solid var(--strong-fg); /* Opcional: borde */
   @media (max-width: 600px) {
     width: 100px; /* Tamaño del círculo */
     height: 100px;
