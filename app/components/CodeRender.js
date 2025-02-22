@@ -16,6 +16,7 @@ import {
   MdUnorderedList,
   MdImage,
   MdImageCaption,
+  MdOrderedList,
 } from "../ui/MarkDownComponents";
 
 import CodeBlock from "./CodeWrapper";
@@ -33,6 +34,7 @@ const RenderCodeBlock = ({ props }) => {
   const Strong = ({ children }) => <MdStrong>{children}</MdStrong>;
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
   const UList = ({ children }) => <MdUnorderedList>{children}</MdUnorderedList>;
+  const OList = ({ children }) => <MdOrderedList>{children}</MdOrderedList>;
   return (
     <MathJaxContext>
       <MathJax dynamic hideUntilTypeset="every">
@@ -44,7 +46,6 @@ const RenderCodeBlock = ({ props }) => {
 
               if (node.children[0].tagName === "img") {
                 const image = node.children[0];
-                console.log(image.properties.alt);
                 const metastring = image.properties.alt || "";
                 const alt = metastring.replace(/ *\{[^)]*\} */g, "");
                 const match = metastring.match(/{(\d+)x(\d+)}/);
@@ -55,10 +56,6 @@ const RenderCodeBlock = ({ props }) => {
                   .toLowerCase()
                   .includes("{caption:");
                 const caption = metastring.match(/{caption: (.*?)}/)?.pop();
-
-                console.log(alt, width, height);
-                console.log(isPriority);
-                console.log(caption);
 
                 return (
                   <MdImage>
@@ -79,6 +76,7 @@ const RenderCodeBlock = ({ props }) => {
             },
             li: Li,
             ul: UList,
+            ol: OList,
             blockquote: Bq,
             h1: Head,
             h2: HeadTwo,

@@ -70,7 +70,7 @@ const CodeBlock = ({ language, value }) => {
         style={coldarkDark}
         wrapLines={true}
         showLineNumbers={true}
-        customStyle={{ lineHeight: "0.75", fontSize: "x-small" }}
+        customStyle={{ lineHeight: "0.75", fontSize: "small" }}
       >
         {value}
       </SyntaxHighlighter>

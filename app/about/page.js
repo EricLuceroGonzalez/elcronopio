@@ -1,7 +1,14 @@
 // "use client";
 import React, { Suspense } from "react";
 import { MainBg, TitlePage } from "../ui/ComponentsStyled";
-import { AboutWrapper, IconLink, LinkList, PhotoAvatar } from "../ui/lugs";
+import {
+  AboutMePanel,
+  AboutMeParaph,
+  AboutWrapper,
+  IconLink,
+  LinkList,
+  PhotoAvatar,
+} from "../ui/lugs";
 import { MdParagraph } from "../ui/MarkDownComponents";
 import Image from "next/image";
 
@@ -10,48 +17,41 @@ const About = () => {
     <>
       <MainBg>
         <AboutWrapper>
-          <TitlePage>About</TitlePage>
-          <PhotoAvatar>
-            <Image
-              src={
-                "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg"
-              } // Ruta de la imagen del autor
-              alt={"aksdjhaksjdh"} // Texto alternativo
-              width={150} // Ancho de la imagen
-              height={150} // Alto de la imagen
-              priority
-              // placeholder="blur"
-              // Make the image display full width
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
-            />
-          </PhotoAvatar>
-          {/* https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg */}
-          {/* <Avatar
+          {/* <TitlePage></TitlePage> */}
+          <AboutMePanel>
+            <PhotoAvatar>
+              <Image
+                src={
+                  "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg"
+                } // Ruta de la imagen del autor
+                alt={"aksdjhaksjdh"} // Texto alternativo
+                width={150} // Ancho de la imagen
+                height={150} // Alto de la imagen
+                priority
+                // placeholder="blur"
+                // Make the image display full width
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+            </PhotoAvatar>
+            {/* https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg */}
+            {/* <Avatar
           src="https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg"
           alt="Tu Nombre"
           width={120}
           height={120}
         /> */}
 
-          <MdParagraph
-            style={{
-              fontFamily: "monospace",
-              fontSize: "small",
-              textAlign: "justify",
-              maxWidth: "70%",
-              border: "1px dashed var(--gray-light)",
-              padding: "7px",
-            }}
-          >
-            Actualmente estoy realizando un doctorado en Inteligencia Artificial
-            en la Universidad Politécnica de Madrid. Mis intereses incluyen
-            algoritmos de optimización, meta-heurísticas y LaTeX. Disfruto
-            compartiendo conocimiento y aprendiendo a través de la escritura.
-          </MdParagraph>
-
+            <AboutMeParaph>
+              Actualmente estoy realizando un doctorado en Inteligencia
+              Artificial en la Universidad Politécnica de Madrid. Mis intereses
+              incluyen algoritmos de optimización, meta-heurísticas y LaTeX.
+              Disfruto compartiendo conocimiento y aprendiendo a través de la
+              escritura.
+            </AboutMeParaph>
+          </AboutMePanel>
           <LinkList>
             <IconLink
               href="https://github.com/EricLuceroGonzalez"

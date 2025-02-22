@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Bar, MainNav } from "./navCompos";
 import StyledLink from "./StyledLink";
 import ThemeSwitcher from "../../../themes/ThemeSwitcher.js";
+import { usePathname } from "next/navigation";
 /*
  * This is a ready to use component, just import it and plop it into your project as:
  * <Navbar/>
@@ -27,6 +28,9 @@ import ThemeSwitcher from "../../../themes/ThemeSwitcher.js";
 //   }
 //   render() {
 const NaviBar = () => {
+  const path = usePathname();
+  const primaryPath = "/" + path.split("/")[1];
+
   return (
     <Bar>
       {/* <NavBarToggle onClick={() => this.toggleNavBar()}>
@@ -37,17 +41,24 @@ const NaviBar = () => {
         display={"flex"}
         // onClick={() => this.toggleNavBar()}
       >
-        {/* <NavigationBar> */}
-        <StyledLink pathName={"/"} href={"/"}>
+        <StyledLink actualPath={primaryPath} pathName={"/"} href={"/"}>
           Home
         </StyledLink>
-        <StyledLink pathName={"/blog"} href={"/blog"}>
+        <StyledLink actualPath={primaryPath} pathName={"/blog"} href={"/blog"}>
           Blog
         </StyledLink>
-        <StyledLink pathName={"/latex"} href={"/latex"}>
+        <StyledLink
+          actualPath={primaryPath}
+          pathName={"/latex"}
+          href={"/latex"}
+        >
           LaTeX
         </StyledLink>
-        <StyledLink pathName={"/about"} href={"/about"}>
+        <StyledLink
+          actualPath={primaryPath}
+          pathName={"/about"}
+          href={"/about"}
+        >
           About
         </StyledLink>
       </MainNav>

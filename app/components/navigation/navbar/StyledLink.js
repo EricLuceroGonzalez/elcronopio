@@ -8,29 +8,37 @@ import { useEffect, useState } from "react";
 const StyledAnchor = styled.div`
   color: var(--fg);
   text-decoration: none;
-  /* border-radius: 8px; */
   transition: background-color 0.3s ease;
   padding: 8px 6px;
   margin: 2px 2px;
-  font-size: normal;
-  font-weight: 700;
+  font-size: large;
+  font-weight: bold;
+
+  font-size: medium;
+  @media (min-width: 660px) {
+    /* border: 1px solid red; */
+    font-size: large;
+  }
   &:hover {
     background-color: var(--fg);
     color: var(--bg);
   }
+  background-color: ${(props) =>
+    props.$activePath ? "var(--accent)" : "var(--bg)"};
+
+  /* border-bottom: 2px solid
+    ${(props) => (props.$activePath ? "var(--accent)" : "var(--bg)")}; */
 `;
 
-const StyledLink = ({ pathName, href, children }) => {
+const StyledLink = ({ actualPath, pathName, href, children }) => {
   const currentPath = usePathname();
-  const [actualPath, setPathName] = useState("");
+  const thePath = currentPath.split("/");
 
-  useEffect(() => {
-    currentPath == pathName ? setPathName("Yes") : setPathName("Not");
-    return () => {};
-  }, [currentPath]);
   return (
     <Link href={href} passHref>
-      <StyledAnchor>{children}</StyledAnchor>
+      <StyledAnchor $activePath={actualPath === pathName ? true : false}>
+        {children}
+      </StyledAnchor>
     </Link>
   );
 };

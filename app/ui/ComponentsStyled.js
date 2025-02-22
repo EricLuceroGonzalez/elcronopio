@@ -23,22 +23,51 @@ export const MainBg = styled.div`
   flex: 1;
   padding: 0 1.5rem;
   background-color: var(--bg);
-  /* min-height: 83vh; */
   min-height: 100vh;
-  /* max-width: 80%; */
-  font-size: small;
   @media (max-width: 728px) {
     text-align: justify;
-    padding: 1rem 1rem;
+    /* padding: 1rem 1rem; */
   }
-  /* border: 2px solid red; */
+  border: 1px solid var(--bg);
+`;
+export const MainPageBg = styled.div`
+  flex: 1;
+  padding: 0 1.5rem;
+  background-color: var(--bg);
+  min-height: 100vh;
+  max-width: 100%;
+  text-align: justify;
+  padding: 1rem 1rem;
+  @media (min-width: 660px) {
+    font-size: large;
+    max-width: 70%;
+    margin: 0 auto;
+  }
 `;
 
 export const TitlePage = styled.h1`
-  font-size: x-large;
   color: var(--fg);
+  @media (max-width: 728px) {
+    text-align: justify;
+    /* padding: 1rem 1rem; */
+  }
+  font-size: x-large;
+  @media (min-width: 660px) {
+    font-size: xx-large;
+  }
 `;
 
 export const Section = styled.section`
   color: blue;
+`;
+
+export const NotFoundTitle = styled.h1`
+  font-size: 6rem;
+  padding: 2rem 0;
+  /* font-family: var(--font-alexandria); */
+  /* font-family: var(--font-parkisans); */
+`;
+export const NotFoundText = styled.p`
+  padding: 0.5rem 0;
+  text-align: justify;
 `;

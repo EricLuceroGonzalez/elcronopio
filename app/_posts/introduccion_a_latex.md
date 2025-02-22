@@ -38,6 +38,14 @@ Hello, World! Este es un ejemplo simple de un documento en LaTeX.
 
 Como puedes ver este es un *gran inicio*. Puedes correr tus **propios proyectos** en [Overleaf](https://www.overleaf.com/) sin necesidad de descargar latex.
 
+
+| Item              | In Stock | Price |
+| :---------------- | :------: | ----: |
+| Python Hat        |   True   | 23.99 |
+| SQL Hat           |   True   | 23.99 |
+| Codecademy Tee    |  False   | 19.99 |
+| Codecademy Hoodie |  False   | 42.99 |
+
 Antes de todo, asegúrate de instalar Latex en tu computadora. Puedes verlo en [esta entrada del blog](/posts/latex-002)
 
 In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
@@ -62,3 +70,18 @@ eat: it was a [hobbit-hole][1], and that means comfort.
  - Profits were higher than ever.
  
 *Everything* is going according to **plan**.
+
+## Last but not least
+
+| Periodo (horas) | Beneficio (euros) |
+|:---------------:|:-----------------:|
+|       498       |      33556.25     |
+|       150       |      32682.86     |
+|       219       |      33423.45     |
+|       194       |      33826.80     |
+|       276       |      33394.54     |
+|       114       |      30228.00     |
+|       374       |      36227.27     |
+|       577       |      35596.80     |
+|       132       |      30893.56     |
+|       345       |      34458.21     |

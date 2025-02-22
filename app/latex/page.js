@@ -1,10 +1,14 @@
-import React from "react";
-import { MainBg, TitlePage } from "../ui/ComponentsStyled";
+// import React from "react";
+import { MainPageBg, PageContainer, TitlePage } from "../ui/ComponentsStyled";
 import { getLatexPosts } from "../lib/api";
 import { Layout } from "../ui/lugs";
 import HomeBoxes from "../components/HomeBoxes";
 import ResponsiveSidebar from "../components/SideBar";
-import { MdListItem, MdParagraph } from "../ui/MarkDownComponents";
+import {
+  MdListItem,
+  MdParagraph,
+  MdUnorderedList,
+} from "../ui/MarkDownComponents";
 
 const Latex = ({ params }) => {
   const AllLatexPosts = getLatexPosts();
@@ -24,8 +28,9 @@ const Latex = ({ params }) => {
   }
   return (
     <Layout>
+      {/* <PageContainer> */}
       <ResponsiveSidebar sidebarItems={sidebarItems} />
-      <MainBg>
+      <MainPageBg>
         {/* <Sidebar>
         <SidebarHeading>Contenido</SidebarHeading>
         <SidebarList>
@@ -52,7 +57,7 @@ const Latex = ({ params }) => {
           la herramienta indispensable para crear documentos científicos y
           técnicos de alta calidad. Algunos temas que encontrarás:
         </MdParagraph>
-        <ul>
+        <MdUnorderedList>
           <MdListItem>Instalación y configuración de LaTeX.</MdListItem>
           <MdListItem>
             Ejemplos prácticos para iniciarte en este mundo.
@@ -60,13 +65,14 @@ const Latex = ({ params }) => {
           <MdListItem>
             Recursos para personalizar y optimizar tus documentos.
           </MdListItem>
-        </ul>
+        </MdUnorderedList>
         <MdParagraph>
           Si eres principiante o buscas mejorar tus habilidades, esta sección es
           para ti. ¡Vamos construyéndola juntos!
         </MdParagraph>
         <HomeBoxes props={latexPosts} />
-      </MainBg>
+      </MainPageBg>
+      {/* </PageContainer> */}
     </Layout>
   );
 };

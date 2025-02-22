@@ -1,5 +1,11 @@
+import React from "react";
 import { getAllPosts } from "@/app/lib/api";
-import { MainBg, PageContainer, TitlePage } from "./ui/ComponentsStyled";
+import {
+  MainBg,
+  MainPageBg,
+  PageContainer,
+  TitlePage,
+} from "./ui/ComponentsStyled";
 import HomeBoxes from "./components/HomeBoxes";
 import {
   MdListItem,
@@ -14,7 +20,7 @@ function Home() {
   return (
     <>
       <PageContainer>
-        <MainBg>
+        <MainPageBg>
           <TitlePage>Hola! </TitlePage>
           <MdParagraph>
             Este sitio web está en construcción, pero pronto será un lugar donde
@@ -40,7 +46,7 @@ function Home() {
             y volver pronto para más contenido. ¡Esto es solo el comienzo!
           </MdParagraph>
           <HomeBoxes props={allPostsData} />
-        </MainBg>
+        </MainPageBg>
       </PageContainer>
     </>
   );

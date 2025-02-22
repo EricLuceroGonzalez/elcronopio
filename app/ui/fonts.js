@@ -1,3 +1,18 @@
-import { Rubik } from "next/font/google";
+import { Inter, Lora, Parkinsans, Alexandria } from "next/font/google";
+import localFont from "next/font/local";
 
-export const inter = Rubik({ subsets: ["latin"], display: "swap" });
+// define your variable fonts
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+const lora = Lora({ subsets: ["latin"], display: "swap" });
+const parkisans = Parkinsans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-parkisans",
+});
+const alexandria = Alexandria({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-alexandria",
+});
+
+export { inter, lora, parkisans, alexandria };

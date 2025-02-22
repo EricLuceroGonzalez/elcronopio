@@ -3,18 +3,30 @@ import styled from "styled-components";
 
 export const MdParagraph = styled.p`
   margin: 2em 0;
-  /* background-color: var(--primary-border); */
+  font-size: medium;
+  @media (min-width: 660px) {
+    font-size: large;
+  }
+  /* border: 1px solid red; */
 `;
 
 export const MdListItem = styled.li`
   color: var(--fg);
-  /* list-style-position: inside; */
-  /* margin: 3px 0px; */
   /* font-size: 0; */
   /* list-style-type: circle; */
+  font-size: medium;
+  text-align: justify;
 `;
 export const MdUnorderedList = styled.ul`
+  list-style-position: inside;
   margin: auto;
+  width: 95%;
+`;
+
+export const MdOrderedList = styled.ol`
+  /* list-style-position: inside; */
+  /* margin: auto; */
+  margin-left: 1rem;
 `;
 
 export const MdBlockQuote = styled.blockquote`
@@ -30,6 +42,9 @@ export const MdHead = styled.h1`
   /* color: var(--fg); */
   text-align: left;
   font-size: x-large;
+  @media (min-width: 660px) {
+    font-size: xx-large;
+  }
 `;
 export const MdSubHeadA = styled.h2`
   color: var(--subheading);

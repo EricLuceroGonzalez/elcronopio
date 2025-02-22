@@ -2,11 +2,10 @@ import React, { Suspense } from "react";
 
 import Footer from "./components/navigation/footer";
 import Providers from "./Providers.js";
-import { Rubik, Roboto_Slab } from "next/font/google";
+// import { Alexandria, Parkinsans } from "next/font/google";
 import dynamic from "next/dynamic";
+import { alexandria, lora, parkisans } from "./ui/fonts.js";
 // import NaviBar from "./components/navigation/navbar/NaviBar";
-
-export const inter = Rubik({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Inicio | Eric Lucero González",
@@ -45,13 +44,16 @@ export default async function RootLayout({ children }) {
       lang="es"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${inter.className}`}
+      // className={`${alexandria.className}`}
+      className={`${parkisans.className}`}
+      // className={`${lora.className}`}
+      // className={`${parkisans.className}``${alexandria.className}`}
     >
       <head />
       <body
         style={{ width: "100%" }}
         antialiased="true"
-        className={inter.className}
+        // className={(parkisans.className, alexandria.className)}
       >
         <Providers>
           <NaviBar />

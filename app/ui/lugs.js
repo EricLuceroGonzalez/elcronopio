@@ -9,6 +9,7 @@ export const Layout = styled.div`
   height: 100%;
   width: 99%;
   font-size: small;
+  background-color: var(--bg);
   @media (max-width: 768px) {
     flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
     /* border: 2px solid yellow; */
@@ -22,12 +23,11 @@ export const Layout = styled.div`
 export const Article = styled.article`
   max-width: 60%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 10px;
   background-color: var(--bg);
   color: var(--fg);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* border: 2px solid red; */
 
   @media (max-width: 1080px) {
     max-width: 90%;
@@ -114,26 +114,23 @@ export const TitleContainer = styled.h2`
   margin-bottom: 1rem;
   color: var(--fg);
 
-  h2 {
-    margin-bottom: 1rem;
-    font-size: larger;
-    line-height: 1.2;
+  /* margin-bottom: 1rem; */
+  font-size: larger;
+  line-height: 1.2;
+  font-size: large;
+  margin: 1rem 0;
+  @media (min-width: 660px) {
+    font-size: x-large;
+  }
 
-    @media (min-width: 1024px) {
-      font-size: x-large;
+  a {
+    text-decoration: none;
 
-      a {
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
-  @media (max-width: 688px) {
-    font-size: medium;
-  }
+  color: var(--accent);
 `;
 
 export const MetaInfo = styled.div`
@@ -161,10 +158,14 @@ export const ExcerptContainer = styled.p`
   font-family: monospace;
   margin-bottom: 1rem;
   color: var(--fg);
-  @media (max-width: 668px) {
-    font-size: smaller;
+  font-size: medium;
+  /* color: blue; */
+  @media (min-width: 660px) {
+    font-size: medium;
+    /* color: red; */
   }
 `;
+
 // Contenedor para el avatar y el nombre del autor
 export const AuthorInfo = styled.div`
   display: flex;
@@ -205,6 +206,12 @@ export const LinkList = styled.div`
   display: flex;
   gap: 1rem;
   font-family: monospace;
+  font-size: medium;
+  margin: 2rem auto;
+  @media (min-width: 660px) {
+    font-size: x-large;
+  }
+  justify-content: center;
 `;
 
 export const IconLink = styled.a`
@@ -224,13 +231,36 @@ export const IconLink = styled.a`
 `;
 
 export const AboutWrapper = styled.div`
+  text-align: left;
+  margin: 0 auto;
+  width: 90%;
+  @media (min-width: 660px) {
+    width: 60%;
+  }
+  /* border: 1px solid red; */
+`;
+
+export const AboutMePanel = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  @media (min-width: 660px) {
+    flex-direction: row;
+    font-size: large;
+  }
+  margin-top: 2rem;
+`;
+
+export const AboutMeParaph = styled.p`
+  font-size: medium;
+  font-family: monospace;
+  text-align: justify;
+  border: 1px dashed var(--gray-light);
+  padding: 12px;
+  @media (min-width: 660px) {
+    margin-left: 2rem;
+    max-width: 50%;
+    font-size: large;
+  }
 `;
 
 export const PhotoAvatar = styled.div`
@@ -239,6 +269,8 @@ export const PhotoAvatar = styled.div`
   border-radius: 50%; /* Hace que la imagen sea circular */
   overflow: hidden; /* Asegura que el contenido no se salga del contenedor */
   border: 2px solid var(--strong-fg); /* Opcional: borde */
+  /* width: 20%; */
+  margin: 0 auto;
   @media (max-width: 600px) {
     width: 100px; /* Tamaño del círculo */
     height: 100px;

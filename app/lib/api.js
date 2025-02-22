@@ -2,7 +2,7 @@
 const fs = require("fs");
 const { join } = require("path");
 const matter = require("gray-matter");
-const { default: next } = require("next");
+// const { default: next } = require("next");
 
 const postsDirectory = join(process.cwd(), "/app/_posts");
 

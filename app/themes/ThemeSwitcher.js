@@ -7,13 +7,14 @@ import styled from "styled-components";
 
 const SunIcon = styled(TbSunFilled)`
   cursor: pointer;
-  color: ${(props) => (props.theme === "dark" ? "var(--bg)" : "var(--fg)")};
-  transition: color 0.5s;
+  color: ${(props) => (props.theme === "dark" ? "var(--accent)" : "var(--fg)")};
+  transition: color 0.35s;
 `;
 const MoonIcon = styled(TbMoonFilled)`
   cursor: pointer;
-  color: ${(props) => (props.theme === "light" ? "var(--bg)" : "var(--fg)")};
-  transition: color 0.5s;
+  color: ${(props) =>
+    props.theme === "light" ? "var(--subheading)" : "var(--fg)"};
+  transition: color 0.35s;
 `;
 const ThemeToggle = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const ThemeToggle = styled.div`
   background-color: var(--fg);
   max-height: fit-content;
   margin: auto 1px;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 `;
 
 const ThemeSwitcher = () => {

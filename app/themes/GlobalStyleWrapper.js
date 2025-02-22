@@ -21,8 +21,8 @@ a {
     /* Fondos y Textos */
     --bg: #F8F9FA; /* Fondo principal blanco suave */
     --fg: #222222; /* Texto oscuro principal */
-    --accent: #D72638; /* Rojo vibrante para acentos */
-
+    --accent:#FF3366; /* Rojo vibrante para acentos */
+    /* #B2A5FF */
     /* Títulos y Encabezados */
     --heading: #D18B00; /* Dorado oscuro para títulos */
     --subheading: #E0A800; /* Amarillo más claro para subtítulos */
