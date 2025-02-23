@@ -14,6 +14,7 @@ import ResponsiveSidebar from "@/app/components/SideBar.js";
 import RenderCodeBlock from "@/app/components/CodeRender.js";
 import { MdHead } from "@/app/ui/MarkDownComponents.js";
 import PostNavigationCard from "@/app/components/PostNavigation.js";
+import ShowPath from "@/app/components/showPath.js";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
@@ -48,6 +49,7 @@ export default async function Post({ params }) {
       <ResponsiveSidebar sidebarItems={sidebarItems} />
       <MainBg>
         <Article>
+          <ShowPath title={post.title} />
           <MdHead>{post.title}</MdHead>
           <MetaInfo>
             <Date>

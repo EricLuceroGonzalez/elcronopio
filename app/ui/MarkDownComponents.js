@@ -44,9 +44,9 @@ export const MdBlockQuote = styled.blockquote`
 export const MdHead = styled.h1`
   /* color: var(--fg); */
   text-align: left;
-  font-size: x-large;
+  font-size: xx-large;
   @media (min-width: 660px) {
-    font-size: xx-large;
+    font-size: 3rem;
   }
 `;
 export const MdSubHeadA = styled.h2`

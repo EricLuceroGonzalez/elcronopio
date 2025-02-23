@@ -16,7 +16,7 @@ export const Bar = styled.nav`
   justify-content: flex-end;
 `;
 export const MainNav = styled.div`
-  width: 80%;
+  width: 85%;
   list-style-type: none;
   display: ${(props) => props.display};
   color: var(--fg);
@@ -25,12 +25,25 @@ export const MainNav = styled.div`
   justify-content: flex-end;
   margin-right: 20px;
 
-  /* @media (min-width: 768px) {
-    margin-right: 30px;
-    display: flex !important;
-    flex-direction: row;
-    justify-content: flex-end;
-  } */
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const MainNavLogo = styled.div`
+  width: 15%;
+  color: var(--accent);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+export const NavLogo = styled.h1`
+  align-items: center;
 `;
 export const NavLi = styled.li`
   text-align: center;

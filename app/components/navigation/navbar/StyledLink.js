@@ -25,7 +25,7 @@ const StyledAnchor = styled.div`
   }
   background-color: ${(props) =>
     props.$activePath ? "var(--accent)" : "var(--bg)"};
-
+  border-radius: 8px;
   /* border-bottom: 2px solid
     ${(props) => (props.$activePath ? "var(--accent)" : "var(--bg)")}; */
 `;

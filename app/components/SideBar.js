@@ -7,7 +7,7 @@ import Image from "next/image";
 // Sidebar estilo fijo al costado
 const Sidebar = styled.aside`
   min-width: 130px;
-  max-width: 140px;
+  max-width: 150px;
   background-color: var(--fg);
   color: var(--bg);
   padding: 1rem;
@@ -18,6 +18,7 @@ const Sidebar = styled.aside`
   text-decoration: none;
   font-size: smaller;
   z-index: 190;
+  border-radius: 12px 10px 0 0;
   @media (max-width: 768px) {
     position: absolute;
     top: 0;
@@ -68,7 +69,7 @@ const CloseButton = styled.button`
   border: none;
   font-size: 2rem;
   font-weight: bold;
-  color: var(--bg);
+  color: var(--accent);
   cursor: pointer;
   margin-bottom: 1rem;
   text-align: end;

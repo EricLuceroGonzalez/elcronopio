@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { Bar, MainNav } from "./navCompos";
+import { Bar, MainNav, MainNavLogo, NavLogo } from "./navCompos";
 import StyledLink from "./StyledLink";
 import ThemeSwitcher from "../../../themes/ThemeSwitcher.js";
 import { usePathname } from "next/navigation";
@@ -36,14 +36,19 @@ const NaviBar = () => {
       {/* <NavBarToggle onClick={() => this.toggleNavBar()}>
           <Hamburger />
         </NavBarToggle> */}
-      {/* <Logo href="/"></Logo> */}
+      <MainNavLogo>
+        <StyledLink actualPath={primaryPath} pathName={"/"} href={"/"}>
+          Eric Lucero
+        </StyledLink>
+        {/* <NavLogo>Eric Lucero</NavLogo> */}
+      </MainNavLogo>
       <MainNav
         display={"flex"}
         // onClick={() => this.toggleNavBar()}
       >
-        <StyledLink actualPath={primaryPath} pathName={"/"} href={"/"}>
+        {/* <StyledLink actualPath={primaryPath} pathName={"/"} href={"/"}>
           Home
-        </StyledLink>
+        </StyledLink> */}
         <StyledLink actualPath={primaryPath} pathName={"/blog"} href={"/blog"}>
           Blog
         </StyledLink>

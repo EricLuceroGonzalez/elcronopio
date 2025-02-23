@@ -1,4 +1,3 @@
-// import React from "react";
 import { MainPageBg, PageContainer, TitlePage } from "../ui/ComponentsStyled";
 import { getLatexPosts } from "../lib/api";
 import { Layout } from "../ui/lugs";

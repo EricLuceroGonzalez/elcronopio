@@ -17,6 +17,7 @@ import Link from "next/link.js";
 import RenderCodeBlock from "@/app/components/CodeRender.js";
 import { MdHead } from "@/app/ui/MarkDownComponents.js";
 import PostNavigationCard from "@/app/components/PostNavigation.js";
+import ShowPath from "@/app/components/showPath.js";
 
 export default function Post({ params }) {
   const post = getPostBySlug(params.slug);
@@ -45,6 +46,7 @@ export default function Post({ params }) {
   return (
     <MainBg>
       <Article>
+        <ShowPath title={post.title} />
         <MdHead>{post.title}</MdHead>
         <MetaInfo>
           <Date>
