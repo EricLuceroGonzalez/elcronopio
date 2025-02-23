@@ -16,6 +16,9 @@ export const MdListItem = styled.li`
   /* list-style-type: circle; */
   font-size: medium;
   text-align: justify;
+  @media (min-width: 660px) {
+    font-size: large;
+  }
 `;
 export const MdUnorderedList = styled.ul`
   list-style-position: inside;
@@ -102,4 +105,8 @@ export const MdImageCaption = styled.p`
   @media (max-width: 660px) {
     max-width: 80%;
   }
+`;
+
+export const MdCite = styled.sup`
+  color: red;
 `;

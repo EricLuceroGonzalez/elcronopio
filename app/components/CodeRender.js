@@ -35,6 +35,7 @@ const RenderCodeBlock = ({ props }) => {
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
   const UList = ({ children }) => <MdUnorderedList>{children}</MdUnorderedList>;
   const OList = ({ children }) => <MdOrderedList>{children}</MdOrderedList>;
+  const MdSuper = ({ children }) => <MdSup>{children}</MdSup>;
   return (
     <MathJaxContext>
       <MathJax dynamic hideUntilTypeset="every">
@@ -43,7 +44,6 @@ const RenderCodeBlock = ({ props }) => {
             // p: P,
             p: (paragraph) => {
               const { node } = paragraph;
-
               if (node.children[0].tagName === "img") {
                 const image = node.children[0];
                 const metastring = image.properties.alt || "";
@@ -84,6 +84,7 @@ const RenderCodeBlock = ({ props }) => {
             h4: HeadFour,
             strong: Strong,
             em: Empha,
+            super: MdSuper,
             a: (props) => {
               return (
                 <MdLink target="_blank" href={props.href}>

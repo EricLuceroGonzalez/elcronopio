@@ -17,7 +17,12 @@ const Providers = ({ children }) => {
 
   return (
     <StyledComponentsRegistry>
-      <ThemeProvider theme={{ mode: theme }}>
+      <ThemeProvider
+        defaultTheme="system"
+        enableColorScheme={true}
+        themes={["light", "dark"]}
+        theme={{ mode: theme }}
+      >
         <GlobalStyleWrapper />
         {children}
       </ThemeProvider>

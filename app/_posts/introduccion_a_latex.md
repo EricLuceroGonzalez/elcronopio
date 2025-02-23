@@ -85,3 +85,28 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 |       577       |      35596.80     |
 |       132       |      30893.56     |
 |       345       |      34458.21     |
+
+# Some tables 
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+Here's a simple footnote,[^1] and here's a longer$^{your text}$ one.[^bignote]
+
+[^1]: This is the first footnote. \(2x\) $$2x$$
+
+Try $^{your text}$ for superscript - $_{more text}$ for subscript
+
+Normal
+${super}$
+$_{sub}$
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.

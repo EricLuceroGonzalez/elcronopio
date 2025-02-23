@@ -142,9 +142,22 @@ export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(await params.slug);
 
   return {
-    title: `${post.title} | LaTeX`,
+    title: `${post.title} | Blog`,
     description: post.excerpt,
     slug: post.slug,
     shortTitle: post.shortTitle,
+    openGraph: {
+      title: `${post.title} | Blog`,
+      description: post.excerpt,
+      url: `https://elcronopio.com/blog/${post.slug}`,
+      images: [
+        {
+          url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1739809759/elCronopio/xle8npibijpsgk9qkfnd.png", // Ruta de la imagen para el home
+          width: 1200,
+          height: 630,
+          alt: "Vista previa del sitio web de Eric",
+        },
+      ],
+    },
   };
 }

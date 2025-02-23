@@ -24,7 +24,7 @@ const About = () => {
                 src={
                   "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732922346/elCronopio/owsftbzp6mn5iuvkogrl.jpg"
                 } // Ruta de la imagen del autor
-                alt={"aksdjhaksjdh"} // Texto alternativo
+                alt={"A portrait photos of Eric Lucero"} // Texto alternativo
                 width={150} // Ancho de la imagen
                 height={150} // Alto de la imagen
                 priority

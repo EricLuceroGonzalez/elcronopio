@@ -150,5 +150,18 @@ export async function generateMetadata({ params }, parent) {
     description: post.excerpt,
     slug: post.slug,
     shortTitle: post.shortTitle,
+    openGraph: {
+      title: `${post.title} | LaTeX`,
+      description: post.excerpt,
+      url: `https://elcronopio.com/latex/${post.slug}`,
+      images: [
+        {
+          url: "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1739810044/elCronopio/LaTeX_logo_dark_yorr5e.png", // Ruta de la imagen para el home
+          width: 1200,
+          height: 630,
+          alt: "Vista previa del sitio web de Eric",
+        },
+      ],
+    },
   };
 }

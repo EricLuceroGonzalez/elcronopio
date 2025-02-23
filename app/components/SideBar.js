@@ -107,19 +107,10 @@ export default function ResponsiveSidebar({ sidebarItems }) {
       </HamburgerButton>
       <Sidebar open={sidebarOpen}>
         <CloseButton onClick={closeSidebar}>×</CloseButton>
-        {/* <Image
-          src={
-            "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732908752/elCronopio/LaTeX_logo_ou5hme.svg"
-          } // Ruta de la imagen del autor
-          alt={"Logo de LaTeX"} // Texto alternativo
-          width={90} // Ancho de la imagen
-          height={37.5} // Alto de la imagen
-        /> */}
         <h1>Contenido</h1>
-        {/* <SideBarTextInstruction>Algunas instruccuines</SideBarTextInstruction> */}
-        {sidebarItems.map(({ slug, shortTitle }) => (
-          <Link key={slug} href={slug}>
-            <ContentTitle>{shortTitle}</ContentTitle>
+        {sidebarItems.map(({ order, slug, shortTitle }) => (
+          <Link key={order} href={slug}>
+            <ContentTitle key={order}>{shortTitle}</ContentTitle>
           </Link>
         ))}
       </Sidebar>

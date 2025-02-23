@@ -34,7 +34,7 @@ const AllPosts = ({
       <Link href={`/${doctype}/${slug}`}>
         <TitleContainer>{title}</TitleContainer>
         {/* <div> */}
-        <ExcerptContainer>{excerpt}</ExcerptContainer>
+        <ExcerptContainer>{excerpt.substring(0, 150)}...</ExcerptContainer>
         {/* </div> */}
         <MetaInfo>
           <SideInfo>

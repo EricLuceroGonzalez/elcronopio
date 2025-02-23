@@ -37,10 +37,10 @@ const PostInfo = styled.div`
 
 const Title = styled.h4`
   margin: 0;
-  font-size: x-small;
   padding: 0.3rem 0;
-  @media (max-width: 620px) {
-    font-size: small;
+  font-size: small;
+  @media (min-width: 660px) {
+    font-size: large;
     text-align: left;
   }
 `;

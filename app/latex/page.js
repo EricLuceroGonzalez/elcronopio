@@ -12,7 +12,6 @@ import {
 
 const Latex = ({ params }) => {
   const AllLatexPosts = getLatexPosts();
-  // console.log(AllLatexPosts);
   const latexPosts = AllLatexPosts.posts;
   // Mapear los posts para devolver solo los datos necesarios
   const sidebarItems = latexPosts

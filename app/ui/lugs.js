@@ -21,7 +21,7 @@ export const Layout = styled.div`
 
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   padding: 20px 10px;
   background-color: var(--bg);
@@ -30,6 +30,7 @@ export const Article = styled.article`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 1080px) {
+    /* border: 2px solid yellow; */
     max-width: 90%;
   }
   @media (max-width: 728px) {
@@ -76,32 +77,34 @@ export const CoverImageContainer = styled.div`
 
 export const BoxGrid = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  max-width: 99%;
   flex-wrap: wrap;
-  padding: 30px 1px;
-  /* border: 3px solid greenyellow; */
+  width: 100%;
+  margin: 2rem 0 8rem 0;
+  /* border: 3px solid blueviolet; */
+  @media (min-width: 660px) {
+    /* border: 3px solid greenyellow; */
+    flex-direction: row;
+  }
 `;
 export const GridContainer = styled.div`
-  margin: 0.55rem 0.55rem;
+  margin: 0.55rem auto;
   background-color: var(--bg);
   padding: 16px 8px;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--gray-light);
-  /* min-width: 99%; */
-
-  @media (min-width: 768px) {
-    /* border: 2px solid red; */
+  width: 100%;
+  @media (min-width: 660px) {
     /* TODO: Style of blog posts and inner post */
     /* display: flex; */
-    flex-direction: row;
-    width: 80%;
+    /* flex-direction: row; */
+    width: 100%;
   }
 
   @media (min-width: 1024px) {
-    max-width: 45%;
+    max-width: 47%;
     gap: 2rem;
   }
   &:hover {
@@ -150,7 +153,7 @@ export const MetaInfo = styled.div`
     width: 33%;
   }
   @media (max-width: 490px) {
-    width: 65%;
+    width: 95%;
   }
 `;
 
@@ -207,11 +210,13 @@ export const LinkList = styled.div`
   gap: 1rem;
   font-family: monospace;
   font-size: medium;
-  margin: 2rem auto;
+  margin: 5rem auto 1rem auto;
+  padding: 1px 10%;
   @media (min-width: 660px) {
     font-size: x-large;
+    /* border: 1px solid red; */
   }
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 export const IconLink = styled.a`
@@ -235,9 +240,8 @@ export const AboutWrapper = styled.div`
   margin: 0 auto;
   width: 90%;
   @media (min-width: 660px) {
-    width: 60%;
+    min-width: 60%;
   }
-  /* border: 1px solid red; */
 `;
 
 export const AboutMePanel = styled.div`
