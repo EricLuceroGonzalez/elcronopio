@@ -17,6 +17,7 @@ import {
   MdImage,
   MdImageCaption,
   MdOrderedList,
+  MdCite,
 } from "../ui/MarkDownComponents";
 
 import CodeBlock from "./CodeWrapper";
@@ -35,7 +36,7 @@ const RenderCodeBlock = ({ props }) => {
   const Empha = ({ children }) => <MdEmph>{children}</MdEmph>;
   const UList = ({ children }) => <MdUnorderedList>{children}</MdUnorderedList>;
   const OList = ({ children }) => <MdOrderedList>{children}</MdOrderedList>;
-  const MdSuper = ({ children }) => <MdSup>{children}</MdSup>;
+  const MdSuper = ({ children }) => <MdCite>{children}</MdCite>;
   return (
     <MathJaxContext>
       <MathJax dynamic hideUntilTypeset="every">
