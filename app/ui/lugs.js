@@ -7,34 +7,32 @@ export const Layout = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
-  width: 99%;
+  width: 100%;
   font-size: small;
   background-color: var(--bg);
   @media (max-width: 768px) {
     flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
-    /* border: 2px solid yellow; */
   }
   @media (min-width: 1080px) {
     font-size: large;
   }
+  /* border: 2px solid orange; */
 `;
 
 // Define los estilos para cada parte del artículo
 export const Article = styled.article`
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 20px 10px;
   background-color: var(--bg);
   color: var(--fg);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 
   @media (max-width: 1080px) {
     /* border: 2px solid yellow; */
     max-width: 90%;
   }
   @media (max-width: 728px) {
-    min-width: 98%;
+    min-width: 100%;
     padding: 5px;
     box-shadow: none;
     font-size: small;

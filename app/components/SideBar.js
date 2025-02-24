@@ -110,8 +110,8 @@ export default function ResponsiveSidebar({ sidebarItems }) {
         <CloseButton onClick={closeSidebar}>×</CloseButton>
         <h1>Contenido</h1>
         {sidebarItems.map(({ order, slug, shortTitle }) => (
-          <Link key={order} href={slug}>
-            <ContentTitle key={order}>{shortTitle}</ContentTitle>
+          <Link key={slug} href={slug}>
+            <ContentTitle>{shortTitle}</ContentTitle>
           </Link>
         ))}
       </Sidebar>

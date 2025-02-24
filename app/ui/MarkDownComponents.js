@@ -89,13 +89,18 @@ export const MdEmph = styled.em`
 `;
 
 export const MdImage = styled.div`
-  /* background-color: red; */
-  /* border: 1px solid red; */
+  /* border: 2px solid blue; */
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 1rem auto;
+  width: 40%;
+  height: auto;
+  position: relative;
+  @media (max-width: 660px) {
+    width: 100%;
+  }
 `;
 export const MdImageCaption = styled.p`
   color: var(--gray-light);

@@ -15,16 +15,7 @@ const HomeBoxes = (posts) => {
     <>
       <BoxGrid>
         {posts.props.map(
-          ({
-            slug,
-            id,
-            date,
-            title,
-            author,
-            excerpt,
-            authorAvatar,
-            doctype,
-          }) => (
+          ({ slug, id, date, title, author, excerpt, doctype }) => (
             <AllPosts
               key={id}
               title={title}
@@ -32,7 +23,6 @@ const HomeBoxes = (posts) => {
               date={date}
               excerpt={excerpt}
               author={author}
-              authorAvatar={authorAvatar}
               doctype={doctype}
             />
           )

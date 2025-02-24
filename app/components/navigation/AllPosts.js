@@ -20,15 +20,7 @@ const Section = styled.section`
 `;
 
 // JSX Component
-const AllPosts = ({
-  title,
-  slug,
-  date,
-  excerpt,
-  author,
-  authorAvatar,
-  doctype,
-}) => (
+const AllPosts = ({ title, slug, date, excerpt, doctype }) => (
   <>
     <GridContainer>
       <Link href={`/${doctype}/${slug}`}>
@@ -41,18 +33,6 @@ const AllPosts = ({
             <Date>{date}</Date>
             <SectionType>{doctype}</SectionType>
           </SideInfo>
-          {/* <SideInfo>
-              <AuthorInfo>
-                <Image
-                  src={authorAvatar} // Ruta de la imagen del autor
-                  alt={author} // Texto alternativo
-                  width={40} // Ancho de la imagen
-                  height={40} // Alto de la imagen
-                  // objectFit="cover" // Asegura que la imagen se adapte bien al contenedor
-                />
-                <AuthorName>{author}</AuthorName>
-              </AuthorInfo>
-            </SideInfo> */}
         </MetaInfo>
       </Link>
     </GridContainer>

@@ -6,7 +6,7 @@ order: 2
 title: "Introducción al mundo del LaTeX"
 shortTitle: "Introducción"
 author: "Eric Lucero"
-authorAvatar: https://avatar.iran.liara.run/public/boy
+postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
 excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas'
 doctype: "latex"
 ---

@@ -15,7 +15,7 @@ const PathSlash = styled.div`
   margin: 0 2px;
 `;
 const PathLink = styled(Link)`
-  color: red;
+  color: var(--accent);
 `;
 
 const ShowPath = (params) => {

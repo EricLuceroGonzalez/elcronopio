@@ -4,7 +4,7 @@ id: 'latex-003'
 date: "2024-07-01"
 order: 3
 author: "Eric Lucero"
-authorAvatar: https://avatar.iran.liara.run/public/boy
+postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
 doctype: "latex"
 title: "Visual Studio Code para LaTeX"
 shortTitle: "Editores de texto"

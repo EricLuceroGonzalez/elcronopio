@@ -26,7 +26,7 @@ export const MainBg = styled.div`
   min-height: 100vh;
   @media (max-width: 728px) {
     text-align: justify;
-    /* padding: 1rem 1rem; */
+    padding: 1rem 5px;
   }
   border: 1px solid var(--bg);
 `;

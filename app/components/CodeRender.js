@@ -62,10 +62,14 @@ const RenderCodeBlock = ({ props }) => {
                   <MdImage>
                     <Image
                       src={image.properties.src}
-                      width={width}
-                      height={height}
+                      // width={width}
+                      // height={height}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }} // optional
                       alt={alt}
-                      priority={isPriority}
+                      objectFit="cover"
                     />
                     {hasCaption ? (
                       <MdImageCaption>{caption}</MdImageCaption>
