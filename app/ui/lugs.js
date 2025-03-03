@@ -36,7 +36,6 @@ export const Article = styled.article`
     padding: 5px;
     box-shadow: none;
     font-size: small;
-    /* border: 1px dashed white; */
   }
 `;
 
@@ -113,10 +112,6 @@ export const GridContainer = styled.div`
 
 export const TitleContainer = styled.h2`
   margin-bottom: 1rem;
-  color: var(--fg);
-
-  /* margin-bottom: 1rem; */
-  font-size: larger;
   line-height: 1.2;
   font-size: large;
   margin: 1rem 0;
@@ -132,26 +127,27 @@ export const TitleContainer = styled.h2`
     }
   }
   color: var(--accent);
+  text-align: left;
 `;
 
 export const MetaInfo = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: small;
   color: gray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 1px solid red; */
   @media (min-width: 668px) {
     width: 50%;
-    margin-bottom: 0;
     flex-direction: row;
   }
-  @media (min-width: 990px) {
-    width: 33%;
+  @media (min-width: 1200px) {
+    width: 45%;
   }
   @media (max-width: 490px) {
-    width: 95%;
+    margin-bottom: 2.75rem;
+    /* border: 1px solid red; */
+    width: 75%;
   }
 `;
 
@@ -186,16 +182,34 @@ export const AuthorName = styled.span`
   font-size: x-small;
   color: var(--fg);
 `;
+
+// background: ${($props) =>
+//   $props.$isCopy ? "var(--emphasis-bg)" : "var(--secondary-btn-bg)"};
 export const SectionType = styled.div`
   font-weight: bold;
-  background-color: var(--fg); /* Verde para blog, Naranja para latex */
+  /* background-color: var(--fg);  */
   color: var(--bg);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 1px 6px;
+  border-radius: 2px;
   display: inline-block;
   margin-left: 10px;
-  font-size: x-small;
+  font-size: xx-small;
   font-family: monospace;
+  background-color: ${(props) => {
+    // Retorna el color basado en la prop "tag"
+    switch (props.tag) {
+      case "js":
+        return "var(--heading)";
+      case "latex":
+        return "var(--fg)";
+      case "curso":
+        return "var(--emphasis-fg)";
+      case "python":
+        return "var(--link-fg)";
+      default:
+        return "var(--subheading)"; // Color por defecto
+    }
+  }};
 `;
 export const SideInfo = styled.div`
   display: flex;
@@ -347,12 +361,28 @@ export const CopyButton = styled.button`
   color: var(--secondary-btn-fg);
   border: none;
   border-radius: 5px;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
+  padding: 1rem 0.5rem;
+  font-size: 1.3rem;
   cursor: pointer;
+  font-weight: bold;
+  width: 100%;
 
   &:hover {
-    background: var(--secondary-btn-hover);
+    background: var(--accent);
     color: var(--fg);
+  }
+`;
+export const ButtonContainer = styled.div`
+  /* border: 1px solid red; */
+  width: 30%;
+  margin: 1rem auto;
+  @media (max-width: 659px) {
+    width: 80%;
+  }
+  @media (min-width: 660px) {
+    width: 60%;
+  }
+  @media (min-width: 1200px) {
+    width: 40%;
   }
 `;

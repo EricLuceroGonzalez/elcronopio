@@ -1,37 +1,34 @@
-import { MainPageBg, PageContainer, TitlePage } from "../ui/ComponentsStyled";
-import { getLatexPosts, getPostsByType } from "../lib/api";
-import { ButtonContainer, CopyButton, Layout } from "../ui/lugs";
-import HomeBoxes from "../components/HomeBoxes";
-import ResponsiveSidebar from "../components/SideBar";
 import {
-  MdHead,
+  MainPageBg,
+  PageContainer,
+  TitlePage,
+} from "../../ui/ComponentsStyled";
+import { getLatexPosts, getPostsByType } from "../../lib/api";
+import { Layout } from "../../ui/lugs";
+import HomeBoxes from "../../components/HomeBoxes";
+import ResponsiveSidebar from "../../components/SideBar";
+import {
   MdListItem,
   MdParagraph,
-  MdSubHeadA,
   MdUnorderedList,
-} from "../ui/MarkDownComponents";
-import Link from "next/link";
-import ShowPath from "../components/showPath";
+} from "../../ui/MarkDownComponents";
+import ShowPath from "@/app/components/showPath";
 
 const Latex = ({ params }) => {
   // const AllLatexPosts = getLatexPosts();
-  const AllLatexPosts = getPostsByType(["latex"]);
-  // Filtra solo los posts que tienen "curso"
-  const coursePosts = AllLatexPosts.posts.filter((post) =>
-    post.doctype.includes("curso")
-  );
-  // Filtra solo los posts que tienen "curso"
-  const latexPosts = AllLatexPosts.posts.filter(
-    (post) => post.doctype.includes("latex") && !post.doctype.includes("curso")
-  );
+  const AllLatexPosts = getPostsByType(["latex", "curso"]);
+  const latexPosts = AllLatexPosts.posts;
   // Mapear los posts para devolver solo los datos necesarios
-  // const sidebarItems = latexPosts
-  //   .map((post) => ({
-  //     slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
-  //     shortTitle: post.shortTitle, // Título del post
-  //     order: post.order,
-  //   }))
-  //   .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
+  const sidebarItems = latexPosts
+    .map((post) => ({
+      slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
+      shortTitle: post.shortTitle, // Título del post
+      order: post.order,
+    }))
+    .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
+  // .filter((post) => {
+  //   post.doctype[1] === "curso";
+  // })
 
   if (!latexPosts) {
     return notFound();
@@ -39,9 +36,10 @@ const Latex = ({ params }) => {
   return (
     <Layout>
       {/* <PageContainer> */}
-      {/* <ResponsiveSidebar sidebarItems={sidebarItems} /> */}
+      <ResponsiveSidebar sidebarItems={sidebarItems} />
+
       <MainPageBg>
-        <ShowPath title={latexPosts.title} />
+        <ShowPath title={"curso"} />
         {/* <Sidebar>
         <SidebarHeading>Contenido</SidebarHeading>
         <SidebarList>
@@ -52,7 +50,7 @@ const Latex = ({ params }) => {
           ))}
         </SidebarList>
       </Sidebar> */}
-        <TitlePage>Todo sobre LaTeX</TitlePage>
+        <TitlePage>Curso de LaTeX</TitlePage>
         {/* <Image
         src={
           "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732908752/elCronopio/LaTeX_logo_ou5hme.svg"
@@ -80,15 +78,8 @@ const Latex = ({ params }) => {
         <MdParagraph>
           Si eres principiante o buscas mejorar tus habilidades, esta sección es
           para ti. ¡Vamos construyéndola juntos!
-          <ButtonContainer>
-            <Link href={"/latex/curso"}>
-              <CopyButton>Ir al curso</CopyButton>
-            </Link>
-          </ButtonContainer>
         </MdParagraph>
         <HomeBoxes props={latexPosts} />
-        <MdHead>Aprende LaTeX</MdHead>
-        <HomeBoxes props={coursePosts} />
       </MainPageBg>
       {/* </PageContainer> */}
     </Layout>

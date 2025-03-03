@@ -7,8 +7,8 @@ title: "Instalación de LaTeX"
 shortTitle: "Instalación"
 author: "Eric Lucero"
 postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
-doctype: "latex"
 excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas'
+doctype: ["latex","curso"]
 ---
 
 LaTeX es un sistema de composición de textos ideal para crear documentos de alta calidad, especialmente en el ámbito académico, científico y técnico. En este tutorial, aprenderás cómo instalar LaTeX en los sistemas operativos más comunes: Windows, macOS y Linux.

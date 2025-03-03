@@ -5,11 +5,11 @@ date: "2024-07-01"
 order: 3
 author: "Eric Lucero"
 postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
-doctype: "latex"
 title: "Visual Studio Code para LaTeX"
 shortTitle: "Editores de texto"
 entryType: "latex"
 excerpt: "Explora cómo usar Visual Studio Code como editor principal para LaTeX, destacando su integración con GitHub, extensiones y la preferencia por TeX Live."
+doctype: ["latex","curso"]
 ---
 
 En este tutorial, recomendamos usar **Visual Studio Code (VS Code)** como el editor principal para trabajar con LaTeX. VS Code es un editor de código fuente gratuito, ligero y altamente extensible que, con las configuraciones adecuadas, es ideal para la escritura de documentos en LaTeX.

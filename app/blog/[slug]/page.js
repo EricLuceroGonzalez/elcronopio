@@ -22,6 +22,7 @@ import ShowPath from "@/app/components/showPath.js";
 export default function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const latexPosts = getBlogPosts(post.order);
+  // const latexPosts = getPostsByType(["blog"]);
   const nextPost = latexPosts.nextPost[0];
   const prevPost = latexPosts.previousPost[0];
 
@@ -60,13 +61,17 @@ export default function Post({ params }) {
               : `${readT.readingTime} minutos`}{" "}
           </Date>
           <SideInfo>
-            {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
-            <Link href={`/${post.doctype}`}>
-              <SectionType
-              // doctype={post.doctype}
-              >
-                {post.doctype}
-              </SectionType>
+            {/* TODO: Renderizar post del mismo tag al hacer click */}
+            {/* El enlace usa el primer elemento del array */}
+            <Link href={`/${post.doctype[0]}`}>
+              {/* Renderiza todos los elementos del array como categorías */}
+              {post.doctype.map((type, index) => (
+                <SectionType key={index} tag={type}>
+                  {type}
+                  {/* Agrega una coma si no es el último elemento */}
+                  {index < post.doctype.length - 1}
+                </SectionType>
+              ))}
             </Link>
           </SideInfo>
         </MetaInfo>

@@ -8,7 +8,7 @@ shortTitle: "Introducción"
 author: "Eric Lucero"
 postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
 excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas'
-doctype: "latex"
+doctype: ["latex","curso"]
 ---
 
 LaTeX es un sistema de preparación de documentos de alta calidad, utilizado frecuentemente en la escritura de documentos científicos y técnicos debido a su capacidad para *manejar ecuaciones matemáticas* complejas, tablas y *referencias bibliográficas*.

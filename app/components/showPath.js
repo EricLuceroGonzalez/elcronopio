@@ -7,8 +7,9 @@ const { usePathname } = require("next/navigation");
 const PathBlock = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: medium;
+  font-size: small;
   margin: 0.5rem auto 3rem auto;
+  text-align: left;
 `;
 const PathSlash = styled.div`
   color: var(--fg);
@@ -20,15 +21,13 @@ const PathLink = styled(Link)`
 
 const ShowPath = (params) => {
   const thisPath = usePathname();
-
+  const pathSplit = thisPath.split("/");
   return (
     <>
       <PathBlock>
         <PathLink href={"/"}>home</PathLink>
         <PathSlash>/</PathSlash>
-        <PathLink href={`/${thisPath.split("/")[1]}`}>
-          {thisPath.split("/")[1]}
-        </PathLink>
+        <PathLink href={`/${pathSplit[1]}`}>{pathSplit[1]}</PathLink>
         <PathSlash>/</PathSlash>
         {params.title}
       </PathBlock>

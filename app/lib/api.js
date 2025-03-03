@@ -33,7 +33,7 @@ function getLatexPosts(orderNum = 0) {
   const latexPosts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post) => {
-      return post.doctype === "latex";
+      return post.doctype[0] === "latex";
     })
     .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
   // /Next and previous posts
@@ -70,7 +70,7 @@ function getBlogPosts(orderNum = 0) {
   const blogPosts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post) => {
-      return post.doctype === "blog";
+      return post.doctype[0] === "blog";
     })
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   // /Next and previous posts
@@ -99,6 +99,44 @@ function getBlogPosts(orderNum = 0) {
 
   return { posts: blogPosts, previousPost, nextPost };
 }
+
+function getPostsByType(types, orderNum = 0) {
+  const slugs = getPostSlugs();
+
+  const filteredPosts = slugs
+    .map((slug) => getPostBySlug(slug))
+    .filter((post) => {
+      // Verifica si el post tiene todos los tipos especificados
+      return types.every((type) => post.doctype.includes(type));
+    })
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+  // Lógica para next y previous posts
+  if (orderNum >= filteredPosts.length - 1) {
+    const nextPost = 0;
+    const previousPost = filteredPosts.filter((post) => {
+      return post.order === orderNum - 1;
+    });
+    return { posts: filteredPosts, previousPost, nextPost: [0] };
+  }
+
+  if (orderNum <= 0) {
+    const nextPost = filteredPosts.filter((post) => {
+      return post.order === orderNum + 1;
+    });
+    return { posts: filteredPosts, previousPost: [0], nextPost };
+  }
+
+  const nextPost = filteredPosts.filter((post) => {
+    return post.order === orderNum + 1;
+  });
+
+  const previousPost = filteredPosts.filter((post) => {
+    return post.order === orderNum - 1;
+  });
+
+  return { posts: filteredPosts, previousPost, nextPost };
+}
 // TODO: Make just una getPost type function with params
 module.exports = {
   getPostSlugs,
@@ -106,4 +144,5 @@ module.exports = {
   getAllPosts,
   getLatexPosts,
   getBlogPosts,
+  getPostsByType,
 };

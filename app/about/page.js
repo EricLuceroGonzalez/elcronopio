@@ -11,12 +11,14 @@ import {
 } from "../ui/lugs";
 import { MdParagraph } from "../ui/MarkDownComponents";
 import Image from "next/image";
+import ShowPath from "../components/showPath";
 
 const About = () => {
   return (
     <>
       <MainBg>
         <AboutWrapper>
+          <ShowPath title={""} />
           {/* <TitlePage></TitlePage> */}
           <AboutMePanel>
             <PhotoAvatar>

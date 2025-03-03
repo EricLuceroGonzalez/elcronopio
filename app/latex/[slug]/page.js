@@ -1,5 +1,10 @@
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import { getLatexPosts, getPostByOrder, getPostBySlug } from "@/app/lib/api";
+import {
+  getLatexPosts,
+  getPostByOrder,
+  getPostBySlug,
+  getPostsByType,
+} from "@/app/lib/api";
 import {
   Article,
   Date,
@@ -19,10 +24,11 @@ import ShowPath from "@/app/components/showPath.js";
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const latexPosts = getLatexPosts(post.order);
+  const coursePosts = getPostsByType(["curso"]);
   const nextPost = latexPosts.nextPost[0];
   const prevPost = latexPosts.previousPost[0];
   // const readTime = readTime(post.content);
-  const sidebarItems = latexPosts.posts.map((post) => ({
+  const sidebarItems = coursePosts.posts.map((post) => ({
     slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
     shortTitle: post.shortTitle, // Título del post
   }));
@@ -46,7 +52,11 @@ export default async function Post({ params }) {
   // Override react-markdown elements to add class names
   return (
     <Layout>
-      <ResponsiveSidebar sidebarItems={sidebarItems} />
+      {post.doctype[1] == "curso" ? (
+        <ResponsiveSidebar sidebarItems={sidebarItems} />
+      ) : (
+        ""
+      )}
       <MainBg>
         <Article>
           <ShowPath title={post.title} />
@@ -64,12 +74,22 @@ export default async function Post({ params }) {
             </Date>
             <SideInfo>
               {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
-              <Link href={`/${post.doctype}`}>
+              {/* <Link href={`/${post.doctype}`}>
                 <SectionType
                 // doctype={post.doctype}
                 >
                   {post.doctype}
                 </SectionType>
+              </Link> */}
+              <Link href={`/${post.doctype[0]}`}>
+                {/* Renderiza todos los elementos del array como categorías */}
+                {post.doctype.map((type, index) => (
+                  <SectionType key={index} tag={type}>
+                    {type}
+                    {/* Agrega una coma si no es el último elemento */}
+                    {index < post.doctype.length - 1}
+                  </SectionType>
+                ))}
               </Link>
             </SideInfo>
           </MetaInfo>

@@ -1,6 +1,6 @@
 // import React from "react";
 import { MainPageBg, PageContainer, TitlePage } from "../ui/ComponentsStyled";
-import { getBlogPosts } from "../lib/api";
+import { getBlogPosts, getPostsByType } from "../lib/api";
 import { notFound } from "next/navigation";
 import HomeBoxes from "../components/HomeBoxes";
 import { Layout } from "../ui/lugs";
@@ -9,9 +9,12 @@ import {
   MdListItem,
   MdUnorderedList,
 } from "../ui/MarkDownComponents";
+import ShowPath from "../components/showPath";
 
 const BlogPage = () => {
-  const blogPosts = getBlogPosts();
+  // const blogPosts = getBlogPosts();
+  const blogPosts = getPostsByType(["blog"]);
+
   if (!blogPosts.posts) {
     return notFound();
   }
@@ -19,6 +22,7 @@ const BlogPage = () => {
     <Layout>
       <PageContainer>
         <MainPageBg>
+          <ShowPath title={""} />
           <TitlePage>¡Bienvenido al Blog!</TitlePage>
           {/* TODO: Create the contact functionality (Mail, Form, database, chat gpt) */}
           <MdParagraph>

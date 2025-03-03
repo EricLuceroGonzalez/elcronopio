@@ -39,21 +39,23 @@ const Title = styled.h4`
   margin: 0;
   padding: 0.3rem 0;
   font-size: small;
+  text-align: left;
   @media (min-width: 660px) {
     font-size: large;
     text-align: left;
   }
+  color: var(--emphasis-fg);
 `;
 
 const Excerpt = styled.p`
   margin: 5px 0 0;
   font-size: x-small;
-  color: var(--gray-medium);
+  color: var(--fg);
 `;
 
 const PostNavigationCard = ({ post, type }) => {
   if (!post) return null;
-
+  // TODO: Rendering todos aunque no tengan el mismo tag
   return (
     <NavCard href={`/${post.doctype}/${post.slug}`}>
       {type === "prev" && (

@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const MdParagraph = styled.p`
-  margin: 2em 0;
+  margin: 0.5em 0;
   font-size: medium;
   @media (min-width: 660px) {
     font-size: large;
@@ -46,16 +46,18 @@ export const MdHead = styled.h1`
   text-align: left;
   font-size: xx-large;
   @media (min-width: 660px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
+  /* border: 1px solid blue; */
 `;
 export const MdSubHeadA = styled.h2`
-  color: var(--subheading);
-  font-size: larger;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-size: x-large;
 `;
 export const MdSubHeadB = styled.h3`
-  color: var(--subheading);
-  margin: 25px 0;
+  color: var(--emphasis-fg);
+  margin-top: 2rem;
   font-size: larger;
 `;
 export const MdSubHeadC = styled.h4`
