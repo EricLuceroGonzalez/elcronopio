@@ -10,6 +10,7 @@ import {
   MdUnorderedList,
 } from "../ui/MarkDownComponents";
 import ShowPath from "../components/showPath";
+import ScrollDiv from "../components/navigation/ScrollDiv";
 
 const BlogPage = () => {
   // const blogPosts = getBlogPosts();
@@ -21,6 +22,7 @@ const BlogPage = () => {
   return (
     <Layout>
       <PageContainer>
+        <ScrollDiv />
         <MainPageBg>
           <ShowPath title={""} />
           <TitlePage>¡Bienvenido al Blog!</TitlePage>

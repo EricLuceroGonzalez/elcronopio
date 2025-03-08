@@ -1,5 +1,5 @@
 import { Parkinsans } from "next/font/google";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 
 // define your variable fonts
 // const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -7,7 +7,6 @@ import localFont from "next/font/local";
 const parkisans = Parkinsans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-parkisans",
 });
 // const alexandria = Alexandria({
 //   subsets: ["latin"],

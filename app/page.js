@@ -12,6 +12,7 @@ import {
   MdParagraph,
   MdUnorderedList,
 } from "./ui/MarkDownComponents";
+import ScrollDiv from "./components/navigation/ScrollDiv";
 
 // const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
 
@@ -20,6 +21,7 @@ function Home() {
   return (
     <>
       <PageContainer>
+        <ScrollDiv />
         <MainPageBg>
           <TitlePage>Hola! </TitlePage>
           <MdParagraph>
@@ -28,6 +30,7 @@ function Home() {
             artificial, LaTeX, y algoritmos de optimización. Aquí encontrarás:
           </MdParagraph>
           <MdUnorderedList>
+            {/* TODO: Nuevo endpoint /licencias, sin ruta fija o desde footer */}
             <MdListItem>
               Un blog con reflexiones, tutoriales, y temas técnicos relacionados
               con la IA.

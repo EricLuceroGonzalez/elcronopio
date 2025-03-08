@@ -117,3 +117,18 @@ export const MdImageCaption = styled.p`
 export const MdCite = styled.sup`
   color: red;
 `;
+
+export const HeroImage = styled.div`
+  border: 2px solid var(--fg);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+  width: 60%;
+  height: auto;
+  position: relative;
+  @media (max-width: 660px) {
+    width: 100%;
+  }
+`;

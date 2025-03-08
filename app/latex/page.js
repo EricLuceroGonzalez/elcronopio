@@ -12,6 +12,7 @@ import {
 } from "../ui/MarkDownComponents";
 import Link from "next/link";
 import ShowPath from "../components/showPath";
+import ScrollDiv from "../components/navigation/ScrollDiv";
 
 const Latex = ({ params }) => {
   // const AllLatexPosts = getLatexPosts();
@@ -41,6 +42,7 @@ const Latex = ({ params }) => {
       {/* <PageContainer> */}
       {/* <ResponsiveSidebar sidebarItems={sidebarItems} /> */}
       <MainPageBg>
+        <ScrollDiv />
         <ShowPath title={latexPosts.title} />
         {/* <Sidebar>
         <SidebarHeading>Contenido</SidebarHeading>
@@ -80,12 +82,12 @@ const Latex = ({ params }) => {
         <MdParagraph>
           Si eres principiante o buscas mejorar tus habilidades, esta sección es
           para ti. ¡Vamos construyéndola juntos!
-          <ButtonContainer>
-            <Link href={"/latex/curso"}>
-              <CopyButton>Ir al curso</CopyButton>
-            </Link>
-          </ButtonContainer>
         </MdParagraph>
+        <ButtonContainer>
+          <Link href={"/latex/curso"}>
+            <CopyButton>Ir al curso</CopyButton>
+          </Link>
+        </ButtonContainer>
         <HomeBoxes props={latexPosts} />
         <MdHead>Aprende LaTeX</MdHead>
         <HomeBoxes props={coursePosts} />

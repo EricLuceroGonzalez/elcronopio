@@ -85,31 +85,6 @@ export const BoxGrid = styled.div`
     flex-direction: row;
   }
 `;
-export const GridContainer = styled.div`
-  margin: 0.55rem auto;
-  background-color: var(--bg);
-  padding: 16px 8px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--gray-light);
-  width: 100%;
-  @media (min-width: 660px) {
-    /* TODO: Style of blog posts and inner post */
-    /* display: flex; */
-    /* flex-direction: row; */
-    width: 100%;
-  }
-
-  @media (min-width: 1024px) {
-    max-width: 47%;
-    gap: 2rem;
-  }
-  &:hover {
-    border: 2px solid var(--box-border-hover);
-    transition: border 0.5s;
-  }
-`;
-
 export const TitleContainer = styled.h2`
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -150,19 +125,6 @@ export const MetaInfo = styled.div`
     width: 75%;
   }
 `;
-
-export const ExcerptContainer = styled.p`
-  font-family: monospace;
-  margin-bottom: 1rem;
-  color: var(--fg);
-  font-size: medium;
-  /* color: blue; */
-  @media (min-width: 660px) {
-    font-size: medium;
-    /* color: red; */
-  }
-`;
-
 // Contenedor para el avatar y el nombre del autor
 export const AuthorInfo = styled.div`
   display: flex;
@@ -211,6 +173,7 @@ export const SectionType = styled.div`
     }
   }};
 `;
+// TODO: Agregar tags: python, ia, other?
 export const SideInfo = styled.div`
   display: flex;
   flex-direction: row;

@@ -17,19 +17,23 @@ import { MainBg } from "@/app/ui/ComponentsStyled.js";
 import Link from "next/link.js";
 import ResponsiveSidebar from "@/app/components/SideBar.js";
 import RenderCodeBlock from "@/app/components/CodeRender.js";
-import { MdHead } from "@/app/ui/MarkDownComponents.js";
+import { HeroImage, MdHead, MdImage } from "@/app/ui/MarkDownComponents.js";
 import PostNavigationCard from "@/app/components/PostNavigation.js";
 import ShowPath from "@/app/components/showPath.js";
+import Image from "next/image.js";
+import ScrollDiv from "@/app/components/navigation/ScrollDiv.js";
+import DateDisplay from "@/app/components/DateDisplay.js";
 
 export default async function Post({ params }) {
   const post = getPostBySlug(params.slug);
   const latexPosts = getLatexPosts(post.order);
   const coursePosts = getPostsByType(["curso"]);
+
   const nextPost = latexPosts.nextPost[0];
   const prevPost = latexPosts.previousPost[0];
   // const readTime = readTime(post.content);
   const sidebarItems = coursePosts.posts.map((post) => ({
-    slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
+    slug: `/${post.doctype[0]}/${post.slug}`, // Generar la ruta con el doctype
     shortTitle: post.shortTitle, // Título del post
   }));
   if (!post) {
@@ -58,13 +62,17 @@ export default async function Post({ params }) {
         ""
       )}
       <MainBg>
+        <ScrollDiv />
         <Article>
           <ShowPath title={post.title} />
           <MdHead>{post.title}</MdHead>
           <MetaInfo>
             <Date>
               <FaPencilAlt style={{ marginRight: "5px" }} />
-              {post.date}
+              <DateDisplay
+                isoDate={post.date.iso}
+                defaultFormatted={post.date.formatted}
+              />
             </Date>
             <Date style={{ marginLeft: "10px" }}>
               <FaClock style={{ marginRight: "5px" }} />
@@ -73,26 +81,36 @@ export default async function Post({ params }) {
                 : `${readT.readingTime} minutos`}{" "}
             </Date>
             <SideInfo>
-              {/* <div>{new Date(post.date).toLocaleDateString()}</div> */}
-              {/* <Link href={`/${post.doctype}`}>
-                <SectionType
-                // doctype={post.doctype}
-                >
-                  {post.doctype}
-                </SectionType>
-              </Link> */}
               <Link href={`/${post.doctype[0]}`}>
-                {/* Renderiza todos los elementos del array como categorías */}
                 {post.doctype.map((type, index) => (
                   <SectionType key={index} tag={type}>
                     {type}
-                    {/* Agrega una coma si no es el último elemento */}
                     {index < post.doctype.length - 1}
                   </SectionType>
                 ))}
               </Link>
             </SideInfo>
           </MetaInfo>
+          {post.coverImage && (
+            <HeroImage>
+              {" "}
+              <Image
+                src={post.coverImage}
+                // width={width}
+                // height={height}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }} // optional
+                alt={
+                  post.coverImageAlt
+                    ? post.coverImageAlt
+                    : "Cover images with a illustration of the title"
+                }
+                objectFit="cover"
+              />
+            </HeroImage>
+          )}
           <RenderCodeBlock props={post.content} />
           <div
             style={{

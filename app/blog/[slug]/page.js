@@ -18,6 +18,8 @@ import RenderCodeBlock from "@/app/components/CodeRender.js";
 import { MdHead } from "@/app/ui/MarkDownComponents.js";
 import PostNavigationCard from "@/app/components/PostNavigation.js";
 import ShowPath from "@/app/components/showPath.js";
+import ScrollDiv from "@/app/components/navigation/ScrollDiv.js";
+import DateDisplay from "@/app/components/DateDisplay.js";
 
 export default function Post({ params }) {
   const post = getPostBySlug(params.slug);
@@ -46,13 +48,17 @@ export default function Post({ params }) {
 
   return (
     <MainBg>
+      <ScrollDiv />
       <Article>
         <ShowPath title={post.title} />
         <MdHead>{post.title}</MdHead>
         <MetaInfo>
           <Date>
             <FaPencilAlt style={{ marginRight: "5px" }} />
-            {post.date}
+            <DateDisplay
+              isoDate={post.date.iso}
+              defaultFormatted={post.date.formatted}
+            />
           </Date>
           <Date style={{ marginLeft: "10px" }}>
             <FaClock style={{ marginRight: "5px" }} />

@@ -99,6 +99,7 @@ const ContentTitle = styled.div`
 export default function ResponsiveSidebar({ sidebarItems }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const closeSidebar = () => setSidebarOpen(false); // Función para cerrar el Sidebar
+  console.log(sidebarItems);
 
   return (
     <>

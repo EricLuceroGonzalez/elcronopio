@@ -2,6 +2,7 @@
 const fs = require("fs");
 const { join } = require("path");
 const matter = require("gray-matter");
+const { formatDateForSSR } = require("./DateUtils");
 // const { default: next } = require("next");
 
 const postsDirectory = join(process.cwd(), "/app/_posts");
@@ -16,14 +17,26 @@ function getPostBySlug(slug) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   // Make reading time estimation
-  return { ...data, slug: realSlug, content };
+  return {
+    ...data,
+    slug: realSlug,
+    content,
+    date: {
+      iso: data.date, // Conserva el formato original 'YYYY-MM-DD'
+      formatted: formatDateForSSR(data.date), // Formateado inicial en español
+    },
+  };
 }
 
 function getAllPosts() {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort(
+      (post1, post2) => new Date(post2.date.iso) - new Date(post1.date.iso)
+    ); // Ordenación más precisa
+  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
   return posts;
 }
 
@@ -72,7 +85,7 @@ function getBlogPosts(orderNum = 0) {
     .filter((post) => {
       return post.doctype[0] === "blog";
     })
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.date.iso > post2.date.iso ? -1 : 1));
   // /Next and previous posts
   if (orderNum >= blogPosts.length - 1) {
     const nextPost = 0;
@@ -109,7 +122,7 @@ function getPostsByType(types, orderNum = 0) {
       // Verifica si el post tiene todos los tipos especificados
       return types.every((type) => post.doctype.includes(type));
     })
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((post1, post2) => (post1.iso > post2.date.iso ? -1 : 1));
 
   // Lógica para next y previous posts
   if (orderNum >= filteredPosts.length - 1) {

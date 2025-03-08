@@ -6,7 +6,7 @@ order: 4
 title: "Poster a lo tcolorbox"
 shortTitle: "Poster en tcolorbox"
 author: "Eric Lucero"
-postImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg
+coverImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1741389125/elCronopio/cover_test-2_dnehhh.jpg
 excerpt: 'LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas'
 doctype: ["latex"]
 ---

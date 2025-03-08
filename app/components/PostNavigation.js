@@ -57,14 +57,20 @@ const PostNavigationCard = ({ post, type }) => {
   if (!post) return null;
   // TODO: Rendering todos aunque no tengan el mismo tag
   return (
-    <NavCard href={`/${post.doctype}/${post.slug}`}>
+    <NavCard
+      href={
+        `/${post.doctype[0]}/${post.slug}`
+        // post.doctype.includes("curso")
+        //   ? `/latex/curso/${post.slug}`  // Si es parte del curso
+        //   : `/${post.doctype[0]}/${post.slug}`  // Para otros casos
+      }
+    >
       {type === "prev" && (
         <FaArrowAltCircleLeft color="var(--fg)" size={"1rem"} />
       )}
       <PostInfo>
         <Excerpt>{type == "prev" ? "Anterior" : "Siguiente"}</Excerpt>
         <Title>{post.title}</Title>
-        {/* <Excerpt>{post.excerpt}</Excerpt> */}
       </PostInfo>
       {type === "next" && (
         <FaArrowAltCircleRight color="var(--fg)" size={"1rem"} />

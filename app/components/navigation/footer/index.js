@@ -22,11 +22,10 @@ const FooterLinks = styled.div`
   justify-content: center;
 `;
 
-const FooterTextBox = styled.p`
+const FooterTextBox = styled.div`
   margin: 0;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
 `;
 const FooterText = styled.p`
   font-size: 1rem;

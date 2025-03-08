@@ -81,6 +81,7 @@ const Latex = ({ params }) => {
         </MdParagraph>
         <HomeBoxes props={latexPosts} />
       </MainPageBg>
+      {/* TODO: Mostrar pdf desde URL con https://www.npmjs.com/package/react-pdf */}
       {/* </PageContainer> */}
     </Layout>
   );
