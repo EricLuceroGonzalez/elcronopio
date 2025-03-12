@@ -11,9 +11,8 @@ export const CardContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  padding: 0 3px;
+  padding: 0px 3px;
   flex-grow: 1;
-  /* border: 2px solid var(--heading); */
 `;
 export const TextContainer = styled.div`
   display: flex;
@@ -21,7 +20,6 @@ export const TextContainer = styled.div`
   padding: 0 3px;
   min-width: 60%;
   flex-grow: 2;
-  /* border: 2px solid var(--box-border-hover); */
 `;
 
 export const GridHeroImage = styled.div`
@@ -29,7 +27,7 @@ export const GridHeroImage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem auto;
+  margin: 0.3rem auto;
   max-width: 90%;
   height: auto;
   position: relative;
@@ -48,15 +46,8 @@ export const GridContainer = styled.div`
   width: 100%;
   @media (min-width: 660px) {
     /* TODO: Style of blog posts and inner post */
-    /* display: flex; */
-    /* flex-direction: row; */
     width: 100%;
   }
-
-  /* @media (min-width: 1024px) {
-    max-width: 47%;
-    gap: 2rem;
-  } */
   &:hover {
     border: 2px solid var(--box-border-hover);
     transition: border 0.5s;
@@ -65,7 +56,7 @@ export const GridContainer = styled.div`
 
 export const ExcerptContainer = styled.p`
   font-family: monospace;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--fg);
   font-size: medium;
   /* color: blue; */
@@ -75,6 +66,24 @@ export const ExcerptContainer = styled.p`
   }
 `;
 
+export const CardTitle = styled.h1`
+  line-height: 0.9;
+  font-size: x-large;
+  margin: 0.33rem 0;
+  @media (min-width: 660px) {
+    font-size: x-large;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  color: var(--accent);
+  text-align: left;
+`;
 // export const AnimatedDiv = styled(motion.div)`
 //   background-color: rebeccapurple;
 //   width: 200px;

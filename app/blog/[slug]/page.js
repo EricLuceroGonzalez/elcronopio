@@ -177,7 +177,6 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(await params.slug);
-
   return {
     title: `${post.title} | Blog`,
     description: post.excerpt,
@@ -189,7 +188,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
       url: `https://elcronopio.com/blog/${post.slug}`,
       images: [
         {
-          url: post.postImage,
+          url: post.imageThumbnail,
           width: 1200,
           height: 630,
           alt: "Vista previa del sitio web de Eric",

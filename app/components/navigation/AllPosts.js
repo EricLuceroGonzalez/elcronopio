@@ -19,6 +19,7 @@ import {
   ImageContainer,
   TextContainer,
   ExcerptContainer,
+  CardTitle,
 } from "@/app/ui/CardsElements.js";
 import DateDisplay from "../DateDisplay.js";
 
@@ -62,7 +63,7 @@ const AllPosts = ({
           </GridHeroImage>
         </ImageContainer>
         <TextContainer>
-          <TitleContainer>{title}</TitleContainer>
+          <CardTitle>{title}</CardTitle>
           <MetaInfo>
             <SideInfo>
               <Date>
@@ -81,16 +82,6 @@ const AllPosts = ({
             </SideInfo>
           </MetaInfo>
           <ExcerptContainer>{excerpt.substring(0, 250)}...</ExcerptContainer>
-          {/* <AnimatedDiv
-            initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            Ver Mas
-          </AnimatedDiv> */}
         </TextContainer>
       </CardContainer>
     </Link>

@@ -107,7 +107,7 @@ export const TitleContainer = styled.h2`
 `;
 
 export const MetaInfo = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   font-size: small;
   color: gray;
   display: flex;
