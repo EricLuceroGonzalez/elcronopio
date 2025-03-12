@@ -1,6 +1,6 @@
 // import React from "react";
 import { MainPageBg, PageContainer, TitlePage } from "../ui/ComponentsStyled";
-import { getBlogPosts, getPostsByType } from "../lib/api";
+import { getPostsByType } from "../lib/api";
 import { notFound } from "next/navigation";
 import HomeBoxes from "../components/HomeBoxes";
 import { Layout } from "../ui/lugs";

@@ -11,6 +11,11 @@ import { BoxGrid } from "../ui/lugs";
 //   flex-wrap: wrap;
 // `;
 const HomeBoxes = (posts) => {
+  // const theProps = posts.props.map((post) => {
+  //   return post.metadata;
+  // });
+  // console.log(theProps);
+
   return (
     <>
       <BoxGrid>

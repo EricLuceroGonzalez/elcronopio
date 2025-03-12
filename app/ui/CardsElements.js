@@ -2,26 +2,39 @@ import styled from "styled-components";
 // import { motion } from "framer-motion";
 
 // CardsElements.js;
-export const GridHeroImage = styled.div`
-  /* border: 2px solid var(--fg); */
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem auto;
-  width: 100%;
-  height: auto;
-  position: relative;
-  @media (max-width: 660px) {
-    width: 70%;
-  }
-`;
-
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
   @media (max-width: 660px) {
     flex-direction: column;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  padding: 0 3px;
+  flex-grow: 1;
+  /* border: 2px solid var(--heading); */
+`;
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 3px;
+  min-width: 60%;
+  flex-grow: 2;
+  /* border: 2px solid var(--box-border-hover); */
+`;
+
+export const GridHeroImage = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+  max-width: 90%;
+  height: auto;
+  position: relative;
+  @media (max-width: 660px) {
+    width: 70%;
   }
 `;
 
@@ -48,14 +61,6 @@ export const GridContainer = styled.div`
     border: 2px solid var(--box-border-hover);
     transition: border 0.5s;
   }
-`;
-export const ImageContainer = styled.div`
-  padding: 0 3px;
-`;
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 3px;
 `;
 
 export const ExcerptContainer = styled.p`

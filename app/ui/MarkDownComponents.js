@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
 
-export const MdParagraph = styled.p`
+export const MdParagraph = styled.div`
   margin: 0.5em 0;
   font-size: medium;
   @media (min-width: 660px) {
@@ -92,12 +92,13 @@ export const MdEmph = styled.em`
 
 export const MdImage = styled.div`
   /* border: 2px solid blue; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.71);
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 1rem auto;
-  width: 40%;
+  width: 50%;
   height: auto;
   position: relative;
   @media (max-width: 660px) {
@@ -105,7 +106,7 @@ export const MdImage = styled.div`
   }
 `;
 export const MdImageCaption = styled.p`
-  color: var(--gray-light);
+  color: var(--accent);
   margin: 5px 0;
   text-align: justify;
   max-width: 60%;
@@ -119,7 +120,6 @@ export const MdCite = styled.sup`
 `;
 
 export const HeroImage = styled.div`
-  border: 2px solid var(--fg);
   align-items: center;
   display: flex;
   flex-direction: column;

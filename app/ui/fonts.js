@@ -5,8 +5,9 @@ import { Parkinsans } from "next/font/google";
 // const inter = Inter({ subsets: ["latin"], display: "swap" });
 // const lora = Lora({ subsets: ["latin"], display: "swap" });
 const parkisans = Parkinsans({
-  subsets: ["latin"],
   display: "swap",
+  adjustFontFallback: false,
+  subsets: ["latin"],
 });
 // const alexandria = Alexandria({
 //   subsets: ["latin"],

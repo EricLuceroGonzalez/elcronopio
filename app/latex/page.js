@@ -18,13 +18,14 @@ const Latex = ({ params }) => {
   // const AllLatexPosts = getLatexPosts();
   const AllLatexPosts = getPostsByType(["latex"]);
   // Filtra solo los posts que tienen "curso"
-  const coursePosts = AllLatexPosts.posts.filter((post) =>
-    post.doctype.includes("curso")
-  );
-  // Filtra solo los posts que tienen "curso"
-  const latexPosts = AllLatexPosts.posts.filter(
+  const latexBlogPost = AllLatexPosts.posts.filter(
     (post) => post.doctype.includes("latex") && !post.doctype.includes("curso")
   );
+  // Filtra solo los posts que tienen "curso"
+  const latexCoursePost = AllLatexPosts.posts.filter(
+    (post) => post.doctype.includes("latex") && post.doctype.includes("curso")
+  );
+
   // Mapear los posts para devolver solo los datos necesarios
   // const sidebarItems = latexPosts
   //   .map((post) => ({
@@ -34,35 +35,15 @@ const Latex = ({ params }) => {
   //   }))
   //   .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
 
-  if (!latexPosts) {
+  if (!latexBlogPost && !latexCoursePost) {
     return notFound();
   }
   return (
     <Layout>
-      {/* <PageContainer> */}
-      {/* <ResponsiveSidebar sidebarItems={sidebarItems} /> */}
       <MainPageBg>
         <ScrollDiv />
-        <ShowPath title={latexPosts.title} />
-        {/* <Sidebar>
-        <SidebarHeading>Contenido</SidebarHeading>
-        <SidebarList>
-          {sidebarItems.map((item) => (
-            <li key={item.slug}>
-            <Link href={`/latex/${item.slug}`}>{item.title}</Link>
-            </li>
-          ))}
-        </SidebarList>
-      </Sidebar> */}
+        <ShowPath title={latexBlogPost.title} />
         <TitlePage>Todo sobre LaTeX</TitlePage>
-        {/* <Image
-        src={
-          "https://res.cloudinary.com/dcvnw6hvt/image/upload/v1732908752/elCronopio/LaTeX_logo_ou5hme.svg"
-        } // Ruta de la imagen del autor
-        alt={"aksdjhaksjdh"} // Texto alternativo
-        width={90} // Ancho de la imagen
-        height={37.5} // Alto de la imagen
-      /> */}
         {/* TODO: Create the feeling here...(and in suscribe, but later) */}
 
         <MdParagraph>
@@ -88,11 +69,10 @@ const Latex = ({ params }) => {
             <CopyButton>Ir al curso</CopyButton>
           </Link>
         </ButtonContainer>
-        <HomeBoxes props={latexPosts} />
+        <HomeBoxes props={latexBlogPost} />
         <MdHead>Aprende LaTeX</MdHead>
-        <HomeBoxes props={coursePosts} />
+        <HomeBoxes props={latexCoursePost} />
       </MainPageBg>
-      {/* </PageContainer> */}
     </Layout>
   );
 };

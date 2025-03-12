@@ -17,22 +17,31 @@ import ShowPath from "@/app/components/showPath";
 const Latex = ({ params }) => {
   // const AllLatexPosts = getLatexPosts();
   const AllLatexPosts = getPostsByType(["latex", "curso"]);
-  const latexPosts = AllLatexPosts.posts;
+  // const latexPosts = AllLatexPosts.posts;
+
+  // Filtra solo los posts que tienen "curso"
+  const latexPosts = AllLatexPosts.posts.filter(
+    (post) => post.doctype.includes("latex") && post.doctype.includes("curso")
+  );
+  // console.log("AllLatexPosts");
+  // console.log(AllLatexPosts);
+
   // Mapear los posts para devolver solo los datos necesarios
-  const sidebarItems = latexPosts
+  const sidebarItems = AllLatexPosts.posts
     .map((post) => ({
       slug: `/${post.doctype}/${post.slug}`, // Generar la ruta con el doctype
       shortTitle: post.shortTitle, // Título del post
       order: post.order,
     }))
     .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
-  // .filter((post) => {
-  //   post.doctype[1] === "curso";
-  // })
 
-  if (!latexPosts) {
+  if (!AllLatexPosts.posts) {
     return notFound();
   }
+
+  // if (!latexPosts) {
+  //   return notFound();
+  // }
   return (
     <Layout>
       {/* <PageContainer> */}

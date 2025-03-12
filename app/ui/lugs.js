@@ -1,6 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 // Contenedor principal para manejar diseño responsivo
 export const Layout = styled.div`
@@ -26,9 +26,9 @@ export const Article = styled.article`
   background-color: var(--bg);
   color: var(--fg);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  min-width: 70%;
 
   @media (max-width: 1080px) {
-    /* border: 2px solid yellow; */
     max-width: 90%;
   }
   @media (max-width: 728px) {
@@ -37,6 +37,7 @@ export const Article = styled.article`
     box-shadow: none;
     font-size: small;
   }
+  /* border: 2px solid yellow; */
 `;
 
 export const Title = styled.h1`
@@ -58,11 +59,11 @@ export const Author = styled.p`
   margin-bottom: 1.5rem;
 `;
 
-export const CodeBlock = styled(SyntaxHighlighter)`
-  margin: 20px 0;
-  border-radius: 8px;
-  font-size: smaller;
-`;
+// export const CodeBlock = styled(SyntaxHighlighter)`
+//   margin: 20px 0;
+//   border-radius: 8px;
+//   font-size: smaller;
+// `;
 
 export const CoverImageContainer = styled.div`
   margin-bottom: 2rem;
@@ -121,9 +122,9 @@ export const MetaInfo = styled.div`
   }
   @media (max-width: 490px) {
     margin-bottom: 2.75rem;
-    /* border: 1px solid red; */
     width: 75%;
   }
+  /* border: 1px solid red; */
 `;
 // Contenedor para el avatar y el nombre del autor
 export const AuthorInfo = styled.div`

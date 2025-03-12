@@ -1,5 +1,5 @@
 import React from "react";
-import { getAllPosts } from "@/app/lib/api";
+// import { getAllPosts } from "@/app/lib/api";
 import {
   MainBg,
   MainPageBg,
@@ -13,11 +13,14 @@ import {
   MdUnorderedList,
 } from "./ui/MarkDownComponents";
 import ScrollDiv from "./components/navigation/ScrollDiv";
+import { getAllPosts } from "./lib/api";
 
 // const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
 
 function Home() {
   const allPostsData = getAllPosts();
+  // console.log(allPostsData);
+
   return (
     <>
       <PageContainer>

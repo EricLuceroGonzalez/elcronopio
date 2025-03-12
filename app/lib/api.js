@@ -1,22 +1,23 @@
-// /app/lib/api.js
 const fs = require("fs");
+// import { promises as fs } from "fs";
 const { join } = require("path");
 const matter = require("gray-matter");
 const { formatDateForSSR } = require("./DateUtils");
-// const { default: next } = require("next");
 
-const postsDirectory = join(process.cwd(), "/app/_posts");
+const postsDirectory = join(process.cwd(), "/app/_posts/");
 
+// Obtener todos los slugs de los posts
 function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
+// Obtener un post por su slug
 function getPostBySlug(slug) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const realSlug = slug.replace(/\.mdx?$/, ""); // Soporta .md y .mdx
+  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-  // Make reading time estimation
+
   return {
     ...data,
     slug: realSlug,
@@ -28,129 +29,57 @@ function getPostBySlug(slug) {
   };
 }
 
+// Obtener todos los posts, ordenados por fecha
 function getAllPosts() {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .sort(
       (post1, post2) => new Date(post2.date.iso) - new Date(post1.date.iso)
-    ); // Ordenación más precisa
-  // .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    );
 
   return posts;
 }
 
-function getLatexPosts(orderNum = 0) {
-  const slugs = getPostSlugs();
-
-  const latexPosts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .filter((post) => {
-      return post.doctype[0] === "latex";
-    })
-    .sort((post1, post2) => (post1.order > post2.order ? 1 : -1));
-  // /Next and previous posts
-
-  if (orderNum >= latexPosts.length - 1) {
-    const nextPost = 0;
-    const previousPost = latexPosts.filter((post) => {
-      return post.order === orderNum - 1;
-    });
-    return { posts: latexPosts, previousPost, nextPost: [0] };
-  }
-
-  if (orderNum <= 0) {
-    const nextPost = latexPosts.filter((post) => {
-      return post.order === orderNum + 1;
-    });
-    return { posts: latexPosts, previousPost: [0], nextPost };
-  }
-
-  const nextPost = latexPosts.filter((post) => {
-    return post.order === orderNum + 1;
-  });
-
-  const previousPost = latexPosts.filter((post) => {
-    return post.order === orderNum - 1;
-  });
-
-  return { posts: latexPosts, previousPost, nextPost };
-}
-
-function getBlogPosts(orderNum = 0) {
-  const slugs = getPostSlugs();
-
-  const blogPosts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .filter((post) => {
-      return post.doctype[0] === "blog";
-    })
-    .sort((post1, post2) => (post1.date.iso > post2.date.iso ? -1 : 1));
-  // /Next and previous posts
-  if (orderNum >= blogPosts.length - 1) {
-    const nextPost = 0;
-    const previousPost = blogPosts.filter((post) => {
-      return post.order === orderNum - 1;
-    });
-    return { posts: blogPosts, previousPost, nextPost: [0] };
-  }
-
-  if (orderNum <= 0) {
-    const nextPost = blogPosts.filter((post) => {
-      return post.order === orderNum + 1;
-    });
-    return { posts: blogPosts, previousPost: [0], nextPost };
-  }
-
-  const nextPost = blogPosts.filter((post) => {
-    return post.order === orderNum + 1;
-  });
-
-  const previousPost = blogPosts.filter((post) => {
-    return post.order === orderNum - 1;
-  });
-
-  return { posts: blogPosts, previousPost, nextPost };
-}
-
-function getPostsByType(types, orderNum = 0) {
+// Función genérica para obtener posts filtrados por tipo
+function getPostsByType(types = [], orderNum = 0) {
   const slugs = getPostSlugs();
 
   const filteredPosts = slugs
     .map((slug) => getPostBySlug(slug))
-    .filter((post) => {
-      // Verifica si el post tiene todos los tipos especificados
-      return types.every((type) => post.doctype.includes(type));
-    })
-    .sort((post1, post2) => (post1.iso > post2.date.iso ? -1 : 1));
+    .filter((post) => types.every((type) => post.doctype.includes(type))) // Filtra por tipos
+    .sort((post1, post2) => post1.order - post2.order); // Ordena por el campo 'order'
+
+  // Encuentra el índice del post actual
+  const currentIndex = filteredPosts.findIndex(
+    (post) => post.order === orderNum
+  );
 
   // Lógica para next y previous posts
-  if (orderNum >= filteredPosts.length - 1) {
-    const nextPost = 0;
-    const previousPost = filteredPosts.filter((post) => {
-      return post.order === orderNum - 1;
-    });
-    return { posts: filteredPosts, previousPost, nextPost: [0] };
-  }
+  const previousPost =
+    currentIndex > 0 ? filteredPosts[currentIndex - 1] : null;
+  const nextPost =
+    currentIndex < filteredPosts.length - 1
+      ? filteredPosts[currentIndex + 1]
+      : null;
 
-  if (orderNum <= 0) {
-    const nextPost = filteredPosts.filter((post) => {
-      return post.order === orderNum + 1;
-    });
-    return { posts: filteredPosts, previousPost: [0], nextPost };
-  }
-
-  const nextPost = filteredPosts.filter((post) => {
-    return post.order === orderNum + 1;
-  });
-
-  const previousPost = filteredPosts.filter((post) => {
-    return post.order === orderNum - 1;
-  });
-
-  return { posts: filteredPosts, previousPost, nextPost };
+  return {
+    posts: filteredPosts,
+    previousPost: previousPost || null, // Devuelve el post o null
+    nextPost: nextPost || null, // Devuelve el post o null
+  };
 }
-// TODO: Make just una getPost type function with params
+
+// Funciones específicas para tipos de posts
+function getLatexPosts(orderNum = 0) {
+  return getPostsByType(["latex"], orderNum);
+}
+
+function getBlogPosts(orderNum = 0) {
+  return getPostsByType(["blog"], orderNum);
+}
+
+// Exportar funciones
 module.exports = {
   getPostSlugs,
   getPostBySlug,
