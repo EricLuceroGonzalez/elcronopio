@@ -145,13 +145,20 @@ export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "/app/_posts");
   const filenames = fs.readdirSync(postsDirectory);
 
-  const slugs = filenames.map((filename) => {
+  const allSlugs = filenames.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
     return { slug };
   });
 
-  return slugs;
+  const latexSlugs = allSlugs
+    .map((slug) => getPostBySlug(slug.slug))
+    .filter((post) => post.doctype.includes("latex"))
+    .map((post) => post.slug)
+    .map((slug) => ({ slug }));
+
+  return latexSlugs;
 }
+
 export async function generateMetadata({ params }, parent) {
   const post = getPostBySlug(await params.slug);
   return {

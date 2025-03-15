@@ -1,9 +1,5 @@
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import {
-  getBlogPostBySlug,
-  getPostBySlug,
-  getPostsByType,
-} from "@/app/lib/api";
+import { getPostBySlug, getPostsByType } from "@/app/lib/api";
 // MDX
 import fs from "fs";
 import path from "path";
@@ -28,8 +24,6 @@ import DateDisplay from "@/app/components/DateDisplay.js";
 
 const BlogPost = async ({ params }) => {
   const post = getPostBySlug(params.slug);
-  console.log("post");
-  console.log(post.slug);
   // const blogPosts = getBlogPosts(post.order);
   const blogPosts = getPostsByType(["blog"], post.order);
 
@@ -128,19 +122,25 @@ const BlogPost = async ({ params }) => {
   );
 };
 export default BlogPost;
+
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "/app/_posts/");
   const filenames = fs.readdirSync(postsDirectory);
 
-  const slugs = filenames.map((filename) => {
+  const allSlugs = filenames.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
     return { slug };
   });
 
-  console.log("\n\n\n\n\n slugs");
-  console.log(slugs);
-  return slugs;
+  const blogSlugs = allSlugs
+    .map((slug) => getPostBySlug(slug.slug))
+    .filter((post) => post.doctype.includes("blog"))
+    .map((post) => post.slug)
+    .map((slug) => ({ slug }));
+
+  return blogSlugs;
 }
+
 export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(await params.slug);
   return {

@@ -105,5 +105,4 @@ module.exports = {
   getLatexPosts,
   getBlogPosts,
   getPostsByType,
-  getBlogPostBySlug,
 };
