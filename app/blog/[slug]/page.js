@@ -1,5 +1,9 @@
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import { getBlogPosts, getPostBySlug, getPostsByType } from "@/app/lib/api";
+import {
+  getBlogPostBySlug,
+  getPostBySlug,
+  getPostsByType,
+} from "@/app/lib/api";
 // MDX
 import fs from "fs";
 import path from "path";
@@ -24,7 +28,8 @@ import DateDisplay from "@/app/components/DateDisplay.js";
 
 const BlogPost = async ({ params }) => {
   const post = getPostBySlug(params.slug);
-
+  console.log("post");
+  console.log(post.slug);
   // const blogPosts = getBlogPosts(post.order);
   const blogPosts = getPostsByType(["blog"], post.order);
 
@@ -86,7 +91,6 @@ const BlogPost = async ({ params }) => {
               </Link>
             </SideInfo>
           </MetaInfo>
-
           <MDXRemote
             source={post.content}
             components={{ ...MdxComponents, ...dynamicMdxComponents }}
@@ -125,7 +129,7 @@ const BlogPost = async ({ params }) => {
 };
 export default BlogPost;
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "/app/_posts");
+  const postsDirectory = path.join(process.cwd(), "/app/_posts/");
   const filenames = fs.readdirSync(postsDirectory);
 
   const slugs = filenames.map((filename) => {
@@ -133,48 +137,10 @@ export async function generateStaticParams() {
     return { slug };
   });
 
+  console.log("\n\n\n\n\n slugs");
+  console.log(slugs);
   return slugs;
 }
-
-// //! Form Markdown render override HTML elements
-// const customRenderers = {
-//   //! Check for paragraphs with images as children
-//   p(paragraph) {
-//     const { node } = paragraph;
-//     if (node.children[0].tagName === "img") {
-//       const image = node.children[0];
-//       return (
-//         <div className={classes.image}>
-//           <Image
-//             src={`/images/posts/${post.slug}/${image.properties.src}`}
-//             alt={image.alt}
-//             width={600}
-//             height={300}
-//           />
-//         </div>
-//       );
-//     }
-//     return <p>{paragraph.children}</p>;
-//   },
-//   code({node, inline, className, children, ...props}) {
-//     console.log(node);
-//     const match = /language-(\w+)/.exec(className || '')
-//     return !inline && match ? (
-//       <SyntaxHighlighter
-//       style={atomDark}
-//       language={match[1]}
-//       PreTag="div"
-//       {...props}
-//       />
-//     ): (
-//       <code className={className} {...props}>
-//         {children}
-//       </code>
-//     )
-//   },
-// };
-// return ()....
-
 export async function generateMetadata({ params, searchParams }, parent) {
   const post = getPostBySlug(await params.slug);
   return {

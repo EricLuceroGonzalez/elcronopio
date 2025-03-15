@@ -22,8 +22,8 @@ const nextConfig = {
     return config;
   },
 };
-module.exports = nextConfig;
 
+module.exports = nextConfig;
 // module.exports = withMDX()(nextConfig);
 // /**
 //  * @type {import('next').NextConfig}

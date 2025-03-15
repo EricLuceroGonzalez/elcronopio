@@ -2,8 +2,10 @@ import {
   MdBlockQuote,
   MdCite,
   MdEmph,
+  MdHead,
   MdImage,
   MdImageCaption,
+  MdLink,
   MdListItem,
   MdOrderedList,
   MdParagraph,
@@ -15,6 +17,7 @@ import {
 } from "@/app/ui/MarkDownComponents";
 import CodeBlock from "@/app/components/CodeWrapper";
 import Image from "next/image";
+import { MathJax } from "better-react-mathjax";
 const MdxComponents = {
   h1: (props) => <MdSubHeadA {...props}>{props.children}</MdSubHeadA>,
   h2: (props) => <MdSubHeadB {...props}> {props.children}</MdSubHeadB>,
@@ -41,6 +44,23 @@ const MdxComponents = {
       <code className={className} {...props}>
         {children}
       </code>
+    );
+  },
+  a: (props) => {
+    return (
+      <MdLink target="_blank" href={props.href}>
+        {props.children}{" "}
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          height="1em"
+          width="1em"
+          {...props}
+        >
+          <path d="M13 3l3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z" />
+          <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z" />
+        </svg>
+      </MdLink> // All other links
     );
   },
   img: ({ src, alt }) => {

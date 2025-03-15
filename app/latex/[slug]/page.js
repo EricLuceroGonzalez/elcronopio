@@ -1,5 +1,5 @@
 import { FaClock, FaPencilAlt } from "react-icons/fa";
-import { getLatexPosts, getPostBySlug, getPostsByType } from "@/app/lib/api";
+import { getPostBySlug, getPostsByType } from "@/app/lib/api";
 // MDX
 import fs from "fs";
 import path from "path";
@@ -23,7 +23,9 @@ import ShowPath from "@/app/components/showPath";
 import DateDisplay from "@/app/components/DateDisplay";
 import Link from "next/link";
 import PostNavigationCard from "@/app/components/PostNavigation";
-// import { Article, Layout } from "@/app/ui/lugs";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax";
+import rehypeHighlight from "rehype-highlight";
 
 // import ShowPath from "@/app/components/showPath";
 const LatexPost = async ({ params }) => {
@@ -48,6 +50,7 @@ const LatexPost = async ({ params }) => {
     ...MdxComponents,
     ...dynamicMdxComponents,
   };
+
   return (
     <Layout>
       <MainBg>
@@ -80,7 +83,6 @@ const LatexPost = async ({ params }) => {
               </Link>
             </SideInfo>
           </MetaInfo>
-
           {post.coverImage && (
             <HeroImage>
               {" "}
@@ -101,9 +103,18 @@ const LatexPost = async ({ params }) => {
               />
             </HeroImage>
           )}
-          {/* <MDXRemote source={post.content} components={MdxComponents} /> */}
-          <MDXRemote source={post.content} components={compos} />
 
+          {/* <MDXContent posts={post.content} /> */}
+          <MDXRemote
+            source={post.content}
+            components={compos}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkMath],
+                rehypePlugins: [rehypeMathjax, rehypeHighlight],
+              },
+            }}
+          />
           <h1 style={{ marginTop: "6rem" }}>Otros posts:</h1>
           <div
             style={{
@@ -141,7 +152,6 @@ export async function generateStaticParams() {
 
   return slugs;
 }
-
 export async function generateMetadata({ params }, parent) {
   const post = getPostBySlug(await params.slug);
   return {

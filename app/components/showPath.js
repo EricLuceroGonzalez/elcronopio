@@ -29,7 +29,7 @@ const ShowPath = (params) => {
         <PathSlash>/</PathSlash>
         <PathLink href={`/${pathSplit[1]}`}>{pathSplit[1]}</PathLink>
         <PathSlash>/</PathSlash>
-        {params.title}
+        {params.title ? params.title : ""}
       </PathBlock>
     </>
   );

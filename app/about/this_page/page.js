@@ -5,6 +5,7 @@ import { RiReactjsLine } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiMdx } from "react-icons/si";
 import styled from "styled-components";
+import ShowPath from "@/app/components/showPath";
 
 const LogosBox = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const LogosBox = styled.div`
 const AboutThisPage = () => {
   return (
     <MainBg>
+      <ShowPath />
       <h1>About this</h1>
       <LogosBox>
         <div>

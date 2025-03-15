@@ -37,8 +37,14 @@ const AllPosts = ({
   coverImage,
   coverImageAlt,
 }) => (
-  // console.log(slug)
-  <GridContainer>
+  <GridContainer
+    initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{
+      duration: 0.3,
+      scale: { type: "spring", visualDuration: 0.3, bounce: 0.5 },
+    }}
+  >
     <Link href={`/${doctype[0]}/${slug}`}>
       <CardContainer>
         <ImageContainer>
@@ -46,8 +52,6 @@ const AllPosts = ({
             {coverImage && coverImage != "" && (
               <Image
                 src={coverImage}
-                // width={width}
-                // height={height}
                 width={0}
                 height={0}
                 sizes="100vw"

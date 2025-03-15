@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import { FaCreativeCommons, FaInfoCircle } from "react-icons/fa";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
@@ -9,17 +10,25 @@ const FooterContainer = styled.footer`
   padding: 1rem;
   background-color: var(--fg);
   color: var(--bg);
-  text-align: center;
   position: relative;
   bottom: 0;
   flex-shrink: 0;
   font-size: small;
 `;
+const FooterIcons = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 660px) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+`;
+
 const FooterLinks = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
 `;
 
 const FooterTextBox = styled.div`
@@ -102,24 +111,35 @@ const Footer = () => {
           </svg>
         </FoooterLink>
       </FooterLinks>
-      <FooterTextBox>
-        <FooterText>
-          &copy; {new Date().getFullYear()} Eric Lucero González.
-        </FooterText>
-        {/* <FooterText>All Rights Reserved</FooterText> */}
-        <FooterText>
-          Made with{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            width="16"
-            height="16"
-            fill="var(--accent)"
-          >
-            <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
-          </svg>
-        </FooterText>
-      </FooterTextBox>
+      <FooterIcons>
+        <FooterTextBox>
+          <FooterText>
+            &copy; {new Date().getFullYear()} Eric Lucero González.
+          </FooterText>
+          {/* <FooterText>All Rights Reserved</FooterText> */}
+          <FooterText>
+            Made with{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="16"
+              height="16"
+              fill="var(--accent)"
+            >
+              <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+            </svg>
+          </FooterText>
+        </FooterTextBox>
+        <FooterTextBox>
+          <Link href={"/about/this_page"}>
+            <FaInfoCircle />
+            Acerca de esta página
+          </Link>
+          <Link href={"/about/license"}>
+            <FaCreativeCommons /> Licencias
+          </Link>
+        </FooterTextBox>
+      </FooterIcons>
     </FooterContainer>
   );
 };

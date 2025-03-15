@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-
 import Footer from "./components/navigation/footer";
 import Providers from "./Providers.js";
 // import { Alexandria, Parkinsans } from "next/font/google";
 import dynamic from "next/dynamic";
 import { parkisans } from "./ui/fonts.js";
+// import { MathJaxContext } from "better-react-mathjax";
 // import NaviBar from "./components/navigation/navbar/NaviBar";
 
 export const metadata = {

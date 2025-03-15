@@ -1,7 +1,8 @@
 import React from "react";
 // import { getAllPosts } from "@/app/lib/api";
 import {
-  MainBg,
+  CoverTitle,
+  HomePageCover,
   MainPageBg,
   PageContainer,
   TitlePage,
@@ -22,39 +23,41 @@ function Home() {
   // console.log(allPostsData);
 
   return (
-    <>
-      <PageContainer>
-        <ScrollDiv />
-        <MainPageBg>
-          <TitlePage>Hola! </TitlePage>
-          <MdParagraph>
-            Este sitio web está en construcción, pero pronto será un lugar donde
-            compartiré mi trabajo y aprendizaje en áreas como inteligencia
-            artificial, LaTeX, y algoritmos de optimización. Aquí encontrarás:
-          </MdParagraph>
-          <MdUnorderedList>
-            {/* TODO: Nuevo endpoint /licencias, sin ruta fija o desde footer */}
-            <MdListItem>
-              Un blog con reflexiones, tutoriales, y temas técnicos relacionados
-              con la IA.
-            </MdListItem>
-            <MdListItem>
-              Recursos sobre LaTeX para quienes deseen perfeccionar sus
-              habilidades en la escritura científica.
-            </MdListItem>
-            <MdListItem>
-              Un portafolio donde documentaré proyectos e ideas relacionadas con
-              programación y matemáticas aplicadas.
-            </MdListItem>
-          </MdUnorderedList>
-          <MdParagraph>
-            Gracias por visitar. Te invito a explorar las secciones disponibles
-            y volver pronto para más contenido. ¡Esto es solo el comienzo!
-          </MdParagraph>
-          <HomeBoxes props={allPostsData} />
-        </MainPageBg>
-      </PageContainer>
-    </>
+    <PageContainer>
+      <ScrollDiv />
+      <MainPageBg>
+        <HomePageCover>
+          <TitlePage>Hola! 👋🏼</TitlePage>
+          {/* <TitlePage>Soy</TitlePage> */}
+          {/* <CoverTitle>Eric Lucero González </CoverTitle> */}
+        </HomePageCover>
+        <MdParagraph>
+          Este sitio web está en construcción, pero pronto será un lugar donde
+          compartiré mi trabajo y aprendizaje en áreas como inteligencia
+          artificial, LaTeX, y algoritmos de optimización. Aquí encontrarás:
+        </MdParagraph>
+        <MdUnorderedList>
+          {/* TODO: Nuevo endpoint /licencias, sin ruta fija o desde footer */}
+          <MdListItem>
+            Un blog con reflexiones, tutoriales, y temas técnicos relacionados
+            con la IA.
+          </MdListItem>
+          <MdListItem>
+            Recursos sobre LaTeX para quienes deseen perfeccionar sus
+            habilidades en la escritura científica.
+          </MdListItem>
+          <MdListItem>
+            Un portafolio donde documentaré proyectos e ideas relacionadas con
+            programación y matemáticas aplicadas.
+          </MdListItem>
+        </MdUnorderedList>
+        <MdParagraph>
+          Gracias por visitar. Te invito a explorar las secciones disponibles y
+          volver pronto para más contenido. ¡Esto es solo el comienzo!
+        </MdParagraph>
+        <HomeBoxes props={allPostsData} />
+      </MainPageBg>
+    </PageContainer>
   );
 }
 export default Home;

@@ -17,13 +17,7 @@ const AnimatedDiv = styled(motion.div)`
 const ScrollDiv = () => {
   const { scrollYProgress } = useScroll();
 
-  return (
-    <div>
-      {/* Scroll */}
-      {/* <motion.div style={{ scaleX }} /> */}
-      <AnimatedDiv style={{ scaleX: scrollYProgress }} />
-    </div>
-  );
+  return <AnimatedDiv style={{ scaleX: scrollYProgress }} />;
 };
 
 export default ScrollDiv;

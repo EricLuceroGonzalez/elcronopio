@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 // CardsElements.js;
 export const CardContainer = styled.div`
@@ -36,7 +36,25 @@ export const GridHeroImage = styled.div`
   }
 `;
 
-export const GridContainer = styled.div`
+// export const AnimatedDiv = styled(motion.div)`
+//   background-color: rebeccapurple;
+//   width: 200px;
+//   height: 200px;
+// `;
+
+//         <motion.div
+//             initial={{ opacity: 0, scale: 0 }}
+//             animate={{ opacity: 1, scale: 1 }}
+//             transition={{
+//                 duration: 0.4,
+//                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+//             }}
+//             style={ball}
+//         />
+//     )
+// }
+
+export const GridContainer = styled(motion.div)`
   margin: 0.55rem auto;
   background-color: var(--bg);
   padding: 2px 10px;
@@ -84,8 +102,3 @@ export const CardTitle = styled.h1`
   color: var(--accent);
   text-align: left;
 `;
-// export const AnimatedDiv = styled(motion.div)`
-//   background-color: rebeccapurple;
-//   width: 200px;
-//   height: 200px;
-// `;

@@ -45,6 +45,22 @@ export const MainPageBg = styled.div`
   }
 `;
 
+export const HomePageCover = styled.div`
+  /* border: 1px solid var(--accent); */
+  height: 45vh;
+  @media (max-width: 660px) {
+    height: 65vh;
+  }
+`;
+
+export const CoverTitle = styled.h1`
+  color: var(--fg);
+  font-size: 2rem;
+  @media (max-width: 728px) {
+    text-align: justify;
+    /* padding: 1rem 1rem; */
+  }
+`;
 export const TitlePage = styled.h1`
   color: var(--fg);
   @media (max-width: 728px) {

@@ -51,6 +51,7 @@ const Latex = ({ params }) => {
           la herramienta indispensable para crear documentos científicos y
           técnicos de alta calidad. Algunos temas que encontrarás:
         </MdParagraph>
+
         <MdUnorderedList>
           <MdListItem>Instalación y configuración de LaTeX.</MdListItem>
           <MdListItem>
@@ -66,7 +67,16 @@ const Latex = ({ params }) => {
         </MdParagraph>
         <ButtonContainer>
           <Link href={"/latex/curso"}>
-            <CopyButton>Ir al curso</CopyButton>
+            <CopyButton
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+              }}
+            >
+              Ir al curso
+            </CopyButton>
           </Link>
         </ButtonContainer>
         <HomeBoxes props={latexBlogPost} />

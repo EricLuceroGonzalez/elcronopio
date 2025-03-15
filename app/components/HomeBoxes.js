@@ -1,8 +1,6 @@
 "use client";
-import styled from "styled-components";
 import AllPosts from "./navigation/AllPosts";
 import { BoxGrid } from "../ui/lugs";
-
 // const BoxGrid = styled.div`
 //   display: flex;
 //   flex-direction: row;

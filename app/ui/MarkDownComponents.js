@@ -69,6 +69,7 @@ export const MdSubHeadC = styled.h4`
 export const MdLink = styled.a`
   background-color: var(--link-bg);
   color: var(--link-fg);
+  font-weight: bold;
   padding: 2px 5px;
 `;
 

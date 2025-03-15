@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 // Contenedor principal para manejar diseño responsivo
@@ -230,7 +231,7 @@ export const AboutMePanel = styled.div`
   margin-top: 2rem;
 `;
 
-export const AboutMeParaph = styled.p`
+export const AboutMeParaph = styled(motion.p)`
   font-size: medium;
   font-family: monospace;
   text-align: justify;
@@ -243,7 +244,7 @@ export const AboutMeParaph = styled.p`
   }
 `;
 
-export const PhotoAvatar = styled.div`
+export const PhotoAvatar = styled(motion.div)`
   width: 200px; /* Tamaño del círculo */
   height: 200px;
   border-radius: 50%; /* Hace que la imagen sea circular */
@@ -320,7 +321,7 @@ export const LanguageBadge = styled.span`
   text-transform: uppercase;
 `;
 
-export const CopyButton = styled.button`
+export const CopyButton = styled(motion.button)`
   background: var(--secondary-btn-bg);
   color: var(--secondary-btn-fg);
   border: none;

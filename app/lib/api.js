@@ -5,7 +5,7 @@ const matter = require("gray-matter");
 const { formatDateForSSR } = require("./DateUtils");
 
 const postsDirectory = join(process.cwd(), "/app/_posts/");
-
+const postsBlogDirectory = join(process.cwd(), "/app/_posts/blog/");
 // Obtener todos los slugs de los posts
 function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
@@ -15,6 +15,24 @@ function getPostSlugs() {
 function getPostBySlug(slug) {
   const realSlug = slug.replace(/\.mdx?$/, ""); // Soporta .md y .mdx
   const fullPath = join(postsDirectory, `${realSlug}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return {
+    ...data,
+    slug: realSlug,
+    content,
+    date: {
+      iso: data.date, // Conserva el formato original 'YYYY-MM-DD'
+      formatted: formatDateForSSR(data.date), // Formateado inicial en español
+    },
+  };
+}
+
+// Obtener un post por su slug
+function getBlogPostBySlug(slug) {
+  const realSlug = slug.replace(/\.mdx?$/, ""); // Soporta .md y .mdx
+  const fullPath = join(postsBlogDirectory, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -87,4 +105,5 @@ module.exports = {
   getLatexPosts,
   getBlogPosts,
   getPostsByType,
+  getBlogPostBySlug,
 };
