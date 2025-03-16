@@ -1,8 +1,10 @@
-import React from "react";
+// import React from "react";
 // import { getAllPosts } from "@/app/lib/api";
 import {
   CoverTitle,
   HomePageCover,
+  HomePageCoverImage,
+  HomePageCoverText,
   MainPageBg,
   PageContainer,
   TitlePage,
@@ -15,21 +17,34 @@ import {
 } from "./ui/MarkDownComponents";
 import ScrollDiv from "./components/navigation/ScrollDiv";
 import { getAllPosts } from "./lib/api";
-
-// const NaviBar = dynamic(() => import("./components/navigation/navbar/NaviBar"));
+import RandomDots from "./components/Canvas/RandomDots";
+import MovingDots from "./components/Canvas/MovingDots";
+import CircleFollow from "./components/Canvas/CanvaCircle";
+import CircleBounce from "./components/Canvas/CircleBounce";
 
 function Home() {
   const allPostsData = getAllPosts();
   // console.log(allPostsData);
-
   return (
     <PageContainer>
       <ScrollDiv />
       <MainPageBg>
         <HomePageCover>
-          <TitlePage>Hola! 👋🏼</TitlePage>
+          <HomePageCoverText>
+            <TitlePage>Hola! 👋🏼</TitlePage>
+            <CoverTitle>Eric Lucero González </CoverTitle>
+          </HomePageCoverText>
           {/* <TitlePage>Soy</TitlePage> */}
-          {/* <CoverTitle>Eric Lucero González </CoverTitle> */}
+          {/* TODO: Check p5 Compo */}
+          {/* <P5Sketch width={600} height={600} /> */}
+          {/* <RandomPointCloud /> */}
+          {/* <RandomDots numDots={200} width={800} height={400} /> */}
+          <HomePageCoverImage>
+            {/* <MovingDots numDots={100} width={100} height={150} speed={2} /> */}
+            <MovingDots numDots={100} speed={2} />
+
+            {/* <CircleBounce /> */}
+          </HomePageCoverImage>
         </HomePageCover>
         <MdParagraph>
           Este sitio web está en construcción, pero pronto será un lugar donde

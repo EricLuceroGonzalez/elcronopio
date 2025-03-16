@@ -4,7 +4,7 @@ import { getPostBySlug, getPostsByType } from "@/app/lib/api";
 import fs from "fs";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import MdxComponents from "@/app/components/MDXComponents";
+import MdxComponents from "@/app/components/MdCompos/MDXComponents";
 import { dynamicMdxComponents } from "@/app/components/MdCompos/dynamicMdxComponents";
 
 import { HeroImage, MdHead } from "@/app/ui/MarkDownComponents";

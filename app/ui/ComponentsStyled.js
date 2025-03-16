@@ -48,9 +48,19 @@ export const MainPageBg = styled.div`
 export const HomePageCover = styled.div`
   /* border: 1px solid var(--accent); */
   height: 45vh;
+  display: flex;
+  flex-direction: row;
   @media (max-width: 660px) {
     height: 65vh;
   }
+`;
+export const HomePageCoverText = styled.div`
+  /* border: 1px dashed var(--accent); */
+  width: 50%;
+`;
+export const HomePageCoverImage = styled.div`
+  border-left: 1px solid var(--strong-fg);
+  width: 50%;
 `;
 
 export const CoverTitle = styled.h1`

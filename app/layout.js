@@ -42,7 +42,7 @@ export default async function RootLayout({ children }) {
     // <html lang="es" suppressHydrationWarning className={`${inter.className}`}>
     <html
       lang="es"
-      data-theme="dark"
+      // data-theme="dark"
       suppressHydrationWarning
       // className={`${alexandria.className}`}
       className={`${parkisans.className}`}

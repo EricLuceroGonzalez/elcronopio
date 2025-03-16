@@ -62,6 +62,12 @@ const FoooterLink = styled.a`
   }
 `;
 
+const FooterLink = styled(Link)`
+  font-size: x-small;
+  &:hover {
+    color: var(--accent);
+  }
+`;
 const Footer = () => {
   return (
     <FooterContainer>
@@ -131,13 +137,13 @@ const Footer = () => {
           </FooterText>
         </FooterTextBox>
         <FooterTextBox>
-          <Link href={"/about/this_page"}>
+          <FooterLink href={"/about/this_page"}>
             <FaInfoCircle />
             Acerca de esta página
-          </Link>
-          <Link href={"/about/license"}>
+          </FooterLink>
+          <FooterLink href={"/about/license"}>
             <FaCreativeCommons /> Licencias
-          </Link>
+          </FooterLink>
         </FooterTextBox>
       </FooterIcons>
     </FooterContainer>
