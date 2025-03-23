@@ -48,7 +48,8 @@ export const MdHead = styled.h1`
   @media (min-width: 660px) {
     font-size: 2rem;
   }
-  /* border: 1px solid blue; */
+  line-height: 0.9;
+  margin: 1em 0;
 `;
 export const MdSubHeadA = styled.h2`
   margin-top: 2rem;

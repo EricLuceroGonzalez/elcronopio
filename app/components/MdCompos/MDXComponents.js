@@ -19,16 +19,16 @@ import CodeBlock from "@/app/components/CodeWrapper";
 import Image from "next/image";
 import { MathJax } from "better-react-mathjax";
 const MdxComponents = {
-  h1: (props) => <MdSubHeadA {...props}>{props.children}</MdSubHeadA>,
-  h2: (props) => <MdSubHeadB {...props}> {props.children}</MdSubHeadB>,
-  h3: (props) => <MdSubHeadC {...props}>{props.children}</MdSubHeadC>,
+  h1: (props) => <MdHead {...props}>{props.children}</MdHead>,
+  h2: (props) => <MdSubHeadA {...props}> {props.children}</MdSubHeadA>,
+  h3: (props) => <MdSubHeadB {...props}>{props.children}</MdSubHeadB>,
   h4: (props) => <MdSubHeadC {...props}>{props.children}</MdSubHeadC>,
   ul: (props) => <MdUnorderedList {...props}>{props.children}</MdUnorderedList>,
   ol: (props) => <MdOrderedList {...props}>{props.children}</MdOrderedList>,
   li: (props) => <MdListItem {...props}>{props.children}</MdListItem>,
   strong: (props) => <MdStrong {...props}>{props.children}</MdStrong>,
   em: (props) => <MdEmph {...props}>{props.children}</MdEmph>,
-  super: (props) => <MdCite {...props}>{props.children}</MdCite>,
+  sup: (props) => <MdCite {...props}>{props.children}</MdCite>,
   blockquote: (props) => (
     <MdBlockQuote {...props}>{props.children}</MdBlockQuote>
   ),

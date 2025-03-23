@@ -9,18 +9,26 @@ author: "Eric Lucero"
 coverImage: https://res.cloudinary.com/dcvnw6hvt/image/upload/v1741389125/elCronopio/cover_test-2_dnehhh.jpg
 coverImageAlt: "Imagen de cover del con el logo de latex y unas paginas"
 excerpt: "LaTeX es una herramienta poderosa para crear documentos de alta calidad, especialmente en el ámbito académico y técnico. Aprende a crear tu primer documento y descubre las ventajas de usar LaTeX para el control preciso del formato, las fórmulas"
-doctype: ["latex"]
+doctype: ["blog"]
 ---
 
 # Hola, esto es un título
 
-Este es un párrafo con una imagen:
+Este es un párrafo con una imagen y un componente:
 <BarChart/>
 ![Imagen de ejemplo caption=tengo el caption](https://res.cloudinary.com/dcvnw6hvt/image/upload/v1740425837/elCronopio/IMG_0038_hsy3i9.jpg)
 
+## Uso de citas en el texto
+Este es un texto con una referencia a un artículo científico <CitationSup id="1" />.
+
+También puedo usarlo como una nota al pie <CitationSup id="2" />.
+
+
 ## Hola, esto es un título h2
 
-Y aquí hay un bloque de código en python:
+Y aquí había un bloque de código en python:
+21^1^ Century,  21^a^ Century and 21^12^ Century, some word: and 21^word^ Century
+
 
 ### Hola, esto es un título h3
 
@@ -29,7 +37,7 @@ Y aquí hay un link [some link](https://example.com):
 $x^2$
 
 $$E = mc^2$$
-$\sqrt{x^2}$ $\sqrt{3x-1}+(1+x)^2$
+$\sqrt{x^2}$ $\sqrt{ 3x-1}+(1+x)^2$
 $$
 x^2 = C^2 + \alpha (3+b)
 $$
@@ -60,3 +68,10 @@ $E = mc^2$
 
 Otra ecuación importante es:
 $F = ma$
+
+<ReferenceList
+  references={[
+    { id: "1", text: "Doe, J. (2023). *Deep Learning for AI*. Springer." },
+    { id: "2", text: "Esta es una nota adicional sobre el tema." },
+  ]}
+/>

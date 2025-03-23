@@ -26,7 +26,8 @@ import PostNavigationCard from "@/app/components/PostNavigation";
 import remarkMath from "remark-math";
 import rehypeMathjax from "rehype-mathjax";
 import rehypeHighlight from "rehype-highlight";
-
+import supersub from "remark-supersub";
+import remarkGfm from "remark-gfm";
 // import ShowPath from "@/app/components/showPath";
 const LatexPost = async ({ params }) => {
   // const latexPosts = getLatexPosts(post.order);
@@ -110,7 +111,7 @@ const LatexPost = async ({ params }) => {
             components={compos}
             options={{
               mdxOptions: {
-                remarkPlugins: [remarkMath],
+                remarkPlugins: [remarkGfm, remarkMath, supersub],
                 rehypePlugins: [rehypeMathjax, rehypeHighlight],
               },
             }}

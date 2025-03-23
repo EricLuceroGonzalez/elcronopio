@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Canvas from "./Canvas";
 import { useTheme } from "next-themes";
 
-const MovingDots = ({ numDots = 50, width = 800, height = 400, speed = 1 }) => {
+const MovingDots = ({ numDots = 50, width = 450, height = 400, speed = 1 }) => {
   const [dots, setDots] = useState([]);
   const [dotColor, setDotColor] = useState("0, 0, 0"); // Default negro en RGB
   const { theme } = useTheme();
@@ -21,7 +21,7 @@ const MovingDots = ({ numDots = 50, width = 800, height = 400, speed = 1 }) => {
       x: Math.random() * width,
       y: Math.random() * height,
       opacity: 0, // Comienzan invisibles
-      life: Math.random() * 800 + 50, // Duración de vida
+      life: Math.random() * 400 + 50, // Duración de vida
       vx: (Math.random() - 0.5) * speed * 2, // Velocidad en x
       vy: (Math.random() - 0.5) * speed * 2, // Velocidad en y
     });

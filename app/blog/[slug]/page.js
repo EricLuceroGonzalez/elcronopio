@@ -21,6 +21,11 @@ import PostNavigationCard from "@/app/components/PostNavigation.js";
 import ShowPath from "@/app/components/showPath.js";
 import ScrollDiv from "@/app/components/navigation/ScrollDiv.js";
 import DateDisplay from "@/app/components/DateDisplay.js";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax";
+import supersub from "remark-supersub";
+import rehypeHighlight from "rehype-highlight";
 
 const BlogPost = async ({ params }) => {
   const post = getPostBySlug(params.slug);
@@ -88,6 +93,12 @@ const BlogPost = async ({ params }) => {
           <MDXRemote
             source={post.content}
             components={{ ...MdxComponents, ...dynamicMdxComponents }}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm, remarkMath, supersub],
+                rehypePlugins: [rehypeMathjax, rehypeHighlight],
+              },
+            }}
           />
           {/* TODO: Hero Image */}
           {/* <RenderCodeBlock props={post.content} /> */}

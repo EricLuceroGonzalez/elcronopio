@@ -29,8 +29,8 @@ export const Article = styled.article`
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   min-width: 70%;
 
-  @media (max-width: 1080px) {
-    max-width: 90%;
+  @media (min-width: 1080px) {
+    max-width: 60%;
   }
   @media (max-width: 728px) {
     min-width: 100%;
@@ -121,9 +121,9 @@ export const MetaInfo = styled.div`
   @media (min-width: 1200px) {
     width: 45%;
   }
-  @media (max-width: 490px) {
+  @media (max-width: 667px) {
     margin-bottom: 2.75rem;
-    width: 75%;
+    width: 95%;
   }
   /* border: 1px solid red; */
 `;

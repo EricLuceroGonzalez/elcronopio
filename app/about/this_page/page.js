@@ -6,42 +6,77 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiMdx } from "react-icons/si";
 import styled from "styled-components";
 import ShowPath from "@/app/components/showPath";
+import { Article, Layout } from "@/app/ui/lugs";
+import { MdHead } from "@/app/ui/MarkDownComponents";
+import Link from "next/link";
 
 const LogosBox = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 30%;
+  max-width: 90%;
   border: 1px dashed var(--fg);
   margin: 1rem auto;
-  @media (max-width: 1080px) {
-    max-width: 40%;
+  @media (min-width: 1080px) {
+    width: 60%;
+
+    border: 1px dashed var(--accent);
   }
   @media (max-width: 880px) {
     max-width: 80%;
+
+    border: 1px dashed red;
+  }
+`;
+
+const ReactIcon = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  margin: 5px;
+  svg {
+    color: var(--fg);
+  }
+  svg:hover {
+    color: var(--accent);
   }
 `;
 
 const AboutThisPage = () => {
   return (
-    <MainBg>
-      <ShowPath />
-      <h1>Acerca de esta pagina</h1>
-      <p>Esta pagina esta en proceso de construcción y diseño.</p>
-      <LogosBox>
-        <div>
-          <RiNextjsFill style={{ fontSize: "4rem", color: "var(--accent)" }} />
-
-          <IoLogoJavascript
-            style={{ fontSize: "4rem", color: "var(--accent)" }}
-          />
-        </div>
-        <div>
-          <RiReactjsLine style={{ fontSize: "4rem", color: "var(--accent)" }} />
-
-          <SiMdx style={{ fontSize: "4rem", color: "var(--accent)" }} />
-        </div>
-      </LogosBox>
-    </MainBg>
+    <Layout>
+      <MainBg>
+        <Article>
+          <ShowPath />
+          <MdHead>Acerca de esta pagina</MdHead>
+          <p>Esta pagina esta en proceso de construcción y diseño.</p>
+          <LogosBox>
+            <ReactIcon href={"https://nextjs.org"}>
+              <RiNextjsFill />
+            </ReactIcon>
+            <div>Some text explaining why and what NExt JS</div>
+          </LogosBox>
+          <LogosBox>
+            <ReactIcon href={"https://simple.wikipedia.org/wiki/JavaScript"}>
+              <IoLogoJavascript />
+            </ReactIcon>
+            <div>Some text explaining why and what NExt JS</div>
+          </LogosBox>
+          <LogosBox>
+            <ReactIcon href={"https://en.wikipedia.org/wiki/React_(software)"}>
+              <RiReactjsLine />
+            </ReactIcon>
+            <div>Some text explaining why and what NExt JS</div>
+          </LogosBox>
+          <LogosBox>
+            <ReactIcon href={"https://mdxjs.com"}>
+              <SiMdx />
+            </ReactIcon>
+            <div>Some text explaining why and what NExt JS</div>
+          </LogosBox>
+        </Article>
+      </MainBg>
+    </Layout>
   );
 };
 
